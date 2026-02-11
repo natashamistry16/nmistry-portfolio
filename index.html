@@ -3,9 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Natasha Mistry | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --flame-red: #C41E3A;
+            --dark-crimson: #8B0000;
+            --jet-black: #0D0D0D;
+            --chrome-yellow: #FFD700;
+            --smoke-gray: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: var(--jet-black);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Tire tread pattern background */
+        .bg-pattern {
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% 0%, var(--dark-crimson) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(0,0,0,0.03) 40px,
+                    rgba(0,0,0,0.03) 41px
+                ),
+                linear-gradient(180deg, var(--jet-black) 0%, var(--smoke-gray) 100%);
+            z-index: -1;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Racing stripes */
+        .stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--flame-red) 0px,
+                var(--flame-red) 30px,
+                var(--chrome-yellow) 30px,
+                var(--chrome-yellow) 40px
+            );
+        }
+
+        .stripes-bottom {
+            bottom: 0;
+            top: auto;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 15vw, 10rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--flame-red);
+            text-shadow: 
+                4px 4px 0 var(--jet-black),
+                8px 8px 0 rgba(196, 30, 58, 0.3),
+                0 0 60px rgba(196, 30, 58, 0.4);
+            line-height: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: var(--chrome-yellow);
+            font-weight: 600;
+        }
+
+        /* Chrome accent bar */
+        .chrome-bar {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--chrome-yellow), transparent);
+            margin: 2rem 0;
+            box-shadow: 0 0 20px var(--chrome-yellow);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Decorative corners */
+        .corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--flame-red);
+            opacity: 0.6;
+        }
+
+        .corner-tl { top: 2rem; left: 2rem; border-right: none; border-bottom: none; }
+        .corner-tr { top: 2rem; right: 2rem; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: 2rem; left: 2rem; border-right: none; border-top: none; }
+        .corner-br { bottom: 2rem; right: 2rem; border-left: none; border-top: none; }
+
+        @media (max-width: 600px) {
+            .corner { width: 40px; height: 40px; }
+            .corner-tl, .corner-tr { top: 1rem; }
+            .corner-bl, .corner-br { bottom: 1rem; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <div class="bg-pattern"></div>
+    <div class="stripes"></div>
+    <div class="stripes stripes-bottom"></div>
+
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <section class="hero">
+        <h1>Natasha Mistry</h1>
+        <div class="chrome-bar"></div>
+        <p class="tagline">Product Designer</p>
+        <p class="subtitle">Portfolio</p>
+    </section>
 </body>
 </html>
