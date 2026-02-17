@@ -3,154 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natasha Mistry | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Natasha Mistry | Product Designer</title>
+    <meta name="description" content="Natasha Mistry is a senior product designer who brings clarity to complex problems through intuitive, accessible, and inclusive digital products.">
+    <meta name="author" content="Natasha Mistry">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta property="og:title" content="Natasha Mistry | Product Designer">
+    <meta property="og:description" content="Senior product designer specializing in financial and data-rich tools. Based in Portland, Oregon.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://use.typekit.net/lww8jbi.css">
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         :root {
-            --flame-red: #C41E3A;
-            --dark-crimson: #8B0000;
-            --jet-black: #0D0D0D;
-            --chrome-yellow: #FFD700;
-            --smoke-gray: #1A1A1A;
+            --cream: #FAF8EA;
+            --brown: #2E191F;
+            --red: #E04C2D;
         }
 
         body {
-            font-family: 'Oswald', sans-serif;
-            background: var(--jet-black);
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: "swear-text", serif;
+            background-color: var(--cream);
+            color: var(--brown);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Tire tread pattern background */
-        .bg-pattern {
-            position: fixed;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse 80% 50% at 50% 0%, var(--dark-crimson) 0%, transparent 50%),
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 40px,
-                    rgba(0,0,0,0.03) 40px,
-                    rgba(0,0,0,0.03) 41px
-                ),
-                linear-gradient(180deg, var(--jet-black) 0%, var(--smoke-gray) 100%);
-            z-index: -1;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .hero {
-            min-height: 100vh;
+        img {
+            display: block;
+        }
+
+        /* ========== HEADER ========== */
+
+        .header {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 2rem;
+            padding: 48px 48px 0 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--red);
+            border-radius: 50%;
+            padding: 4px;
+            flex-shrink: 0;
+            transform: translateY(4px);
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo:hover .logo-icon svg {
+            transform: rotate(180deg);
+        }
+
+        .logo-text {
+            font-family: "swear-display-cilati", sans-serif;
+            font-weight: 800;
+            font-size: 48px;
+            letter-spacing: 3.84px;
+            color: var(--brown);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: var(--brown);
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover .logo-text span {
+            color: #5a3340;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav a {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--red);
+            text-decoration: none;
+            transition: color 0.2s ease;
             position: relative;
+            padding-bottom: 4px;
         }
 
-        /* Racing stripes */
-        .stripes {
+        .nav a::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--flame-red) 0px,
-                var(--flame-red) 30px,
-                var(--chrome-yellow) 30px,
-                var(--chrome-yellow) 40px
-            );
-        }
-
-        .stripes-bottom {
             bottom: 0;
-            top: auto;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #b8391f;
+            transition: width 0.3s ease, left 0.3s ease;
         }
 
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(4rem, 15vw, 10rem);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--flame-red);
-            text-shadow: 
-                4px 4px 0 var(--jet-black),
-                8px 8px 0 rgba(196, 30, 58, 0.3),
-                0 0 60px rgba(196, 30, 58, 0.4);
-            line-height: 0.9;
-            margin-bottom: 0.5rem;
+        .nav a:hover {
+            color: #b8391f;
         }
 
-        .tagline {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            color: var(--chrome-yellow);
-            font-weight: 600;
+        .nav a:hover::after {
+            width: 100%;
+            left: 0;
         }
 
-        /* Chrome accent bar */
-        .chrome-bar {
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--chrome-yellow), transparent);
-            margin: 2rem 0;
-            box-shadow: 0 0 20px var(--chrome-yellow);
+        .nav a.active::after {
+            width: 100%;
+            left: 0;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            letter-spacing: 0.2em;
-            color: rgba(255,255,255,0.7);
+        /* ========== INTRO ========== */
+
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 48px 48px 96px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Decorative corners */
-        .corner {
+        .bio {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--brown);
+            max-width: 768px;
+            flex: 1;
+        }
+
+        .bio p + p {
+            margin-top: 1em;
+        }
+
+        .headshot-wrapper {
+            position: relative;
+            width: 370px;
+            height: 476px;
+            min-width: 370px;
+        }
+
+        .headshot-border-outer {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 3px solid var(--flame-red);
-            opacity: 0.6;
+            inset: 0;
+            border: 1px solid var(--red);
+            border-radius: 40px;
+            transition: inset 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .corner-tl { top: 2rem; left: 2rem; border-right: none; border-bottom: none; }
-        .corner-tr { top: 2rem; right: 2rem; border-left: none; border-bottom: none; }
-        .corner-bl { bottom: 2rem; left: 2rem; border-right: none; border-top: none; }
-        .corner-br { bottom: 2rem; right: 2rem; border-left: none; border-top: none; }
+        .headshot-border-inner {
+            position: absolute;
+            top: 11px;
+            left: 9px;
+            right: 8px;
+            bottom: 11px;
+            border: 1px solid var(--red);
+            border-radius: 32px;
+            transition: top 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s,
+                        left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s,
+                        right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s,
+                        bottom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s;
+        }
 
-        @media (max-width: 600px) {
-            .corner { width: 40px; height: 40px; }
-            .corner-tl, .corner-tr { top: 1rem; }
-            .corner-bl, .corner-br { bottom: 1rem; }
+        .headshot {
+            position: absolute;
+            top: 21px;
+            left: 17px;
+            width: 336px;
+            height: 433px;
+            border-radius: 24px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .headshot-wrapper:hover .headshot {
+            transform: rotate(2deg);
+        }
+
+        .headshot-wrapper:hover .headshot-border-outer {
+            inset: -4px;
+        }
+
+        .headshot-wrapper:hover .headshot-border-inner {
+            top: 7px;
+            left: 5px;
+            right: 4px;
+            bottom: 7px;
+        }
+
+        /* ========== DIVIDER ========== */
+
+        .divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .divider-pill {
+            height: 8px;
+            border: 1px solid var(--red);
+            border-radius: 24px;
+            width: 0;
+            margin: 0 auto;
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .divider-pill.visible {
+            width: 100%;
+        }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== SECTIONS (Work, Education, Skills) ========== */
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            display: grid;
+            grid-template-columns: 336px 1fr;
+            gap: 48px;
+        }
+
+        .section-label {
+            font-family: "swear-display-cilati", sans-serif;
+            font-weight: 800;
+            font-size: 40px;
+            letter-spacing: 3.2px;
+            color: var(--brown);
+            line-height: 1;
+        }
+
+        .section-entries {
+            max-width: 960px;
+        }
+
+        /* ========== WORK ENTRIES ========== */
+
+        .entry + .entry {
+            margin-top: 72px;
+        }
+
+        .entry-title {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .entry-subtitle {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 40px;
+            color: var(--brown);
+        }
+
+        .entry-description {
+            font-family: "swear-text", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--brown);
+            margin-top: 16px;
+        }
+
+        /* ========== SKILL ENTRIES ========== */
+
+        .skill-entry + .skill-entry {
+            margin-top: 56px;
+        }
+
+        .skill-entry .entry-title {
+            margin-bottom: 8px;
+        }
+
+        .skill-items {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 40px;
+            color: var(--brown);
+        }
+
+        /* ========== FOOTER ========== */
+
+        .footer {
+            background-color: var(--red);
+            padding: 32px 48px 32px 48px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .footer-col-label {
+            font-family: "swear-display", serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.48px;
+            color: var(--cream);
+            margin-bottom: 4px;
+        }
+
+        .footer-col-value {
+            font-family: "swear-display-cilati", sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.64px;
+            color: var(--cream);
+        }
+
+        .footer-col-value a {
+            color: var(--cream);
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-col-value a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 48px;
+        }
+
+        .footer-divider {
+            margin: 16px 0;
+        }
+
+        .footer-divider hr {
+            border: none;
+            height: 1px;
+            background-color: var(--cream);
+        }
+
+        .footer-bottom {
+            font-family: "swear-display", serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.48px;
+            color: var(--cream);
+        }
+
+        /* ========== RESPONSIVE ========== */
+
+        @media (max-width: 1024px) {
+            .header {
+                padding: 32px 32px 0 32px;
+            }
+
+            .intro {
+                flex-direction: column;
+                padding: 32px 32px 64px 32px;
+            }
+
+            .headshot-wrapper {
+                width: 300px;
+                height: 390px;
+                min-width: unset;
+            }
+
+            .headshot {
+                width: 272px;
+                height: 350px;
+            }
+
+            .bio {
+                font-size: 20px;
+            }
+
+            .divider {
+                padding: 0 32px;
+            }
+
+            .section {
+                grid-template-columns: 1fr;
+                padding: 64px 32px;
+                gap: 32px;
+            }
+
+            .footer {
+                padding: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                padding: 24px 24px 0 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .logo-text {
+                font-size: 36px;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav {
+                gap: 24px;
+            }
+
+            .nav a {
+                font-size: 18px;
+            }
+
+            .intro {
+                padding: 24px 24px 48px 24px;
+            }
+
+            .headshot-wrapper {
+                width: 260px;
+                height: 340px;
+            }
+
+            .headshot {
+                width: 230px;
+                height: 300px;
+            }
+
+            .bio {
+                font-size: 18px;
+            }
+
+            .divider {
+                padding: 0 24px;
+            }
+
+            .section {
+                padding: 48px 24px;
+            }
+
+            .section-label {
+                font-size: 32px;
+            }
+
+            .entry-title {
+                font-size: 26px;
+            }
+
+            .entry-subtitle {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            .skill-items {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            .footer {
+                padding: 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-pattern"></div>
-    <div class="stripes"></div>
-    <div class="stripes stripes-bottom"></div>
 
-    <div class="corner corner-tl"></div>
-    <div class="corner corner-tr"></div>
-    <div class="corner corner-bl"></div>
-    <div class="corner corner-br"></div>
+    <!-- HEADER -->
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-icon" aria-label="NM Logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:100%;">
+                    <path d="M24 46.2227C24.4909 46.2227 24.8887 46.6204 24.8887 47.1113C24.8885 47.6021 24.4908 48 24 48C23.5092 48 23.1115 47.6021 23.1113 47.1113C23.1113 46.6204 23.5091 46.2227 24 46.2227ZM23.999 26.667C24.0406 26.7138 27.5537 30.6755 27.5537 35.5557C27.5536 40.4414 24.0327 44.4066 23.999 44.4443C23.999 44.4443 20.4434 40.4648 20.4434 35.5557C20.4434 30.6465 23.999 26.667 23.999 26.667ZM34.875 34.8105C34.875 34.8105 36.94 34.9273 38.2852 36.2725C39.6185 37.6059 39.744 39.6462 39.7461 39.6816C39.71 39.6795 37.6701 39.5538 36.3369 38.2207C34.9918 36.8756 34.875 34.8105 34.875 34.8105ZM13.2842 34.6533C13.2842 34.6533 13.1681 36.7183 11.8232 38.0635C10.4837 39.4031 8.43001 39.5244 8.41309 39.5254C8.41309 39.5254 8.52908 37.4604 9.87402 36.1152C11.2192 34.7701 13.2842 34.6533 13.2842 34.6533ZM14.5713 32.1709C14.9184 31.824 15.4811 31.8239 15.8281 32.1709C16.1751 32.5179 16.175 33.0806 15.8281 33.4277C15.481 33.7749 14.9184 33.7748 14.5713 33.4277C14.2242 33.0806 14.2242 32.518 14.5713 32.1709ZM32.1709 32.1709C32.518 31.824 33.0807 31.8239 33.4277 32.1709C33.7748 32.518 33.7746 33.0806 33.4277 33.4277C33.0806 33.7749 32.518 33.7749 32.1709 33.4277C31.8238 33.0806 31.8238 32.518 32.1709 32.1709ZM22.1143 25.8857C22.1048 25.9015 20.2266 29.0303 19.5996 29.6572C18.9714 30.2851 18.5 29.8144 18.3428 29.6572C18.1856 29.5001 17.7142 29.028 18.3428 28.3994C18.9708 27.7715 22.1072 25.89 22.1143 25.8857ZM25.8857 25.8857C25.8857 25.8857 29.0283 27.7707 29.6572 28.3994C30.2858 29.028 29.8144 29.5001 29.6572 29.6572C29.4999 29.8145 29.0285 30.285 28.4004 29.6572C27.7719 29.0287 25.8857 25.8857 25.8857 25.8857ZM12.4434 20.4443C17.3524 20.4445 21.332 24 21.332 24C21.332 24 17.3524 27.5555 12.4434 27.5557C7.53416 27.5557 3.55371 24 3.55371 24C3.55371 24 7.53416 20.4443 12.4434 20.4443ZM35.5537 20.4443C40.4629 20.4443 44.4434 24 44.4434 24C44.4434 24 40.4629 27.5557 35.5537 27.5557C30.6447 27.5555 26.665 24 26.665 24C26.665 24 30.6447 20.4445 35.5537 20.4443ZM0.888672 23.1113C1.37958 23.1113 1.77732 23.5091 1.77734 24C1.77734 24.4909 1.37959 24.8887 0.888672 24.8887C0.397852 24.8886 0 24.4908 0 24C2.34788e-05 23.5092 0.397866 23.1114 0.888672 23.1113ZM24 23.1113C24.4909 23.1114 24.8886 23.5091 24.8887 24C24.8887 24.4909 24.4909 24.8886 24 24.8887C23.5091 24.8887 23.1113 24.4909 23.1113 24C23.1114 23.5091 23.5091 23.1113 24 23.1113ZM47.1113 23.1113C47.6021 23.1115 48 23.5092 48 24C48 24.4908 47.6021 24.8885 47.1113 24.8887C46.6204 24.8887 46.2217 24.4909 46.2217 24C46.2217 23.5091 46.6204 23.1113 47.1113 23.1113ZM18.3428 18.3428C18.5 18.1856 18.9714 17.7149 19.5996 18.3428C20.2266 18.9697 22.1048 22.0985 22.1143 22.1143C22.1072 22.11 18.9708 20.2285 18.3428 19.6006C17.7142 18.972 18.1856 18.4999 18.3428 18.3428ZM28.4004 18.3428C29.0285 17.715 29.4999 18.1855 29.6572 18.3428C29.8144 18.4999 30.2858 18.972 29.6572 19.6006C29.0283 20.2293 25.8857 22.1143 25.8857 22.1143C25.8857 22.1143 27.7719 18.9713 28.4004 18.3428ZM23.999 3.55566C24.0338 3.59476 27.5537 7.55946 27.5537 12.4443C27.5537 17.3251 24.0397 21.2874 23.999 21.333C23.999 21.333 20.4434 17.3535 20.4434 12.4443C20.4434 7.53518 23.999 3.55566 23.999 3.55566ZM14.5723 14.5723C14.9194 14.2251 15.482 14.2251 15.8291 14.5723C16.1762 14.9194 16.1762 15.482 15.8291 15.8291C15.482 16.176 14.9193 16.1761 14.5723 15.8291C14.2252 15.482 14.2254 14.9194 14.5723 14.5723ZM32.1709 14.5723C32.518 14.2251 33.0806 14.2251 33.4277 14.5723C33.7747 14.9194 33.7748 15.482 33.4277 15.8291C33.0806 16.1761 32.518 16.1761 32.1709 15.8291C31.8238 15.482 31.8239 14.9194 32.1709 14.5723ZM8.47461 8.41211C8.47461 8.41211 10.5396 8.52888 11.8848 9.87402C13.2213 11.2109 13.3442 13.258 13.3457 13.2832C13.3226 13.2819 11.2741 13.1595 9.93652 11.8223C8.59138 10.4771 8.47461 8.41211 8.47461 8.41211ZM39.6816 8.25488C39.6816 8.25488 39.5649 10.3199 38.2197 11.665C36.8838 13.0008 34.8384 13.1243 34.8105 13.126C34.8123 13.0959 34.9365 11.052 36.2715 9.7168C37.6166 8.37166 39.6816 8.25488 39.6816 8.25488ZM24 0C24.4908 3.32048e-05 24.8886 0.397872 24.8887 0.888672C24.8887 1.37957 24.4909 1.77731 24 1.77734C23.5091 1.77734 23.1113 1.37959 23.1113 0.888672C23.1114 0.397852 23.5092 0 24 0Z" fill="#FAF8EA"/>
+                </svg>
+            </div>
+            <span class="logo-text"><span style="transition-delay:0s">N</span><span style="transition-delay:0.03s">a</span><span style="transition-delay:0.06s">t</span><span style="transition-delay:0.09s">a</span><span style="transition-delay:0.12s">s</span><span style="transition-delay:0.15s">h</span><span style="transition-delay:0.18s">a</span><span> </span><span style="transition-delay:0.24s">M</span><span style="transition-delay:0.27s">i</span><span style="transition-delay:0.30s">s</span><span style="transition-delay:0.33s">t</span><span style="transition-delay:0.36s">r</span><span style="transition-delay:0.39s">y</span></span>
+        </a>
+        <nav class="nav">
+            <a href="case-studies.html">Case Studies</a>
+            <a href="#">R&eacute;sum&eacute;</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <h1>Natasha Mistry</h1>
-        <div class="chrome-bar"></div>
-        <p class="tagline">Product Designer</p>
-        <p class="subtitle">Portfolio</p>
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="bio">
+            <p>I'm a senior product designer who enjoys bringing clarity to complex problems. I design digital products that are intuitive, accessible, and grounded in real human needs, with a strong commitment to inclusive design.</p>
+            <p>My experience spans financial and data-rich tools, where I've partnered closely with product managers, engineers, and data teams to shape ideas from early concepts through launch. I combine research, systems thinking, and visual craft to create thoughtful, scalable solutions, and care deeply about the details that make products feel clear and trustworthy.</p>
+            <p>I'm currently seeking senior product design opportunities and excited to help bring great products to life.</p>
+        </div>
+        <div class="headshot-wrapper">
+            <div class="headshot-border-outer"></div>
+            <div class="headshot-border-inner"></div>
+            <img src="assets/headshot.png" alt="Natasha Mistry" class="headshot">
+        </div>
     </section>
+
+    <!-- DIVIDER -->
+    <div class="divider">
+        <div class="divider-pill"></div>
+    </div>
+
+    <!-- WORK -->
+    <section class="section">
+        <h2 class="section-label scroll-fade">Work</h2>
+        <div class="section-entries">
+
+            <article class="entry scroll-fade" style="transition-delay: 0.1s">
+                <h3 class="entry-title">Square</h3>
+                <div class="entry-subtitle">
+                    Senior Product Designer &bull; October 2024 – January 2026<br>
+                    Product Designer &bull; January 2021 – October 2024
+                </div>
+                <p class="entry-description">Helped drive product strategy for Square Banking by aligning user needs, business goals, and technical constraints that help small business owners make informed financial decisions. Led UX research and collaborated with PMs, engineers, and data scientists to optimize product flows through data-driven insights.</p>
+            </article>
+
+            <article class="entry scroll-fade" style="transition-delay: 0.2s">
+                <h3 class="entry-title">WillowTree</h3>
+                <div class="entry-subtitle">
+                    Product Designer &bull; June 2017 – January 2021
+                </div>
+                <p class="entry-description">I led cross-platform web and mobile app design for enterprise clients, balancing business needs with user goals. Through user research, usability testing, and concept validation, I refined product experiences to drive engagement and efficiency. Committed to digital accessibility and inclusive design, I advocated for their integration in large-scale application releases.</p>
+            </article>
+
+            <article class="entry scroll-fade" style="transition-delay: 0.3s">
+                <h3 class="entry-title">Cloudera</h3>
+                <div class="entry-subtitle">
+                    UX Design Intern &bull; May 2015 – August 2016
+                </div>
+                <p class="entry-description">I designed a cross-platform design system for a suite of data engineering, machine learning, and analytics tools. By conducting user interviews, I shaped persona development and information architecture strategies to enhance usability. To address complex design challenges, I developed responsive web components using front-end code, ensuring a seamless and scalable user experience.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+        <h2 class="section-label scroll-fade">Education</h2>
+        <div class="section-entries">
+
+            <article class="entry scroll-fade" style="transition-delay: 0.1s">
+                <h3 class="entry-title">Rochester Institute of Technology</h3>
+                <div class="entry-subtitle">
+                    New Media Design, BFA &bull; 2013 – 2017<br>
+                    Web Development, Minor &bull; 2013 – 2017
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+        <h2 class="section-label scroll-fade">Skills</h2>
+        <div class="section-entries">
+
+            <div class="skill-entry scroll-fade" style="transition-delay: 0.1s">
+                <h3 class="entry-title">Product Strategy</h3>
+                <div class="skill-items">
+                    Roadmap &amp; Vision Alignment<br>
+                    Stakeholder Collaboration &amp; Facilitation
+                </div>
+            </div>
+
+            <div class="skill-entry scroll-fade" style="transition-delay: 0.2s">
+                <h3 class="entry-title">UX Research</h3>
+                <div class="skill-items">
+                    User Testing &amp; Interviews<br>
+                    Heuristic Evaluation<br>
+                    A/B Testing
+                </div>
+            </div>
+
+            <div class="skill-entry scroll-fade" style="transition-delay: 0.3s">
+                <h3 class="entry-title">Design Systems &amp; Accessibility</h3>
+                <div class="skill-items">
+                    Scalable UI Components<br>
+                    WCAG &amp; Inclusive Design Best Practices
+                </div>
+            </div>
+
+            <div class="skill-entry scroll-fade" style="transition-delay: 0.4s">
+                <h3 class="entry-title">AI Tooling</h3>
+                <div class="skill-items">
+                    Coding &amp; Prototyping (Cursor, Vercel, Figma Make)<br>
+                    Version Control &amp; Collaborative Workflows (Git, GitHub)
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-col-label">Based in</div>
+                    <div class="footer-col-value">Portland, Oregon</div>
+                </div>
+                <div>
+                    <div class="footer-col-label">Available</div>
+                    <div class="footer-col-value">Remote, U.S.</div>
+                </div>
+                <div>
+                    <div class="footer-col-label">Other channels</div>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/natashamistry/" class="footer-col-value" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+                        <a href="mailto:natashamistry16@gmail.com" class="footer-col-value">Email &rarr;</a>
+                        <a href="https://dribbble.com/natashamistry" class="footer-col-value" target="_blank" rel="noopener">Dribbble &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <hr>
+            </div>
+            <div class="footer-bottom">Natasha Mistry Portfolio</div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.scroll-fade, .divider-pill').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
