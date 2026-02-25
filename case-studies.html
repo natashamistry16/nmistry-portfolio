@@ -191,6 +191,7 @@
             padding: 8px;
             z-index: 1001;
             position: relative;
+            transition: background-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .menu-toggle-bar {
@@ -210,7 +211,7 @@
 
         .menu-toggle.active .menu-toggle-bar:nth-child(1) {
             transform: translateY(9px) rotate(45deg);
-            background-color: var(--cream);
+            background-color: var(--brown);
         }
 
         .menu-toggle.active .menu-toggle-bar:nth-child(2) {
@@ -220,7 +221,7 @@
 
         .menu-toggle.active .menu-toggle-bar:nth-child(3) {
             transform: translateY(-9px) rotate(-45deg);
-            background-color: var(--cream);
+            background-color: var(--brown);
         }
 
         .mobile-menu {
@@ -237,20 +238,6 @@
             visibility: hidden;
             transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1),
                         visibility 0.4s;
-        }
-
-        .mobile-menu-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            border: none;
-            background: transparent;
-            color: var(--cream);
-            font-family: "swear-display", serif;
-            font-size: 36px;
-            line-height: 1;
-            cursor: pointer;
-            padding: 4px 8px;
         }
 
         .mobile-menu.open {
@@ -291,6 +278,18 @@
 
         body.menu-open {
             overflow: hidden;
+        }
+
+        body.menu-open .header {
+            z-index: 1102;
+        }
+
+        body.menu-open .menu-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1103;
+            background-color: var(--cream);
         }
 
         /* ========== PASSWORD GATE ========== */
@@ -667,6 +666,11 @@
             .menu-toggle {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 999px;
             }
 
             .mobile-menu {
@@ -869,7 +873,6 @@
     </header>
 
     <div class="mobile-menu">
-        <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
         <a href="case-studies.html" class="active">Case Studies</a>
         <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer">R&eacute;sum&eacute;</a>
     </div>
@@ -1089,7 +1092,6 @@
 
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
         const header = document.querySelector('.header');
 
         if (menuToggle && mobileMenu) {
@@ -1097,14 +1099,6 @@
                 menuToggle.classList.toggle('active');
                 mobileMenu.classList.toggle('open');
                 document.body.classList.toggle('menu-open');
-            });
-        }
-
-        if (mobileMenuClose && mobileMenu && menuToggle) {
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                menuToggle.classList.remove('active');
-                document.body.classList.remove('menu-open');
             });
         }
 
