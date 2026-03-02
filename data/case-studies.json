@@ -1,0 +1,1366 @@
+{
+  "projects": [
+    {
+      "slug": "instant-transfers",
+      "title": "Instant Transfers",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Square, Japan",
+        "heading": "Instant Transfers",
+        "subheading": "Native mobile and web",
+        "body": "I was the sole and lead designer for this launch, working closely with engineers, product managers, data scientists, content design, and translation specialists. Together, we designed an instant transfer experience tailored to Japan that keeps the flow fast while setting clear expectations around timing, fees, and outcomes.",
+        "image": "assets/case-studies/japan-instant-transfers/hero-mockup.png",
+        "imageAlt": "Japan Instant Transfers hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "Instant transfers already existed in most Square markets, but Japan needed a custom approach. Local banking windows, account validation behavior, and planned outages introduced constraints that could easily make the experience feel unpredictable. Our challenge was to keep the interaction simple, while still giving sellers enough context to trust what would happen after they tapped transfer.",
+        "goals": [
+          "Enable instant transfers for sellers in Japan",
+          "Set clear expectations for fees, timing, and outages",
+          "Give sellers clear next steps when bank issues happen"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "centeredBlock",
+          "sectionTitle": "Process",
+          "subtitle": "Japan-specific constraints",
+          "body": [
+            "Fast deposit speed is a top need for sellers in Japan, but local banking constraints made a direct copy of other markets unrealistic. Many sellers still rely on weekly transfers, and holiday delays can create immediate cash pressure, especially for food and beverage businesses. We mapped these constraints early and used them to shape product decisions, disclosures, and status messaging so sellers would understand what to expect before and after each transfer."
+          ],
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Error and eligibility flow",
+          "body": [
+            "We kept the core action fast, then designed clear status states and follow-up messaging for cases where bank checks completed later in the flow. We focused on actionable recovery paths for name mismatch and account ineligibility so sellers could quickly understand the issue and move forward."
+          ],
+          "image": {
+            "src": "assets/case-studies/japan-instant-transfers/process-error-handling-flow.png.png",
+            "alt": "Eligibility and error handling flow"
+          },
+          "spacing": "process-main",
+          "imageWidth": 320
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Content and translation workflow",
+          "body": [
+            "I partnered with a content designer to simplify high-risk moments like maintenance windows, delays, and transfer uncertainty into concise, scannable language. We then worked with translation specialists to localize the experience for Japanese sellers while preserving intent, tone, and clarity across surfaces."
+          ],
+          "image": {
+            "src": "assets/case-studies/japan-instant-transfers/process-disclosures.png",
+            "alt": "Disclosure and messaging explorations"
+          },
+          "spacing": "process-secondary",
+          "imageWidth": 320
+        },
+        {
+          "type": "divider",
+          "spacing": "after-process"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Clear transfer review",
+          "body": [
+            "Before submission, sellers see source, destination, transfer speed, fee, and net amount in one clear review step. This helped reduce uncertainty at the decision point without adding unnecessary friction."
+          ],
+          "image": {
+            "src": "assets/case-studies/japan-instant-transfers/solution-transfer-review.png",
+            "alt": "Instant transfer review screen"
+          },
+          "imageWidth": 320,
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Clear status states",
+          "body": [
+            "After submission, sellers immediately see whether a transfer is queued, initiated, or failed, then receive follow-up by email. The state system was designed to answer the most important question quickly: what happened, and what should I do next?"
+          ],
+          "image": {
+            "src": "assets/case-studies/japan-instant-transfers/solution-status-states.png",
+            "alt": "Pending, initiated, and failed transfer states"
+          },
+          "spacing": "solution-main",
+          "imageWidth": 320
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Bank relinking recovery",
+          "body": [
+            "When a bank account is blocked, sellers are guided to relink directly from the error context. This creates a clear self-serve recovery path and reduces repeated failed transfer attempts."
+          ],
+          "image": {
+            "src": "assets/case-studies/japan-instant-transfers/solution-bank-relinking.png",
+            "alt": "Bank relinking entry point from transfer errors"
+          },
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "84x",
+              "label": "Faster transfer speed"
+            },
+            {
+              "value": "\u00a51 Billion",
+              "label": "Transferred within 1 month of launch"
+            },
+            {
+              "value": "100%",
+              "label": "Support for eligible Japanese banks"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "Shipped a Japan-specific instant transfer experience with clearer status and recovery.",
+        "items": [
+          {
+            "value": "84x",
+            "label": "Faster transfer speed"
+          },
+          {
+            "value": "\u00a51 Billion",
+            "label": "Transferred within 1 month of launch"
+          },
+          {
+            "value": "100%",
+            "label": "Support for eligible Japanese banks"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cash-flow-visualization",
+      "title": "Cash Flow Visualization",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Square Checking",
+        "heading": "Cash Flow Visualization",
+        "subheading": "Web & native mobile",
+        "body": "Give Square sellers a comprehensive view of their business cash flow to streamline financial planning. The work focused on making financial data easier to understand at a glance while reducing manual bookkeeping effort through automation and actionable insights.",
+        "image": "assets/case-studies/cash-flow-visualization/hero-mockup.png",
+        "imageAlt": "Cash Flow Visualization hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "Sellers were managing business finances across multiple tools, making it hard to quickly understand account health, spending patterns, and short-term cash risk. We needed to design a cash flow experience that surfaces the right data at the right moment, supports faster decision-making, and feels simple enough for day-to-day use.",
+        "goals": [
+          "Concise and intuitive data visualization",
+          "Enhance understanding of business cash flow",
+          "Streamline bookkeeping processes"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Process",
+          "reverse": true,
+          "subtitle": "Methodology",
+          "body": [
+            "We ran 90-minute semi-structured interviews with 10 sellers, balancing participants who used multiple finance tools and those fully in Square's ecosystem. Sessions included moderated co-creation in FigJam and qualitative feedback collection over remote interviews."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/methodology.png",
+            "alt": "Research methodology board"
+          },
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Interview flow and co-creation",
+          "body": [
+            "Interviews covered goal tracking, external tools, guided co-creation, and design feedback. This helped reveal which dashboard patterns, visual treatments, and automation opportunities were most meaningful to sellers."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/custom-dashboards.png",
+            "alt": "Custom dashboards co-creation output"
+          },
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Research objectives",
+          "body": [
+            "Discovery focused on four questions: what data is essential for daily operations, how visuals and insights affect decision-making, whether sellers prefer visuals or text, and which visual formats best support action."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/methodology.png",
+            "alt": "Research objectives and synthesis"
+          },
+          "spacing": "process-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-process"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Prioritize bank balances",
+          "body": [
+            "Sellers consistently wanted immediate visibility into Square and external bank balances. Prioritizing this information reduced time to insight and improved confidence in day-to-day financial decisions."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/balances-priority.png",
+            "alt": "Bank balances prioritized in cash flow view"
+          },
+          "imageWidth": 320,
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Sales reporting with actionable insights",
+          "body": [
+            "Sellers valued insight layers tied to sales performance that could inform pricing, staffing, promotions, and inventory decisions."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/sales-reporting-insights.png",
+            "alt": "Sales reporting view with insights"
+          },
+          "imageWidth": 420,
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Automated categorization and flexible filtering",
+          "body": [
+            "A phased feature rollout introduced automated transaction categorization, custom date-range filtering, and inflow/outflow comparisons to help sellers understand trends without manual reconciliation."
+          ],
+          "carousel": [
+            {
+              "src": "assets/case-studies/cash-flow-visualization/transactions.png",
+              "alt": "Transaction list with categories"
+            },
+            {
+              "src": "assets/case-studies/cash-flow-visualization/update-category.png",
+              "alt": "Update category flow"
+            }
+          ],
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "AI recommendations and smart search",
+          "body": [
+            "Participants responded positively to AI-generated recommendations, especially when tied to profit improvement or cost reduction. A smart search pattern also helped sellers quickly locate transactions, dates, and relevant insights."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-flow-visualization/smart-search.png",
+            "alt": "Smart search and recommendations"
+          },
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "30%",
+              "label": "Increase in spending via Square debit card"
+            },
+            {
+              "value": "25%",
+              "label": "Increase in weekly transactions"
+            },
+            {
+              "value": "20%",
+              "label": "Increase in attach rate to Square Checking"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "",
+        "items": [
+          {
+            "value": "30%",
+            "label": "Increase in spending via Square debit card"
+          },
+          {
+            "value": "25%",
+            "label": "Increase in weekly transactions"
+          },
+          {
+            "value": "20%",
+            "label": "Increase in attach rate to Square Checking"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cash-deposits",
+      "title": "Cash Deposits",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Square",
+        "heading": "Cash Deposits",
+        "subheading": "Native mobile app",
+        "body": "Lead design strategy to define user journey. Executed designs and validated via user testing. Collaborated closely with cross-functional partners to define feature priorities and success metrics.",
+        "image": "assets/case-studies/cash-deposits/hero-mockup.png",
+        "imageAlt": "Square Cash Deposits hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "In the past, 45K Square Checking sellers collected more than $560M in cash payments each year. There was no mechanism to deposit this physical cash into their account and so, sellers were for forced to maintain accounts with other banks. In order to alleviate cash flow disruptions, our team sought to build a solution to allow sellers to deposit cash directly into their Square Checking account.",
+        "goals": [
+          "Allow Square sellers to deposit cash into Square Checking",
+          "Provide flexible options for deposit locations",
+          "Keep Square sellers informed about the process and fees"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Allow Square sellers to deposit cash into Square Checking",
+          "body": [
+            "Given that many Square sellers accept cash, we wanted to enable them to deposit their money directly into their Square Checking balance. This would enable them to get a more holistic picture of their finances. The entry point to deposit cash is easily accessible from other transfer and deposit options."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-deposits/allow-sellers.png",
+            "alt": "Add money screen showing cash deposit option"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Provide flexible options for deposit locations",
+          "body": [
+            "We partnered with major retailers to allow sellers to access secure deposit locations. These included grocery and convenience stores, places that sellers may frequent often to purchase supplies."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-deposits/flexible-options.png",
+            "alt": "Cash deposit locations list"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Keep Square sellers informed about the process and fees",
+          "body": [
+            "Transparency was essential to building trust with sellers new to cash deposits. We designed clear, upfront messaging around fees, processing times, and deposit limits so sellers always know what to expect before completing a transaction."
+          ],
+          "image": {
+            "src": "assets/case-studies/cash-deposits/process-fees.png",
+            "alt": "Deposit process and fees information"
+          },
+          "spacing": "solution-secondary"
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "The updated flow improved reliability and reduced confusion across the deposit journey.",
+        "items": [
+          {
+            "value": "-21%",
+            "label": "Flow Abandonment",
+            "detail": "More users successfully completed deposits once they started."
+          },
+          {
+            "value": "-27%",
+            "label": "Error Retries",
+            "detail": "Clearer guidance reduced repeated failed attempts."
+          },
+          {
+            "value": "+16%",
+            "label": "Satisfaction",
+            "detail": "Sellers rated the deposit experience as more straightforward and dependable."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "point-of-sale",
+      "title": "Point of Sale",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Domino's Pizza",
+        "heading": "Point of Sale",
+        "subheading": "Reimagining speed and clarity for store teams",
+        "body": "I was the lead product designer on this project. Over 4 months, I lead design explorations and aided research activities to deliver a comprehensive design system for the Domino\u2019s in-store point of sale and back office enterprise system.",
+        "image": "assets/case-studies/dominos/hero-mockup.png",
+        "imageAlt": "Point of sale hero image",
+        "placeholderLabel": "Hero mockup placeholder"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "The point of sale system used by all Domino\u2019s stores was an off-the-shelf solution that no longer supported the breadth of tasks that employees must be able to accomplish. It required extensive employee training and did not map to the most efficient workflow. Our key design goals focused on the 3 main areas of improvement.",
+        "goals": [
+          "Modernize design system",
+          "Streamline order taking",
+          "Reduce time to learn workflows"
+        ],
+        "goalIcons": [
+          "assets/case-studies/dominos/goal-1.svg",
+          "assets/case-studies/dominos/goal-2.svg",
+          "assets/case-studies/dominos/goal-3.svg"
+        ]
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "principlesGrid",
+          "sectionTitle": "Process",
+          "subtitle": "Heuristic Principles",
+          "intro": "These heuristic principles are a distilled list of Jakob Nielson\u2019s Usability Heuristics that were used to identify key areas of focus on during our process and to guide the final design solution.",
+          "cards": [
+            {
+              "number": "01",
+              "title": "Reduce cognitive load",
+              "bullets": [
+                "Strategic display of information and functions",
+                "Strategic use of visual design",
+                "Recognition rather than recall"
+              ]
+            },
+            {
+              "number": "02",
+              "title": "Clarity & alignment with expectations",
+              "bullets": [
+                "Visibility of system status",
+                "Internal Consistency",
+                "System and real world match",
+                "Aligns with familiar UI patterns"
+              ]
+            },
+            {
+              "number": "03",
+              "title": "Reduce effort to task completion",
+              "bullets": [
+                "Automate unnecessary workload",
+                "Group data in consistently meaningful ways"
+              ]
+            },
+            {
+              "number": "04",
+              "title": "User accomodation",
+              "bullets": [
+                "Error correction",
+                "Error prevention",
+                "Flexibility for multiple experience levels"
+              ]
+            }
+          ],
+          "spacing": "process"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "System Audit",
+          "body": [
+            "Pulse, the previous point of sale system, was an off-the shelf solution. It required extensive employee training and had disconnected workflows."
+          ],
+          "image": {
+            "src": "assets/case-studies/dominos/system-audit.png",
+            "alt": "System Audit visual"
+          },
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Competitive Landscape",
+          "body": [
+            "During the competitive landscape review, our team reviewed the following off-the-shelf competitors, consumer facing kiosks and other multi-national franchises.",
+            "Each ordering process used a very defined linear flow. The use of color was also very intentional and helped streamline the process. The overall layout used a strict grid system to reinforce familiarity and efficiency. The use of imagery was very distinct again, to aid familiarity and quick identification of items."
+          ],
+          "inlineImage": {
+            "src": "assets/case-studies/dominos/competitive-landscape-icons.png",
+            "alt": "Competitive landscape logos",
+            "className": "domino-landscape-logos"
+          },
+          "carousel": [
+            {
+              "src": "assets/case-studies/dominos/competitive-landscape.png",
+              "alt": "Competitive landscape overview"
+            },
+            {
+              "src": "assets/case-studies/dominos/competitive-landscape-2.png",
+              "alt": "Competitor system comparison"
+            },
+            {
+              "src": "assets/case-studies/dominos/competitive-landscape-3.png",
+              "alt": "Competitor ordering flow"
+            },
+            {
+              "src": "assets/case-studies/dominos/competitive-landscape-4.png",
+              "alt": "Competitor kiosk interface"
+            },
+            {
+              "src": "assets/case-studies/dominos/competitive-landscape-5.png",
+              "alt": "Competitor franchise system"
+            }
+          ],
+          "spacing": "process-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-process"
+        },
+        {
+          "type": "systemGrid",
+          "sectionTitle": "Solution",
+          "subtitle": "Modernize design system",
+          "intro": "We developed a new design system built on the heuristic principles identified earlier. The Domino\u2019s UI system was adapted piecemeal as menu offerings and employee roles expanded, resulting in an incongruous and difficult to navigate system for modern users.",
+          "rows": [
+            {
+              "title": "Color",
+              "text": "Various shades of blue help carry the brand identity and provide a spectrum of options. Stoplight colors are used for universal utility and recognizability. The overall design was set on a white background to encourage higher relative contrast.",
+              "image": {
+                "src": "assets/case-studies/dominos/color-system.png",
+                "alt": "Color system specimen"
+              }
+            },
+            {
+              "title": "Typography",
+              "text": "We chose to use work sans given it was a web font with lots of versatility with the many weights specifically designed for onscreen reading.",
+              "image": {
+                "src": "assets/case-studies/dominos/typography-system.png",
+                "alt": "Typography specimen"
+              },
+              "reverse": true
+            },
+            {
+              "title": "Modifier icons",
+              "text": "These include a small set of functional icons that use color to primarily communicate a modification.",
+              "image": {
+                "src": "assets/case-studies/dominos/modifier--icons.png",
+                "alt": "Modifier icons"
+              }
+            },
+            {
+              "title": "Topping icons",
+              "text": "These include a simple set of stylized topping icons with a compact color palette. They helped to communicate the nuances of toppings.",
+              "image": {
+                "src": "assets/case-studies/dominos/topping-icons.png",
+                "alt": "Topping icons"
+              },
+              "reverse": true
+            },
+            {
+              "title": "Grid system",
+              "text": "We designed a strict grid to help define hierarchy, alignment and balance. It was used from the overall design view to individual elements.",
+              "image": {
+                "src": "assets/case-studies/dominos/grid-system.png",
+                "alt": "Grid system specimen"
+              }
+            }
+          ],
+          "spacing": "solution"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Streamline order taking",
+          "body": [
+            "Each Domino\u2019s franchise may have a slightly different process for how employees complete tasks. As a result of this nuance, the legacy system had become bloated with multiple entry points to the same task and redundant workflows. This made order taking much longer process.",
+            "In order to grasp the core process of order taking, we mapped out a Golden Path in two parts: taking and making an order. An employee can take an order over the phone or in person, both with the point of sale monitor. Once they are ready to make the order, an employee assembles the pizza and puts it through the oven with guidance from the \u201cMakeline\u201d screen."
+          ],
+          "image": {
+            "src": "assets/case-studies/dominos/order-taking.png",
+            "alt": "Order-taking flow visual"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Reduce time to learn",
+          "body": [
+            "Domino\u2019s has a high turnover rate for in-store employees. One of the main points of frustration for new employees is the complex software. Because of this, one of our goals was to greatly reduce the time it takes for new employees to learn and efficiently use the order taking system.",
+            "Our strategy for reducing the time to learn was to use recognizable UI patterns and present information in ways that helps reduce the cognitive load. In order to validate that the new designs improve the time to efficiency, we conducted user interviews. Domino\u2019s employees felt the new designs was easy to learn and efficient to use."
+          ],
+          "quotes": [
+            "I like that there\u2019s small pictures, I think it makes it easier for new employees to get a hang of it quickly and reduces training time and mistakes.",
+            "It seems like a pretty straight forward way to order food. If it was my first day of work, I don\u2019t think I would have any trouble using it."
+          ],
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "55%",
+              "label": "Reduced time to complete taking an order",
+              "shape": "assets/case-studies/dominos/outcome-shape-3.svg"
+            },
+            {
+              "value": "\u21933",
+              "label": "Reduced taps to complete golden path",
+              "shape": "assets/case-studies/dominos/outcome-shape-4.svg"
+            },
+            {
+              "value": "90%",
+              "label": "Of users felt new designs exceeded expectations",
+              "shape": "assets/case-studies/dominos/outcome-shape-1.svg"
+            },
+            {
+              "value": "12%",
+              "label": "Increase in task success rate",
+              "shape": "assets/case-studies/dominos/outcome-shape-2.svg"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "The redesign improved speed and consistency for front-line teams during high-demand windows.",
+        "items": [
+          {
+            "value": "-17%",
+            "label": "Order Entry Time",
+            "detail": "Staff completed common ordering tasks faster in peak-time simulations."
+          },
+          {
+            "value": "-14%",
+            "label": "Input Errors",
+            "detail": "Fewer missed modifiers and correction requests after release."
+          },
+          {
+            "value": "+23%",
+            "label": "Onboarding Readiness",
+            "detail": "New staff reached confidence benchmarks more quickly."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "expense-reporting",
+      "title": "Expense Management",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Mastercard",
+        "heading": "Expense Management",
+        "subheading": "Modernizing employee expense workflows",
+        "body": "As part of a team of Product Designers, I led strategic exercises to define business outcomes and product vision. After the initial discovery phase, our design team funneled the outcomes of these activities into production-ready designs.",
+        "image": "assets/case-studies/mastercard/hero-mockup.png",
+        "imageAlt": "Mastercard Expense Management hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "Mastercard tasked our team with creating a companion native app to their existing web-based expense management software. This software is offered to companies with corporate card users via issuing banks as an added service. The web software encompasses a wide-variety of corporate finance management outside of just expensing however, the focus of the app was meant to streamline mobile expense management and achieve the following outcomes:",
+        "goals": [
+          "Flexible design system for white-labeling",
+          "native receipt image capture",
+          "Streamline expense submission"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Process",
+          "reverse": true,
+          "subtitle": "Competitive Analysis",
+          "body": [
+            "I conducted a competitive landscape analysis to understand how leading expense platforms differentiate across key features. This research helped identify gaps in the market, highlight opportunities for differentiation, and inform feature prioritization to ensure Mastercard could deliver a cohesive, competitive experience tailored to modern finance teams."
+          ],
+          "image": {
+            "src": "assets/case-studies/mastercard/Competitive-analysis.png",
+            "alt": "Competitive landscape analysis grid"
+          },
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Workshop",
+          "body": [
+            "I facilitated a design direction workshop with cross-functional stakeholders to align on the product\u2019s visual style and tone of voice. Through moodboard dot voting and messaging exercises, we defined a clear direction: clean, intuitive, and modern visuals paired with language that is direct, supportive, and professional. The outcome was a shared design north star that guided UI decisions, content standards, and overall brand expression across the expense management experience."
+          ],
+          "image": {
+            "src": "assets/case-studies/mastercard/workshop.png",
+            "alt": "Workshop sticky notes and moodboard"
+          },
+          "imageRounded": 24,
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Design direction",
+          "body": [
+            "Based on the workshop outcomes, we developed two distinct design directions for stakeholders to evaluate. Direction #1 embraced a soft, minimal aesthetic with subtle backgrounds and flexible brand accents, creating a calm, effortless experience that could easily adapt to different issuers. Direction #2 leaned into stronger typography, sharper lines, and more defined hierarchy to convey a premium, confident feel while remaining brand neutral.",
+            "Presenting both concepts with supporting moodboards and applied UI examples allowed the team to compare tone, flexibility, and perceived value, ultimately aligning on a clear visual path forward."
+          ],
+          "carousel": [
+            {
+              "src": "assets/case-studies/mastercard/design-direction-1.png",
+              "alt": "Design direction exploration 1"
+            },
+            {
+              "src": "assets/case-studies/mastercard/design-direction-2.png",
+              "alt": "Design direction exploration 2"
+            }
+          ],
+          "spacing": "process-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-process"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Flexible design system for whitelabeling",
+          "body": [
+            "Because Mastercard\u2019s expense tool is issued through partner banks, the app needed to easily adapt to a wide range of brand identities. Banks provide a primary brand color and logo, so we designed a flexible system that programmatically applies color across buttons, icons, and key UI elements. We audited a range of issuer brand palettes and created contrast-based rules to ensure accessibility across all variations, meeting WCAG AA and Section 508 standards while maintaining visual consistency."
+          ],
+          "carousel": [
+            {
+              "src": "assets/case-studies/mastercard/Mastercard-Design-System-1.png",
+              "alt": "Mastercard design system brand variation 1"
+            },
+            {
+              "src": "assets/case-studies/mastercard/Mastercard-Design-System-2.png",
+              "alt": "Mastercard design system brand variation 2"
+            },
+            {
+              "src": "assets/case-studies/mastercard/Mastercard-Design-System-3.png",
+              "alt": "Mastercard design system brand variation 3"
+            },
+            {
+              "src": "assets/case-studies/mastercard/Mastercard-Design-System-4.png",
+              "alt": "Mastercard design system brand variation 4"
+            }
+          ],
+          "imageRounded": 20,
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Receipt image capture",
+          "body": [
+            "In order to make sure new users were as familiar as possible with the process to quickly capture and upload a receipt image, we opted to use the native camera and photos apps on the iOS and Android platforms respectively. We designed a button that would drop the user in to the image capture or upload flow as well as an in-app enlarged view of any image attached.  Using the native camera also allowed us to move away from handling image storage locally in the app which helped the app function more quickly."
+          ],
+          "image": {
+            "src": "assets/case-studies/mastercard/receipt-image.png",
+            "alt": "Receipt image capture flow"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Streamline expense submission",
+          "body": [
+            "Because both banks and employers can customize expense fields, we designed a flexible submission form that accommodates varying inputs without adding complexity. All required fields live in a single, streamlined view, with adaptable components and intuitive, neutral language to support different configurations while keeping the experience simple for employees."
+          ],
+          "image": {
+            "src": "assets/case-studies/mastercard/streamline-expense-submission.png",
+            "alt": "Streamlined expense submission form"
+          },
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "75+",
+              "label": "White label brands supported"
+            },
+            {
+              "value": "5",
+              "label": "Languages supported"
+            },
+            {
+              "value": "100%",
+              "label": "Compliance with WCAG AA criteria"
+            },
+            {
+              "value": "20,000",
+              "label": "Unique app users"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "",
+        "items": [
+          {
+            "value": "75+",
+            "label": "White label brands supported"
+          },
+          {
+            "value": "5",
+            "label": "Languages supported"
+          },
+          {
+            "value": "100%",
+            "label": "Compliance with WCAG AA criteria"
+          },
+          {
+            "value": "20,000",
+            "label": "Unique app users"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "online-banking",
+      "title": "Online Banking",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Synchrony Bank",
+        "heading": "Digital transformation",
+        "subheading": "Designing for trust, scale, and accessibility",
+        "body": "As the Design Lead, I guided product decisions, established the design system and created production-ready designs for the native mobile applications and website. I also ran various usability tests and supported day-to-day development work by coordinating business requirements.",
+        "image": "assets/case-studies/synchrony/hero-image.png",
+        "imageAlt": "Synchrony Bank digital banking across laptop, tablet, and mobile",
+        "placeholderLabel": "Hero mockup placeholder"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "Synchrony is a premier consumer financial services company delivering customized financing programs across several industries. As an online-only bank, transforming the digital customer experience was key to their success. Along with establishing the overall design system and UX architecture, the project had a few key desired outcomes:",
+        "goals": [
+          "Modernize web experience",
+          "Integrate voice technology",
+          "Implement AA Accessibility features",
+          "Streamline account opening flow"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "centeredBlock",
+          "sectionTitle": "Solution",
+          "subtitle": "Modernized web experience",
+          "body": [
+            "Previously, Synchrony had very low engagement with their digital products and often users would opt to do more cumbersome transactions over the phone. This was in part do to the older visual design which users found overwhelming and confusing. With the new design, day-to-day engagement significantly increased."
+          ],
+          "images": [
+            {
+              "src": "assets/case-studies/synchrony/web-experience-1.png",
+              "alt": "Synchrony Bank My Accounts dashboard"
+            },
+            {
+              "src": "assets/case-studies/synchrony/web-experience-2.png",
+              "alt": "Synchrony Bank deposit flow"
+            }
+          ],
+          "spacing": "solution"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Integrate voice technology",
+          "body": [
+            "In order to increase customer access to Synchrony Bank from a variety of platforms, I created several different voice integrations for the app. Users are able to check account balances, and interact with their bank using voice assistants.",
+            "I designed and tested the interaction patterns for these experiences by using the underlying foundation that was set up by the original design system."
+          ],
+          "image": {
+            "src": "assets/case-studies/synchrony/voice-technology.png",
+            "alt": "Synchrony Bank voice technology with Siri"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Implement AA Accessibility features",
+          "body": [
+            "I focused a large portion of my work on creating designs that met users needs through accessibility best-practices. I used the WCAG AA standards to design and document accessibility features for both the website and native app. In doing so, Synchrony Bank leads the financial services industry with a robust suite of digital products that allow users to interact with them in ways that are most convenient to them."
+          ],
+          "image": {
+            "src": "assets/case-studies/synchrony/accessibility.png",
+            "alt": "Synchrony Bank accessibility comparison showing normal and enlarged text"
+          },
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Streamline account opening flow",
+          "body": [
+            "A large barrier to acquiring new customers was the long account opening process. In order to grow their business, it was imperative that I design a new account opening flow which significantly decreased the long and confusing process.",
+            "I focused my attention on removing any input or questions which were not absolutely crucial to create a new account. Anything that a user could configure after opening the account was removed and given a dedicated place within the app and website. For the final design, I opted for a more conversational content design to make the process easy to understand and enjoyable."
+          ],
+          "image": {
+            "src": "assets/case-studies/synchrony/account-opening.gif",
+            "alt": "Synchrony Bank streamlined account opening flow"
+          },
+          "imageRounded": 24,
+          "spacing": "process-main"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "10x",
+              "label": "Faster new account opening experience.",
+              "shape": "assets/case-studies/dominos/outcome-shape-3.svg"
+            },
+            {
+              "value": "200K",
+              "label": "Unique daily app visitors",
+              "shape": "assets/case-studies/dominos/outcome-shape-4.svg"
+            },
+            {
+              "value": "3",
+              "label": "Voice Assistant integrations (Google, Siri, Alexa)",
+              "shape": "assets/case-studies/dominos/outcome-shape-1.svg"
+            },
+            {
+              "value": "100%",
+              "label": "Compliance with WCAG AA standards",
+              "shape": "assets/case-studies/dominos/outcome-shape-2.svg"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "The redesign improved consistency, usability, and accessibility for a broad customer base.",
+        "items": [
+          {
+            "value": "10x",
+            "label": "Faster new account opening experience.",
+            "detail": "Streamlined the multi-step process into a conversational flow."
+          },
+          {
+            "value": "200K",
+            "label": "Unique daily app visitors",
+            "detail": "Significant increase in digital engagement after redesign."
+          },
+          {
+            "value": "3",
+            "label": "Voice Assistants",
+            "detail": "Integrated Google, Siri, and Alexa for account access."
+          },
+          {
+            "value": "100%",
+            "label": "WCAG AA Compliance",
+            "detail": "All digital products meet accessibility standards."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "flexible-transfers",
+      "title": "Flexible Transfers",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Square",
+        "heading": "Flexible Transfers",
+        "subheading": "Website & native mobile app",
+        "body": "Lead design strategy and execution and collaborated closely with cross-functional partners to define feature priorities and success metrics. I ran UX research to understand user pain points at the start of the work and validated designs via user testing.",
+        "image": "assets/case-studies/flexible-transfers/hero-mockup.png",
+        "imageAlt": "Flexible Transfers hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "As small business owners begin to bank with Square through multiple accounts and store funds within the ecosystem, support of inter-account transfers and the ability to flexible move funds around was crucial. In addition, the UI was far outdated and relied on a legacy system that was no longer used within the ecosystem. Our team sought to create a flexible system that could establish guidelines for money movement within the Square ecosystem.",
+        "goals": [
+          "Allow Square sellers to flexibly move funds across their balances",
+          "Create a money movement system that establishes ecosystem-wide patterns",
+          "Update the design system"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Allow Square sellers to flexibly move funds across their balances",
+          "body": [
+            "For Square sellers with multiple Checking accounts or Savings folders, it is crucial for them to be able to transfer funds between accounts. This will allow sellers to take advantage of all of their business\u2019s revenue streams."
+          ],
+          "image": {
+            "src": "assets/case-studies/flexible-transfers/allow-sellers.png",
+            "alt": "Which balance selection screen"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Ecosystem money-movement patterns",
+          "body": [
+            "Unifying the different ways sellers can move money across the ecosystem is critical. Not only is it helpful to use similar design patterns but, having a centralized place for money movement can be important to allow Square sellers to be more efficient when it comes to managing their business finances."
+          ],
+          "image": {
+            "src": "assets/case-studies/flexible-transfers/ecosystem-money.png",
+            "alt": "Balance and transfer screens"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Update the design system",
+          "body": [
+            "Modernized the design system to improve visibility of calls to action and scanability of text. Additionally, statuses and system updates are clearly communicated."
+          ],
+          "image": {
+            "src": "assets/case-studies/flexible-transfers/update-design-system.png",
+            "alt": "Updated design system transfer flow"
+          },
+          "imageRounded": 24,
+          "spacing": "solution-secondary"
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "The redesigned experience gave sellers more autonomy with less operational friction.",
+        "items": [
+          {
+            "value": "+28%",
+            "label": "Transfer Setup Completion",
+            "detail": "More sellers completed configuration without abandoning the flow."
+          },
+          {
+            "value": "-15%",
+            "label": "Configuration Rework",
+            "detail": "Users made fewer corrective edits after initial setup."
+          },
+          {
+            "value": "+18%",
+            "label": "Perceived Control",
+            "detail": "Research participants reported stronger confidence in payout flexibility."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "check-deposit",
+      "title": "Mobile Check Deposit",
+      "layoutVersion": "domino-v2",
+      "usePlaceholderImages": false,
+      "processTitle": "Process",
+      "solutionTitle": "Solution",
+      "intro": {
+        "eyebrow": "Square",
+        "heading": "Mobile Check Deposit",
+        "subheading": "Native mobile app",
+        "body": "Mobile check deposit was a highly requested feature and a prerequisite for offering a business checking account. Enabling this feature would allow us to position ourselves as a full-fledged banking ecosystem and enable sellers to capture more of their sales through Square directly.",
+        "image": "assets/case-studies/check-deposit/hero-mockup.png",
+        "imageAlt": "Mobile Check Deposit hero mockup"
+      },
+      "challenge": {
+        "title": "Challenge",
+        "body": "The existing money movement options centered on linked bank accounts and debit cards with no support for check deposits. Square sellers frequently receive checks as a form of payment but had no way to deposit them directly into their Square balance. Our team set out to design a mobile check deposit experience that would feel intuitive while navigating complex compliance requirements.",
+        "goals": [
+          "Design an intuitive entry point for check deposit",
+          "Create a seamless check image capture experience",
+          "Ensure compliance with endorsement and patent requirements"
+        ],
+        "numberedGoals": true
+      },
+      "sections": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-hero"
+        },
+        {
+          "type": "challenge"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-challenge"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Process",
+          "reverse": true,
+          "subtitle": "Existing state of money movement",
+          "body": [
+            "The current options for money movement center on a linked bank account or debit card. There is no mapping to payment types within checkout. Understanding these existing patterns was critical to identifying the right entry point for check deposits within the broader money movement experience."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/existing-state.png",
+            "alt": "Existing state of money movement screens"
+          },
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Concepting entry points",
+          "body": [
+            "We explored multiple approaches to introducing check deposit into the existing money movement architecture. One direction consolidated all add-money options into a single button, acting as a stepping stone toward unified money movement. Another explored an interstitial view that could provide more space to highlight new features and advertise upcoming capabilities."
+          ],
+          "carousel": [
+            {
+              "src": "assets/case-studies/check-deposit/reconfiguring-add-money.png",
+              "alt": "Reconfiguring add money entry points"
+            },
+            {
+              "src": "assets/case-studies/check-deposit/interstitial-view.png",
+              "alt": "Interstitial view concept"
+            }
+          ],
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Validating with users",
+          "body": [
+            "We recruited 8 participants in senior leadership roles at independently owned businesses, all responsible for financial decisions and currently accepting checks as payment. Testing revealed that the \u2018Add Money\u2019 button was not immediately intuitive for depositing a check. Several testers also expected the app to auto-capture check images, similar to their personal banking apps."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/entry-point-heatmap.png",
+            "alt": "Entry point usability heatmap"
+          },
+          "imageWidth": 320,
+          "spacing": "process-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "after-process"
+        },
+        {
+          "type": "twoCol",
+          "sectionTitle": "Solution",
+          "subtitle": "Design an intuitive entry point",
+          "body": [
+            "We selected the entry point option that would allow the most flexibility down the road with other money movement options. By placing check deposit alongside existing add-money actions, we ensured discoverability while maintaining a clean, uncluttered balance screen."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/entry-point.png",
+            "alt": "Check deposit entry point screens"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Endorsement instructions",
+          "body": [
+            "Providing these instructions was not only essential for compliance purposes but allowed us to ensure that checks would easily pass the review process and sellers would not have to worry about delayed deposits."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/endorsement.png",
+            "alt": "Check endorsement instruction screen"
+          },
+          "imageWidth": 320,
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "subtitle": "Navigating the USAA patent",
+          "body": [
+            "Due to ongoing lawsuits from a patent owned by USAA, we were no longer allowed to show check images after capturing them via the camera. This was an unexpected constraint during the design process, but I was able to utilize Square\u2019s design system to replace components quickly and maintain a seamless experience."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/usaa-patent.png",
+            "alt": "USAA patent design adaptation screens"
+          },
+          "spacing": "solution-main"
+        },
+        {
+          "type": "twoCol",
+          "reverse": true,
+          "subtitle": "Check image capture",
+          "body": [
+            "The check image capture flow guides sellers through photographing both the front and back of the check. We designed the experience to feel familiar by leveraging native camera patterns while adding alignment guides and clear step-by-step instructions to ensure properly framed images."
+          ],
+          "image": {
+            "src": "assets/case-studies/check-deposit/image-capture.png",
+            "alt": "Check image capture flow"
+          },
+          "spacing": "solution-secondary"
+        },
+        {
+          "type": "divider",
+          "spacing": "before-outcomes"
+        },
+        {
+          "type": "outcomes",
+          "items": [
+            {
+              "value": "3,781",
+              "label": "Active users since GA in Nov 2021"
+            },
+            {
+              "value": "$3.5M+",
+              "label": "Deposited into Square Balance via check deposit"
+            },
+            {
+              "value": "10,212",
+              "label": "Checks deposited to date"
+            },
+            {
+              "value": "5.81%",
+              "label": "Failure rate for properly endorsing checks"
+            }
+          ]
+        }
+      ],
+      "outcomes": {
+        "title": "Outcomes",
+        "summary": "",
+        "items": [
+          {
+            "value": "3,781",
+            "label": "Active users since GA in Nov 2021"
+          },
+          {
+            "value": "$3.5M+",
+            "label": "Deposited into Square Balance via check deposit"
+          },
+          {
+            "value": "10,212",
+            "label": "Checks deposited to date"
+          },
+          {
+            "value": "5.81%",
+            "label": "Failure rate for properly endorsing checks"
+          }
+        ]
+      }
+    }
+  ]
+}

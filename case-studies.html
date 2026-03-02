@@ -20,6 +20,7 @@
             --brown: #2E191F;
             --brown-2: #4b353c;
             --red: #E04C2D;
+            --red-hover: #b8391f;
             --cream-soft: #f7f3ee;
             --cream-tint: #eee8e1;
             --space-1: 8px;
@@ -74,7 +75,21 @@
             top: 0;
             z-index: 900;
             background-color: var(--cream);
+            isolation: isolate;
             transition: padding-bottom 0.2s ease;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 100vw;
+            height: 100%;
+            background-color: var(--cream);
+            transform: translateX(-50%);
+            z-index: -1;
+            pointer-events: none;
         }
 
         .header::after {
@@ -163,12 +178,12 @@
             left: 50%;
             width: 0;
             height: 3px;
-            background-color: #b8391f;
+            background-color: var(--red-hover);
             transition: width 0.3s ease, left 0.3s ease;
         }
 
         .nav a:hover {
-            color: #b8391f;
+            color: var(--red-hover);
         }
 
         .nav a:hover::after {
@@ -557,11 +572,27 @@
         .cs-card--expense-reporting { background-color: #d7e4f2; }
         .cs-card--online-banking { background-color: #f5e595; }
         .cs-card--flexible-transfers { background-color: #dfdfdc; }
+        .cs-card--check-deposit { background-color: #d0e5dc; }
 
         /* Card-specific text widths from Figma */
         .cs-card--cash-flow .cs-card-text { width: 28.3%; }
         .cs-card--point-of-sale .cs-card-text { width: 40%; left: 6.3%; }
         .cs-card--online-banking .cs-card-text { width: 27.3%; }
+        .cs-card--check-deposit .cs-card-text { width: 29.5%; }
+        .cs-card--check-deposit .cs-card-mockup {
+            top: 19.5%;
+            bottom: 19.5%;
+            left: 4.76%;
+            right: 39.06%;
+            width: auto;
+            height: auto;
+        }
+        .cs-card--check-deposit .cs-card-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left center;
+        }
 
 
         /* ========== SCROLL ANIMATIONS ========== */
@@ -849,7 +880,67 @@
                 font-size: 16px;
             }
         }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --cream: #141213;
+                --cream-soft: #1b1718;
+                --cream-tint: #231f20;
+                --brown: #f4ede6;
+                --brown-2: #d2c8be;
+                --red: #b8391f;
+                --red-hover: #ff8b70;
+            }
+
+            html {
+                background-color: #0d0b0c;
+            }
+
+            .header.scrolled::after {
+                background-color: rgba(255, 240, 230, 0.12);
+            }
+
+            .password-submit,
+            .cs-card-btn {
+                background-color: #2a1c21;
+                color: #faf8ea;
+            }
+
+            .password-submit:hover,
+            .cs-card-btn:hover {
+                background-color: #38252d;
+            }
+
+            .cs-card {
+                border-color: rgba(250, 248, 234, 0.15);
+            }
+
+            .cs-card--instant-transfers { background-color: #5b3f47; }
+            .cs-card--cash-flow { background-color: #4a445f; }
+            .cs-card--cash-deposits { background-color: #3b5145; }
+            .cs-card--point-of-sale { background-color: #594f3f; }
+            .cs-card--expense-reporting { background-color: #3f4f60; }
+            .cs-card--online-banking { background-color: #5f5837; }
+            .cs-card--flexible-transfers { background-color: #4a4a48; }
+            .cs-card--check-deposit { background-color: #3e5851; }
+
+            .footer {
+                background-color: #0f0d0e;
+            }
+
+            .footer-col-label,
+            .footer-col-value,
+            .footer-bottom {
+                color: #faf8ea;
+            }
+
+            .footer-divider hr {
+                background-color: rgba(250, 248, 234, 0.72);
+            }
+        }
+
     </style>
+    <link rel="stylesheet" href="assets/styles/shared-nav.css">
 </head>
 <body>
 
@@ -906,7 +997,7 @@
                         <p class="cs-card-company">Square, Japan</p>
                         <h2 class="cs-card-title">Instant Transfers</h2>
                         <p class="cs-card-description">Allow Square sellers in Japan to instantly transfer funds in their balance, instead of having to wait up to a week to receive their sales revenue.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=instant-transfers" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -922,7 +1013,7 @@
                         <p class="cs-card-company">Square Checking</p>
                         <h2 class="cs-card-title">Cash Flow Visualization</h2>
                         <p class="cs-card-description">Give Square sellers a comprehensive view of their business's cash flow to streamline financial planning.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=cash-flow-visualization" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -941,7 +1032,7 @@
                         <p class="cs-card-company">Square Checking</p>
                         <h2 class="cs-card-title">Cash Deposits</h2>
                         <p class="cs-card-description">A seamless experience for Square Sellers to deposit physical cash directly into their Checking accounts.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=cash-deposits" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -957,7 +1048,7 @@
                         <p class="cs-card-company">Domino's Pizza</p>
                         <h2 class="cs-card-title">Point of Sale</h2>
                         <p class="cs-card-description">Re-imaging Domino's point of sale and back of office systems to optimize pizza-making and delivery.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=point-of-sale" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -976,7 +1067,7 @@
                         <p class="cs-card-company">Mastercard</p>
                         <h2 class="cs-card-title">Expense Reporting</h2>
                         <p class="cs-card-description">Native app for organizations and employees to manage their business expenses.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=expense-reporting" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -992,7 +1083,7 @@
                         <p class="cs-card-company">Synchrony Bank</p>
                         <h2 class="cs-card-title">Online Banking</h2>
                         <p class="cs-card-description">Cross-platform redesign of digital consumer Banking experiences including accessibility compliance.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=online-banking" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -1011,7 +1102,23 @@
                         <p class="cs-card-company">Square</p>
                         <h2 class="cs-card-title">Flexible Transfers</h2>
                         <p class="cs-card-description">Redesigning money movement to enable Square sellers to more easily manage their money.</p>
-                        <a href="#" class="cs-card-btn">View Case Study</a>
+                        <a href="case-study.html?slug=flexible-transfers" class="cs-card-btn">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Check Deposits -->
+            <div class="cs-card cs-card--check-deposit scroll-fade">
+                <div class="cs-card-overlay"></div>
+                <div class="cs-card-inner">
+                    <div class="cs-card-mockup">
+                        <img src="assets/case-studies/check-deposit/mockup-check-deposit.png" alt="Check Deposits mockup">
+                    </div>
+                    <div class="cs-card-text">
+                        <p class="cs-card-company">Square</p>
+                        <h2 class="cs-card-title">Check Deposits</h2>
+                        <p class="cs-card-description">Enabling Square sellers to deposit paper checks directly within the app, simplifying cash flow management and reducing trips to the bank.</p>
+                        <a href="case-study.html?slug=check-deposit" class="cs-card-btn">View Case Study</a>
                     </div>
                 </div>
             </div>

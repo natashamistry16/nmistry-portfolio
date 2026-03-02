@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Natasha Mistry</title>
+    <meta name="description" content="Detailed product design case study by Natasha Mistry.">
+    <meta name="author" content="Natasha Mistry">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="https://use.typekit.net/lww8jbi.css">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F2EFEA;
+            --brown: #2E191F;
+            --brown-2: #4b353c;
+            --red: #E04C2D;
+            --red-hover: #b8391f;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --space-10: 80px;
+            --space-12: 96px;
+        }
+
+        html {
+            background-color: var(--brown);
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            font-size: 16px;
+            background-color: var(--cream);
+            color: var(--brown);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-6) var(--space-6) var(--space-2) var(--space-6);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            background-color: var(--cream);
+            isolation: isolate;
+            transition: padding-bottom 0.2s ease;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 100vw;
+            height: 100%;
+            background-color: var(--cream);
+            transform: translateX(-50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: transparent;
+            transform: translateX(-50%);
+            transition: background-color 0.2s ease;
+            pointer-events: none;
+        }
+
+        .header.scrolled {
+            padding-bottom: 10px;
+        }
+
+        .header.scrolled::after {
+            background-color: rgba(46, 25, 31, 0.12);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo:hover .logo-icon img {
+            transform: rotate(180deg);
+        }
+
+        .logo-text {
+            font-family: "swear-display", serif;
+            font-weight: 800;
+            font-size: 40px;
+            letter-spacing: 3.2px;
+            color: var(--brown);
+            line-height: 1;
+            transform: translateY(-2px);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--red);
+            transition: color 0.2s ease;
+            position: relative;
+            padding-bottom: var(--space-1);
+            line-height: 1;
+        }
+
+        .nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: var(--red-hover);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: var(--red-hover);
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            position: relative;
+            transition: background-color 0.25s ease;
+        }
+
+        .menu-toggle-bar {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: var(--brown);
+            border-radius: 2px;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease, background-color 0.3s ease;
+        }
+
+        .menu-toggle-bar + .menu-toggle-bar {
+            margin-top: 7px;
+        }
+
+        .menu-toggle.active .menu-toggle-bar:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+            background-color: var(--brown);
+        }
+
+        .menu-toggle.active .menu-toggle-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle.active .menu-toggle-bar:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+            background-color: var(--brown);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: var(--brown);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.4s;
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: "swear-display", serif;
+            font-weight: 800;
+            font-size: 48px;
+            letter-spacing: 1px;
+            color: var(--cream);
+            padding: 16px 0;
+            transform: translateY(24px);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease, color 0.2s ease;
+        }
+
+        .mobile-menu.open a {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu.open a:nth-of-type(1) { transition-delay: 0.1s; }
+        .mobile-menu.open a:nth-of-type(2) { transition-delay: 0.18s; }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            color: var(--red);
+        }
+
+
+        .password-gate {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-12) var(--space-6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 60vh;
+            justify-content: center;
+        }
+
+        .password-form {
+            display: flex;
+            gap: var(--space-2);
+            align-items: center;
+        }
+
+        .password-gate-formstack {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+        }
+
+        .password-input {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: var(--fs-h4);
+            color: var(--brown);
+            background: transparent;
+            border: 1px solid var(--red);
+            border-radius: var(--radius-pill);
+            padding: var(--space-2) var(--space-3);
+            width: 320px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .password-input::placeholder {
+            color: rgba(46, 25, 31, 0.4);
+        }
+
+        .password-input:focus {
+            border-color: var(--brown);
+            box-shadow: 0 0 0 1px var(--brown);
+        }
+
+        .password-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            border-radius: var(--radius-pill);
+            padding: 12px 28px;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 10px rgba(46, 25, 31, 0.08);
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: var(--fs-h4);
+            letter-spacing: 0.24px;
+            color: var(--cream);
+            background-color: var(--brown);
+            border: none;
+            cursor: pointer;
+        }
+
+        .password-submit:hover {
+            background-color: #4a2f38;
+            transform: translateY(-1px);
+        }
+
+        .password-error {
+            font-family: "Nunito", sans-serif;
+            font-size: 16px;
+            color: var(--red);
+            margin-top: 16px;
+            text-align: left;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .password-error.show {
+            opacity: 1;
+        }
+
+        .case-study-shell {
+            display: none;
+        }
+
+        .case-study-shell.unlocked {
+            display: block;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        body.menu-open .header {
+            z-index: 1102;
+        }
+
+        body.menu-open .menu-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1103;
+            background-color: var(--cream);
+        }
+
+        .case-study-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--space-6) 120px;
+            position: relative;
+        }
+
+        .section {
+            margin-top: 128px;
+            position: relative;
+        }
+
+        .case-study-page.domino-v2 {
+            max-width: 1248px;
+            padding: 28px 0 120px;
+        }
+
+        .case-study-page.domino-v2 .section {
+            margin-top: 104px;
+        }
+
+        .case-study-page.domino-v2 .intro-grid {
+            grid-template-columns: 624px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .case-study-page.domino-v2 .hero-stack {
+            padding: 0;
+            margin: -24px -20px;
+        }
+
+        .case-study-page.domino-v2 .hero-image-wrap {
+            border-radius: 0;
+            background: none;
+            border: 0;
+            box-shadow: none;
+            overflow: visible;
+        }
+
+        .case-study-page.domino-v2 .hero-image {
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+        }
+
+        .case-study-page.domino-v2 .intro-title {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 1;
+            letter-spacing: 3.84px;
+            margin-bottom: 48px;
+            max-width: 528px;
+        }
+
+        .case-study-page.domino-v2 .lead {
+            font-family: "swear-text", serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 30px;
+            max-width: 480px;
+            margin-left: 48px;
+            color: var(--brown);
+        }
+
+        .case-study-page.domino-v2 .eyebrow {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: 1.92px;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+
+        .domino-hero-visual {
+            padding: 0;
+            border-radius: 0;
+            border: 0;
+            background: transparent;
+        }
+
+        .domino-challenge-grid {
+            display: grid;
+            grid-template-columns: 530px 528px;
+            gap: 190px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .domino-challenge-grid--with-icons {
+            align-items: start;
+        }
+
+        .domino-challenge-frame {
+            position: relative;
+            padding: 0;
+        }
+
+        .domino-challenge-copy {
+            padding-top: 0;
+        }
+
+        .domino-challenge-grid--with-icons .domino-challenge-copy {
+            padding-top: 157px;
+        }
+
+        .domino-challenge-copy .domino-section-title {
+            margin-bottom: 16px;
+        }
+
+        .domino-challenge-copy .domino-body {
+            max-width: 530px;
+        }
+
+        .domino-goals {
+            list-style: none;
+            display: grid;
+            gap: 48px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .domino-goals li {
+            display: grid;
+            grid-template-columns: 144px minmax(0, 336px);
+            align-items: center;
+            gap: 48px;
+        }
+
+        .domino-goals li.goal-reverse {
+            grid-template-columns: minmax(0, 337px) 144px;
+        }
+
+        .domino-goals li.goal-reverse .domino-goal-icon {
+            order: 2;
+        }
+
+        .domino-goals li.goal-reverse .domino-goal-copy {
+            order: 1;
+            text-align: right;
+        }
+
+        .domino-goal-icon {
+            width: 144px;
+            height: 144px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .domino-goal-copy {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.2;
+            color: var(--brown);
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .domino-goals-numbered {
+            list-style: none;
+            counter-reset: goal-counter;
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            align-self: center;
+        }
+
+        .domino-goals-numbered li {
+            counter-increment: goal-counter;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 2;
+            color: var(--brown);
+        }
+
+        .domino-goals-numbered li::before {
+            content: counter(goal-counter) ".";
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 2;
+            color: var(--red);
+            flex-shrink: 0;
+        }
+
+        .domino-centered-images {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .domino-centered-image-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .domino-centered-image-wrap .domino-media-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case-study-page.domino-v2 .story-blocks {
+            gap: 44px;
+        }
+
+        .case-study-page.domino-v2 .story-block {
+            border-top-color: rgba(46, 25, 31, 0.2);
+            border-bottom-color: rgba(46, 25, 31, 0.13);
+            padding: 26px 0;
+        }
+
+        .section-kicker {
+            font-family: "swear-display", serif;
+            font-size: 14px;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            color: rgba(46, 25, 31, 0.7);
+            margin-bottom: 12px;
+        }
+
+        .section-head {
+            margin-bottom: 34px;
+            max-width: 850px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 36px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-family: "swear-display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            letter-spacing: 0.24px;
+            color: var(--red);
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .intro-title {
+            font-family: "swear-display", serif;
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 1;
+            color: var(--brown);
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .lead {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--brown-2);
+            max-width: 72ch;
+        }
+
+        .hero-stack {
+            position: relative;
+            padding: 22px;
+        }
+
+        .hero-image-wrap {
+            border-radius: 32px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(0, 0, 0, 0.08));
+            border: 1px solid rgba(46, 25, 31, 0.12);
+            box-shadow: 0 22px 52px rgba(46, 25, 31, 0.14);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            max-height: 560px;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: var(--fs-h2);
+            line-height: 1;
+            margin-bottom: 14px;
+            color: var(--brown);
+        }
+
+        .section-copy {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: var(--brown-2);
+            max-width: 72ch;
+        }
+
+        .goals-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .goals-list li {
+            padding: 0 0 0 22px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--brown-2);
+            position: relative;
+        }
+
+        .goals-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: rgba(224, 76, 45, 0.85);
+        }
+
+        .story-blocks {
+            display: grid;
+            gap: 56px;
+        }
+
+        .story-block {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+            gap: 34px;
+            align-items: center;
+            padding: 22px 0;
+            border-radius: 0;
+            border-top: 1px solid rgba(46, 25, 31, 0.12);
+            border-bottom: 1px solid rgba(46, 25, 31, 0.08);
+            border-left: 0;
+            border-right: 0;
+            background: transparent;
+            position: relative;
+            overflow: visible;
+        }
+
+        .story-block:nth-child(even) {
+            grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+        }
+
+        .story-block:nth-child(even) .story-copy {
+            order: 2;
+        }
+
+        .story-block:nth-child(even) .story-image-wrap {
+            order: 1;
+        }
+
+        .story-step {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            border: 1px solid rgba(46, 25, 31, 0.2);
+            padding: 6px 12px;
+            font-family: "swear-display", serif;
+            font-size: 13px;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            background-color: rgba(255, 255, 255, 0.78);
+        }
+
+        .story-title {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: var(--fs-h3);
+            letter-spacing: 0.4px;
+            line-height: 1.1;
+            margin-bottom: 14px;
+            max-width: 18ch;
+            color: var(--brown);
+        }
+
+        .story-desc {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--brown-2);
+            max-width: 56ch;
+        }
+
+        .story-image-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(46, 25, 31, 0.05);
+            border: 1px solid rgba(46, 25, 31, 0.08);
+            box-shadow: 0 12px 32px rgba(46, 25, 31, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 100%;
+            max-height: 340px;
+            object-fit: cover;
+        }
+
+        .story-image-placeholder {
+            width: 100%;
+            min-height: 280px;
+            max-height: 440px;
+            border-radius: 14px;
+            border: 1px dashed rgba(46, 25, 31, 0.32);
+            background:
+                repeating-linear-gradient(135deg, rgba(46, 25, 31, 0.04) 0 10px, rgba(46, 25, 31, 0.08) 10px 20px);
+            color: rgba(46, 25, 31, 0.75);
+            font-family: "swear-display", serif;
+            font-size: 18px;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px;
+        }
+
+        .story-carousel {
+            position: relative;
+        }
+
+        .story-carousel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .story-carousel-slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+        }
+
+        .story-carousel-slide .story-image {
+            display: block;
+            width: 100%;
+        }
+
+        .story-carousel-slide .story-image-placeholder {
+            min-height: 340px;
+        }
+
+        .story-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            border: 1px solid rgba(46, 25, 31, 0.22);
+            background: rgba(242, 239, 234, 0.88);
+            color: var(--brown);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "swear-display", serif;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 3;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .story-carousel-btn:hover {
+            background: rgba(242, 239, 234, 1);
+        }
+
+        .story-carousel-btn:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
+        }
+
+        .story-carousel-btn--prev {
+            left: 10px;
+        }
+
+        .story-carousel-btn--next {
+            right: 10px;
+        }
+
+        .story-carousel-dots {
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translateX(-50%);
+            display: inline-flex;
+            gap: 6px;
+            background: rgba(46, 25, 31, 0.16);
+            border-radius: 999px;
+            padding: 6px 8px;
+            z-index: 3;
+        }
+
+        .story-carousel-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            border: 0;
+            background: rgba(242, 239, 234, 0.5);
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .story-carousel-dot.is-active {
+            background: rgba(242, 239, 234, 1);
+            transform: scale(1.15);
+        }
+
+        .story-block:hover .story-image-wrap {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 44px rgba(46, 25, 31, 0.14);
+        }
+
+        .story-block--image-focus {
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        }
+
+        .story-block--image-focus .story-image {
+            max-height: 480px;
+        }
+
+        .story-block--offset .story-image-wrap {
+            transform: translateY(-18px) rotate(-1.1deg);
+        }
+
+        .story-block--offset:hover .story-image-wrap {
+            transform: translateY(-24px) rotate(-1.1deg);
+        }
+
+        .story-block--editorial {
+            grid-template-columns: 1fr;
+            gap: 26px;
+        }
+
+        .story-block--editorial .story-image-wrap {
+            order: -1;
+            max-width: 76%;
+        }
+
+        .story-block--editorial .story-image {
+            max-height: 420px;
+        }
+
+        .story-block--editorial .story-copy {
+            margin-left: 10%;
+        }
+
+        .story-block--detail .story-image {
+            max-height: 250px;
+        }
+
+        .story-block--hero .story-image {
+            max-height: 560px;
+        }
+
+        .story-block--small .story-image-wrap {
+            max-width: 82%;
+        }
+
+        .story-block--no-image {
+            grid-template-columns: 1fr;
+            border-top: 1px solid rgba(46, 25, 31, 0.1);
+            border-bottom: 1px solid rgba(46, 25, 31, 0.1);
+            padding: 34px 0;
+        }
+
+        .story-block--no-image .story-copy {
+            text-align: center;
+            justify-self: center;
+            max-width: 760px;
+        }
+
+        .story-block--no-image .story-title,
+        .story-block--no-image .story-desc {
+            max-width: none;
+        }
+
+        .story-block--no-image .story-step {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-block--tone-1,
+        .story-block--tone-2,
+        .story-block--tone-3 {
+            background: transparent;
+        }
+
+        .outcomes-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .outcome-card {
+            border: 0;
+            border-top: 3px solid rgba(224, 76, 45, 0.7);
+            border-radius: 20px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.58);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .outcome-value {
+            display: block;
+            font-family: "swear-display", serif;
+            font-size: 36px;
+            line-height: 1;
+            color: var(--red);
+            margin-bottom: 10px;
+        }
+
+        .outcome-label {
+            display: block;
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: var(--fs-h4);
+            margin-bottom: 6px;
+            color: var(--brown);
+        }
+
+        .outcome-detail {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--brown-2);
+        }
+
+        .section-divider-pill {
+            width: 100%;
+            height: 8px;
+            border-radius: 999px;
+            border: 1px solid var(--red);
+            margin: 92px 0 96px;
+        }
+
+        .domino-section-title {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 1;
+            letter-spacing: 3.84px;
+            color: var(--red);
+        }
+
+        .domino-section-title--center {
+            text-align: center;
+            margin: 0 auto 64px;
+        }
+
+        .domino-hero-frame,
+        .domino-media-frame {
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+            background: transparent;
+        }
+
+        .domino-media-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .domino-carousel {
+            position: relative;
+            padding: 0 44px 40px;
+        }
+
+        .domino-carousel-viewport {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .domino-carousel .story-carousel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .domino-carousel .story-carousel-slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+        }
+
+        .domino-carousel .domino-media-image {
+            border-radius: 0;
+        }
+
+        .domino-carousel .story-carousel-btn {
+            top: calc(50% - 20px);
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(46, 25, 31, 0.18);
+            background: var(--cream);
+            color: var(--brown);
+            font-size: 0;
+            line-height: 0;
+        }
+
+        .domino-carousel .story-carousel-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--brown);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .domino-carousel .story-carousel-btn:hover {
+            background: #fff;
+        }
+
+        .domino-carousel .story-carousel-btn--prev {
+            left: 0;
+        }
+
+        .domino-carousel .story-carousel-btn--next {
+            right: 0;
+        }
+
+        .domino-carousel .story-carousel-dots {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            background: transparent;
+            padding: 0;
+            gap: 8px;
+        }
+
+        .domino-carousel .story-carousel-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(46, 25, 31, 0.2);
+            border-radius: 999px;
+        }
+
+        .domino-carousel .story-carousel-dot.is-active {
+            background: var(--red);
+            transform: scale(1);
+        }
+
+        .domino-heuristics-intro {
+            text-align: center;
+            max-width: 576px;
+            margin: 0 auto 48px;
+            font-family: "swear-text", serif;
+            font-size: 16px;
+            line-height: 30px;
+            color: var(--brown);
+        }
+
+        .domino-heuristics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 288px);
+            gap: 31px;
+            justify-content: center;
+        }
+
+        .domino-principle-shell {
+            border: 1px solid var(--red);
+            border-radius: 40px;
+            padding: 16px;
+        }
+
+        .domino-principle-card {
+            border: 1px solid #db6046;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 16px;
+            min-height: 262px;
+        }
+
+        .domino-principle-num {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+            color: #db6046;
+            margin-bottom: 8px;
+        }
+
+        .domino-principle-title {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.2;
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+
+        .domino-principle-list {
+            margin: 0;
+            padding-left: 18px;
+            list-style: disc;
+            font-family: "swear-text", serif;
+            font-size: 12px;
+            line-height: 30px;
+            color: var(--brown);
+        }
+
+        .domino-two-col {
+            display: grid;
+            grid-template-columns: 624px 560px;
+            gap: 64px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .domino-two-col.reverse {
+            grid-template-columns: 560px 624px;
+        }
+
+        .project-cash-deposits .domino-two-col {
+            grid-template-columns: 320px 560px;
+        }
+
+        .project-cash-deposits .domino-two-col.reverse {
+            grid-template-columns: 560px 320px;
+        }
+
+        .project-cash-flow-visualization .domino-outcomes {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .project-instant-transfers .domino-outcomes {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .case-study-page.domino-v2.project-instant-transfers .intro-grid {
+            grid-template-columns: 437px 528px;
+            justify-content: center;
+        }
+
+        .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual {
+            max-width: 437px;
+            margin: 0 auto;
+        }
+
+        .project-instant-transfers .domino-two-col {
+            grid-template-columns: 560px 560px;
+            justify-content: center;
+            justify-items: center;
+            gap: 64px;
+        }
+
+        .project-instant-transfers .domino-two-col.reverse {
+            grid-template-columns: 560px 560px;
+        }
+
+        .project-instant-transfers .domino-copy {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .project-instant-transfers .domino-media-frame {
+            max-width: 560px;
+            width: 100%;
+            justify-self: center;
+        }
+
+        .project-cash-flow-visualization .domino-two-col {
+            grid-template-columns: 560px 560px;
+            justify-content: center;
+            justify-items: center;
+            gap: 64px;
+        }
+
+        .project-cash-flow-visualization .domino-two-col.reverse {
+            grid-template-columns: 560px 560px;
+        }
+
+        .project-cash-flow-visualization .domino-copy {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .project-cash-flow-visualization .domino-media-frame {
+            justify-self: center;
+        }
+
+        .project-cash-flow-visualization .domino-carousel .story-carousel-btn {
+            top: 50%;
+            transform: translateY(calc(-50% - 20px));
+        }
+
+        .case-study-page.domino-v2.project-cash-flow-visualization .intro-grid {
+            grid-template-columns: 437px 528px;
+            justify-content: center;
+        }
+
+        .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual {
+            max-width: 437px;
+            margin: 0 auto;
+        }
+
+        .case-study-page.domino-v2.project-check-deposit .intro-grid {
+            grid-template-columns: 320px 528px;
+            gap: 96px;
+            justify-content: center;
+        }
+
+        .case-study-page.domino-v2.project-check-deposit .domino-hero-visual {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .case-study-page.domino-v2.project-check-deposit .hero-stack {
+            margin: 0;
+        }
+
+        .domino-two-col.reverse .domino-copy {
+            order: 1;
+        }
+
+        .domino-two-col.reverse .domino-media-frame {
+            order: 2;
+        }
+
+        .domino-subtitle {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.08;
+            color: var(--brown);
+            margin-bottom: 20px;
+        }
+
+        .domino-body {
+            font-family: "swear-text", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            color: var(--brown);
+        }
+
+        .domino-soln-intro {
+            text-align: center;
+            max-width: 576px;
+            margin: 0 auto 64px;
+        }
+
+        .domino-system-grid {
+            display: grid;
+            gap: 96px;
+            position: relative;
+        }
+
+        .domino-system-grid::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -5px;
+            bottom: -5px;
+            width: 10px;
+            transform: translateX(-5px);
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(circle at 5px 5px, var(--red) 4px, transparent 4.5px),
+                radial-gradient(circle at 5px calc(100% - 5px), var(--red) 4px, transparent 4.5px),
+                linear-gradient(var(--red), var(--red)) center 5px / 2px calc(100% - 10px) no-repeat;
+        }
+
+        .domino-system-wrap {
+            position: relative;
+        }
+
+        .domino-system-row {
+            display: grid;
+            grid-template-columns: 337px 337px;
+            justify-content: center;
+            gap: 96px;
+            align-items: center;
+            position: relative;
+        }
+
+        .domino-system-row::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 87px;
+            height: 2px;
+            background: var(--red);
+            transform: translateY(-1px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .domino-system-row::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            transform: translateY(-4px) rotate(45deg);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .domino-system-row:not(.reverse)::before {
+            left: 50%;
+        }
+
+        .domino-system-row:not(.reverse)::after {
+            left: calc(50% + 83px);
+        }
+
+        .domino-system-row.reverse::before {
+            right: 50%;
+        }
+
+        .domino-system-row.reverse::after {
+            right: calc(50% + 83px);
+        }
+
+        .domino-system-row.reverse {
+            grid-template-columns: 337px 337px;
+        }
+
+        .domino-system-row.reverse .domino-system-copy {
+            order: 1;
+            text-align: right;
+        }
+
+        .domino-system-row.reverse .domino-system-media {
+            order: 2;
+        }
+
+        .domino-system-media,
+        .domino-system-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .domino-system-item {
+            font-family: "swear-display", serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.2;
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+
+        .domino-system-text {
+            font-family: "swear-text", serif;
+            font-size: 12px;
+            line-height: 30px;
+            color: var(--brown);
+            max-width: 288px;
+            margin-left: 49px;
+        }
+
+        .domino-system-row.reverse .domino-system-text {
+            margin-left: auto;
+            margin-right: 49px;
+        }
+
+        .domino-chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .domino-chip {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            border: 1px dashed rgba(46, 25, 31, 0.35);
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        .domino-landscape-logos {
+            width: 100%;
+            max-width: 464px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .domino-quote-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 288px));
+            gap: 48px;
+            justify-content: start;
+        }
+
+        .domino-quote-shell {
+            border: 1px solid var(--red);
+            border-radius: 40px;
+            padding: 8px;
+        }
+
+        .domino-quote-card {
+            border: 1px solid #db6046;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 16px;
+            min-height: 265px;
+        }
+
+        .domino-quote-mark {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #db6046;
+        }
+
+        .domino-quote-copy {
+            font-family: "swear-text", serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--brown);
+        }
+
+        .domino-outcomes {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 28px;
+            text-align: center;
+        }
+
+        .domino-outcome-value {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 1;
+            color: var(--brown);
+            margin-bottom: 8px;
+        }
+
+        .domino-outcome-label {
+            font-family: "swear-display", serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.2;
+            color: var(--brown);
+            max-width: 264px;
+            margin: 0 auto;
+        }
+
+        .case-study-page.domino-v2 .section {
+            margin-top: 0;
+        }
+
+        .domino-divider {
+            margin: 0;
+        }
+
+        .domino-divider--after-hero {
+            margin-top: 88px;
+            margin-bottom: 92px;
+        }
+
+        .domino-divider--after-challenge {
+            margin-top: 86px;
+            margin-bottom: 96px;
+        }
+
+        .domino-divider--after-process {
+            margin-top: 94px;
+            margin-bottom: 88px;
+        }
+
+        .domino-divider--before-outcomes {
+            margin-top: 96px;
+            margin-bottom: 88px;
+        }
+
+        .domino-block--process {
+            margin-bottom: 96px;
+        }
+
+        .domino-block--process-main {
+            margin-bottom: 84px;
+        }
+
+        .domino-block--process-secondary {
+            margin-bottom: 72px;
+        }
+
+        .domino-block--solution {
+            margin-bottom: 96px;
+        }
+
+        .domino-block--solution-main {
+            margin-bottom: 90px;
+        }
+
+        .domino-block--solution-secondary {
+            margin-bottom: 76px;
+        }
+
+        .domino-text-block {
+            max-width: 526px;
+            padding-left: 22px;
+        }
+
+        .footer {
+            background: var(--brown);
+            color: var(--cream);
+            padding: var(--space-12) var(--space-6) var(--space-6) var(--space-6);
+            margin-top: 96px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-col-label {
+            font-family: "swear-display", serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 0.84px;
+            text-transform: uppercase;
+            color: #faf8ea;
+            opacity: 0.82;
+            margin-bottom: 8px;
+        }
+
+        .footer-col-value {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.2;
+            letter-spacing: 0.18px;
+            color: #faf8ea;
+        }
+
+        .footer-divider {
+            margin: 0 0 var(--space-3) 0;
+        }
+
+        .footer-divider hr {
+            border: 0;
+            border-top: 0.5px solid #faf8ea;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            font-family: "swear-display", serif;
+            font-size: 12px;
+            letter-spacing: 0.84px;
+            color: #faf8ea;
+            text-transform: uppercase;
+            opacity: 0.82;
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(22px) scale(0.992);
+            filter: blur(2px);
+            transition:
+                opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        .domino-media-frame,
+        .domino-centered-image-wrap {
+            transition: transform 0.35s ease, filter 0.35s ease;
+            transform-origin: center center;
+        }
+
+        .domino-media-frame:hover,
+        .domino-centered-image-wrap:hover {
+            transform: translateY(-4px);
+            filter: saturate(1.02) contrast(1.01);
+        }
+
+        @keyframes hero-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .case-study-page.domino-v2 .domino-hero-visual .domino-media-image {
+            animation: hero-float 8s ease-in-out infinite;
+        }
+
+        .error-state {
+            font-family: "swear-display", serif;
+            font-size: 28px;
+            padding: 72px 0;
+        }
+
+        @media (max-width: 1040px) {
+            .nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 999px;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .password-form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .password-gate-formstack {
+                width: 100%;
+                max-width: 560px;
+            }
+
+            .password-input,
+            .password-submit {
+                width: 100%;
+            }
+
+            .header {
+                padding: 24px 24px 8px 24px;
+            }
+
+            .case-study-page {
+                padding: 24px 24px 80px;
+            }
+
+            .case-study-page.domino-v2 {
+                padding: 24px 24px 80px;
+            }
+
+            .intro-grid,
+            .story-block,
+            .story-block:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .domino-challenge-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .domino-challenge-frame {
+                padding: 0;
+            }
+
+            .domino-challenge-copy {
+                padding-top: 0;
+            }
+
+            .domino-heuristics-grid,
+            .domino-outcomes,
+            .domino-two-col,
+            .domino-two-col.reverse,
+            .domino-system-row,
+            .domino-system-row.reverse,
+            .domino-quote-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .domino-system-row.reverse .domino-system-copy,
+            .domino-two-col.reverse .domino-copy,
+            .domino-two-col.reverse .domino-media-frame {
+                order: initial;
+                text-align: left;
+            }
+
+            .domino-system-text {
+                margin-left: 0;
+            }
+
+            .domino-system-row.reverse .domino-system-text {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .domino-goals li,
+            .domino-goals li.goal-reverse {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .domino-goals li.goal-reverse .domino-goal-icon,
+            .domino-goals li.goal-reverse .domino-goal-copy {
+                order: initial;
+                text-align: left;
+            }
+
+            .domino-centered-images {
+                grid-template-columns: 1fr;
+            }
+
+            .domino-system-grid::before,
+            .domino-system-row::before,
+            .domino-system-row::after {
+                display: none;
+            }
+
+            .story-block--image-focus,
+            .story-block--editorial {
+                grid-template-columns: 1fr;
+            }
+
+            .story-block--editorial .story-image-wrap {
+                max-width: 100%;
+                order: initial;
+            }
+
+            .hero-stack {
+                padding: 0;
+            }
+
+            .story-block:nth-child(even) .story-copy,
+            .story-block:nth-child(even) .story-image-wrap {
+                order: initial;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 32px;
+                letter-spacing: 2.8px;
+            }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .mobile-menu a {
+                font-size: 38px;
+            }
+
+            .section {
+                margin-top: 68px;
+            }
+
+            .story-block {
+                padding: 18px 0;
+                gap: 22px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --cream: #141213;
+                --brown: #f4ede6;
+                --brown-2: #d2c8be;
+                --red: #b8391f;
+                --red-hover: #ff8b70;
+            }
+
+            .password-input::placeholder {
+                color: rgba(250, 248, 234, 0.52);
+            }
+
+            html {
+                background-color: #0d0b0c;
+            }
+
+            .header.scrolled::after {
+                background-color: rgba(255, 240, 230, 0.12);
+            }
+
+            .story-block {
+                border-top-color: rgba(250, 248, 234, 0.2);
+                border-bottom-color: rgba(250, 248, 234, 0.12);
+            }
+
+            .story-image-wrap {
+                background: rgba(255, 255, 255, 0.04);
+                border-color: rgba(250, 248, 234, 0.2);
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            }
+
+            .story-step {
+                border-color: rgba(250, 248, 234, 0.28);
+                background-color: rgba(255, 255, 255, 0.06);
+            }
+
+            .outcome-card {
+                background: rgba(255, 255, 255, 0.04);
+            }
+
+            .domino-principle-card,
+            .domino-quote-card {
+                background: rgba(255, 255, 255, 0.04);
+            }
+
+            .domino-carousel .story-carousel-dot {
+                background: rgba(250, 248, 234, 0.32);
+            }
+
+            .footer {
+                background: #0f0d0e;
+                color: #faf8ea;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-fade {
+                opacity: 1;
+                transform: none;
+                filter: none;
+                transition: none;
+                transition-delay: 0ms;
+            }
+
+            .domino-media-frame,
+            .domino-centered-image-wrap,
+            .story-image-wrap,
+            .cs-card-mockup img {
+                transition: none !important;
+                transform: none !important;
+                animation: none !important;
+                filter: none !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/styles/shared-nav.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-icon" aria-label="NM Logo">
+                <img src="assets/logo-mark-figma.svg" alt="">
+            </div>
+            <span class="logo-text">NM</span>
+        </a>
+        <nav class="nav">
+            <a href="case-studies.html" class="active">Case Studies</a>
+            <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer">R&eacute;sum&eacute;</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-toggle-bar"></span>
+            <span class="menu-toggle-bar"></span>
+            <span class="menu-toggle-bar"></span>
+        </button>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="case-studies.html" class="active">Case Studies</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer">R&eacute;sum&eacute;</a>
+    </div>
+
+    <div class="password-gate" id="passwordGate">
+        <div class="password-gate-formstack">
+            <form class="password-form" id="passwordForm" onsubmit="return false;">
+                <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="password-submit" id="passwordSubmit">Enter</button>
+            </form>
+            <p class="password-error" id="passwordError">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+
+    <div class="case-study-shell" id="caseStudyShell">
+        <main class="case-study-page" id="caseStudyPage">
+            <div class="error-state">Loading case study...</div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div>
+                        <div class="footer-col-label">Based in</div>
+                        <div class="footer-col-value">Portland, Oregon</div>
+                    </div>
+                    <div>
+                        <div class="footer-col-label">Available</div>
+                        <div class="footer-col-value">Remote, U.S.</div>
+                    </div>
+                </div>
+                <div class="footer-divider">
+                    <hr>
+                </div>
+                <div class="footer-bottom">
+                    <span>Natasha Mistry Portfolio</span>
+                    <span>&copy; 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const correctPassword = "MistryProjects2026";
+        const storageKey = "nm-case-studies-auth";
+
+        function unlockCaseStudy() {
+            const gate = document.getElementById("passwordGate");
+            const shell = document.getElementById("caseStudyShell");
+            if (gate) gate.style.display = "none";
+            if (shell) shell.classList.add("unlocked");
+            loadCaseStudy();
+        }
+
+        function escapeHtml(value) {
+            return String(value).replace(/[&<>"']/g, (char) => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                "\"": "&quot;",
+                "'": "&#39;"
+            }[char]));
+        }
+
+        function normalizeToken(value, fallback) {
+            const token = String(value || "").toLowerCase().trim().replace(/[^a-z0-9\-]+/g, "-");
+            return token || fallback;
+        }
+
+        function renderPlaceholder(label) {
+            return `<div class="story-image-placeholder">${escapeHtml(label || "Image placeholder")}</div>`;
+        }
+
+        function renderStoryBlocks(blocks, sectionName, options = {}) {
+            const usePlaceholderImages = options.usePlaceholderImages === true;
+            const fallbackLayouts = ["standard", "image-focus", "offset", "editorial"];
+            return (blocks || []).map((block, index) => {
+                const layout = block.layout || fallbackLayouts[(index + (sectionName === "Solution" ? 1 : 0)) % fallbackLayouts.length];
+                const tone = block.tone || ((index % 3) + 1);
+                const label = block.kicker || `${sectionName} Step ${index + 1}`;
+                const layoutClass = normalizeToken(layout, "standard");
+                const toneClass = normalizeToken(tone, "1");
+                const imageScale = normalizeToken(block.imageScale || (index % 3 === 0 ? "hero" : (index % 3 === 1 ? "standard" : "detail")), "standard");
+                const sizeClass = normalizeToken(block.size || (index % 3 === 2 ? "small" : "standard"), "standard");
+                const carouselImages = Array.isArray(block.images)
+                    ? block.images
+                        .map((item) => {
+                            if (typeof item === "string") {
+                                return { src: item, alt: block.imageAlt || block.title || "", placeholderLabel: "" };
+                            }
+                            if (item && typeof item === "object") {
+                                return {
+                                    src: item.src || "",
+                                    alt: item.alt || block.imageAlt || block.title || "",
+                                    placeholderLabel: item.placeholderLabel || ""
+                                };
+                            }
+                            return { src: "", alt: "", placeholderLabel: "" };
+                        })
+                        .filter((item) => String(item.src).trim().length > 0 || String(item.placeholderLabel).trim().length > 0)
+                    : [];
+                const hasCarousel = carouselImages.length > 1;
+                const singleCarouselImage = carouselImages.length === 1 ? carouselImages[0] : null;
+                const fallbackImageSrc = String(block.image || "").trim() || (singleCarouselImage ? singleCarouselImage.src : "");
+                const fallbackImageAlt = block.imageAlt || block.title || "";
+                const placeholderLabel = block.placeholderLabel || block.title || "Image placeholder";
+                const hasImage = hasCarousel || Boolean(fallbackImageSrc) || usePlaceholderImages || Boolean(placeholderLabel);
+                const renderSlide = (item, slideIndex) => {
+                    if (usePlaceholderImages || !String(item.src).trim()) {
+                        return renderPlaceholder(item.placeholderLabel || `${block.title || "Image"} ${slideIndex + 1}`);
+                    }
+                    return `<img class="story-image story-image--${imageScale}" src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}">`;
+                };
+                const carouselMarkup = hasCarousel
+                    ? `
+                    <div class="story-image-wrap story-carousel" data-carousel>
+                        <div class="story-carousel-track">
+                            ${carouselImages.map((item, slideIndex) => `
+                                <div class="story-carousel-slide">
+                                    ${renderSlide(item, slideIndex)}
+                                </div>
+                            `).join("")}
+                        </div>
+                        <button class="story-carousel-btn story-carousel-btn--prev" type="button" aria-label="Previous image">&#8249;</button>
+                        <button class="story-carousel-btn story-carousel-btn--next" type="button" aria-label="Next image">&#8250;</button>
+                        <div class="story-carousel-dots">
+                            ${carouselImages.map((_, dotIndex) => `
+                                <button class="story-carousel-dot ${dotIndex === 0 ? "is-active" : ""}" type="button" aria-label="Go to image ${dotIndex + 1}" data-slide="${dotIndex}"></button>
+                            `).join("")}
+                        </div>
+                    </div>`
+                    : "";
+                const imageMarkup = hasImage
+                    ? (hasCarousel
+                        ? carouselMarkup
+                        : `<div class="story-image-wrap">
+                            ${usePlaceholderImages || !fallbackImageSrc
+                                ? renderPlaceholder(placeholderLabel)
+                                : `<img class="story-image story-image--${imageScale}" src="${escapeHtml(fallbackImageSrc)}" alt="${escapeHtml(fallbackImageAlt)}">`}
+                        </div>`)
+                    : "";
+
+                return `
+                <article class="story-block story-block--${layoutClass} story-block--tone-${toneClass} story-block--${sizeClass} ${hasImage ? "" : "story-block--no-image"} scroll-fade">
+                    <div class="story-copy">
+                        <span class="story-step">${escapeHtml(label)}</span>
+                        <h3 class="story-title">${escapeHtml(block.title || "")}</h3>
+                        <p class="story-desc">${escapeHtml(block.description || "")}</p>
+                    </div>
+                    ${imageMarkup}
+                </article>
+            `;
+            }).join("");
+        }
+
+        function renderOutcomes(items) {
+            return (items || []).map((item) => `
+                <li class="outcome-card scroll-fade">
+                    <span class="outcome-value">${escapeHtml(item.value || "")}</span>
+                    <span class="outcome-label">${escapeHtml(item.label || "")}</span>
+                    <p class="outcome-detail">${escapeHtml(item.detail || "")}</p>
+                </li>
+            `).join("");
+        }
+
+        function initStoryCarousels() {
+            document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+                const track = carousel.querySelector(".story-carousel-track");
+                const slides = [...carousel.querySelectorAll(".story-carousel-slide")];
+                const dots = [...carousel.querySelectorAll(".story-carousel-dot")];
+                const prevBtn = carousel.querySelector(".story-carousel-btn--prev");
+                const nextBtn = carousel.querySelector(".story-carousel-btn--next");
+                if (!track || slides.length <= 1 || !prevBtn || !nextBtn) return;
+
+                let index = 0;
+                const setSlide = (newIndex) => {
+                    index = (newIndex + slides.length) % slides.length;
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                    dots.forEach((dot, dotIndex) => {
+                        dot.classList.toggle("is-active", dotIndex === index);
+                    });
+                };
+
+                prevBtn.addEventListener("click", () => setSlide(index - 1));
+                nextBtn.addEventListener("click", () => setSlide(index + 1));
+                dots.forEach((dot, dotIndex) => {
+                    dot.addEventListener("click", () => setSlide(dotIndex));
+                });
+
+                setSlide(0);
+            });
+        }
+
+        const lockups = {
+            _cacheBust: `?v=${Date.now()}`,
+
+            media(src, alt, placeholderLabel, usePlaceholder) {
+                if (usePlaceholder || !src) return renderPlaceholder(placeholderLabel || alt || "Image placeholder");
+                return `<img class="domino-media-image" src="${escapeHtml(src)}${this._cacheBust}" alt="${escapeHtml(alt || "")}">`;
+            },
+
+            carousel(images, usePlaceholder) {
+                if (!images || images.length === 0) return renderPlaceholder("Carousel placeholder");
+                if (images.length === 1) return this.media(images[0].src, images[0].alt, images[0].alt, usePlaceholder);
+                return `
+                    <div class="domino-carousel" data-carousel>
+                        <div class="domino-carousel-viewport">
+                            <div class="story-carousel-track">
+                                ${images.map((img) => `
+                                    <div class="story-carousel-slide">
+                                        ${usePlaceholder || !img.src
+                                            ? renderPlaceholder(img.alt || "Image")
+                                            : `<img class="domino-media-image" src="${escapeHtml(img.src)}${this._cacheBust}" alt="${escapeHtml(img.alt || "")}">`}
+                                    </div>
+                                `).join("")}
+                            </div>
+                        </div>
+                        <button class="story-carousel-btn story-carousel-btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 14 14"><polyline points="9 2 4 7 9 12"/></svg></button>
+                        <button class="story-carousel-btn story-carousel-btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 14 14"><polyline points="5 2 10 7 5 12"/></svg></button>
+                        <div class="story-carousel-dots">
+                            ${images.map((_, i) => `
+                                <button class="story-carousel-dot ${i === 0 ? "is-active" : ""}" type="button" aria-label="Go to image ${i + 1}" data-slide="${i}"></button>
+                            `).join("")}
+                        </div>
+                    </div>`;
+            },
+
+            hero(project, usePlaceholder) {
+                const heroSrc = String(project.intro.image || "").trim();
+                const heroImg = usePlaceholder || !heroSrc
+                    ? renderPlaceholder(project.intro.placeholderLabel || "Hero mockup placeholder")
+                    : `<img class="domino-media-image" src="${escapeHtml(heroSrc)}${this._cacheBust}" alt="${escapeHtml(project.intro.imageAlt || project.title)}">`;
+
+                return `
+                <section class="section intro-grid">
+                    <div class="hero-stack domino-hero-visual scroll-fade">
+                        <div class="hero-image-wrap">${heroImg}</div>
+                    </div>
+                    <div class="intro-copy scroll-fade">
+                        <p class="eyebrow">${escapeHtml(project.intro.eyebrow || "")}</p>
+                        <h1 class="intro-title">${escapeHtml(project.intro.heading || "")}</h1>
+                        <p class="lead">${escapeHtml(project.intro.body || "")}</p>
+                    </div>
+                </section>`;
+            },
+
+            divider(section) {
+                const spacingClass = section.spacing ? ` domino-divider--${section.spacing}` : "";
+                return `<div class="section-divider-pill domino-divider${spacingClass} scroll-fade"></div>`;
+            },
+
+            challenge(project) {
+                const icons = project.challenge.goalIcons || [];
+                const isNumbered = project.challenge.numberedGoals === true;
+
+                const goalsHtml = isNumbered
+                    ? `<ol class="domino-goals-numbered scroll-fade">
+                        ${(project.challenge.goals || []).map((goal) =>
+                            `<li><span class="domino-goal-num-text">${escapeHtml(goal)}</span></li>`
+                        ).join("")}
+                    </ol>`
+                    : `<ul class="domino-goals">
+                        ${(project.challenge.goals || []).map((goal, idx) => {
+                            const isReverse = idx % 2 === 1;
+                            const iconSrc = icons[idx] || icons[icons.length - 1] || "";
+                            return `<li class="scroll-fade${isReverse ? " goal-reverse" : ""}">
+                                ${iconSrc ? `<img class="domino-goal-icon" src="${escapeHtml(iconSrc)}" alt="">` : ""}
+                                <span class="domino-goal-copy">${escapeHtml(goal)}</span>
+                            </li>`;
+                        }).join("")}
+                    </ul>`;
+
+                return `
+                <section class="section domino-block domino-block--challenge">
+                    <div class="domino-challenge-frame">
+                    <div class="domino-challenge-grid${icons.length > 0 ? ' domino-challenge-grid--with-icons' : ''}">
+                        <div class="section-head domino-challenge-copy">
+                            <h2 class="domino-section-title scroll-fade">${escapeHtml(project.challenge.title || "Challenge")}</h2>
+                            <p class="domino-body scroll-fade">${escapeHtml(project.challenge.body || "")}</p>
+                        </div>
+                        ${goalsHtml}
+                    </div>
+                    </div>
+                </section>`;
+            },
+
+            principlesGrid(section) {
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "process"}">
+                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
+                    <h3 class="domino-subtitle scroll-fade" style="text-align:center; margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
+                    <p class="domino-heuristics-intro scroll-fade">${escapeHtml(section.intro || "")}</p>
+                    <div class="domino-heuristics-grid">
+                        ${(section.cards || []).map((card) => `
+                            <article class="domino-principle-shell scroll-fade">
+                                <div class="domino-principle-card">
+                                    <p class="domino-principle-num">${escapeHtml(card.number)}</p>
+                                    <h4 class="domino-principle-title">${escapeHtml(card.title)}</h4>
+                                    <ul class="domino-principle-list">
+                                        ${(card.bullets || []).map((b) => `<li>${escapeHtml(b)}</li>`).join("")}
+                                    </ul>
+                                </div>
+                            </article>
+                        `).join("")}
+                    </div>
+                </section>`;
+            },
+
+            twoCol(section, usePlaceholder) {
+                const isReverse = section.reverse === true;
+                const hasQuotes = Array.isArray(section.quotes) && section.quotes.length > 0;
+                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+
+                let inlineImgHtml = "";
+                if (section.inlineImage && !usePlaceholder) {
+                    const cls = section.inlineImage.className ? ` class="${escapeHtml(section.inlineImage.className)}"` : "";
+                    inlineImgHtml = `<img${cls} src="${escapeHtml(section.inlineImage.src)}" alt="${escapeHtml(section.inlineImage.alt || "")}">`;
+                } else if (section.inlineImage && usePlaceholder) {
+                    inlineImgHtml = `<div class="domino-chip-row" style="margin-top:18px;">${Array.from({ length: 7 }).map(() => '<span class="domino-chip" aria-hidden="true"></span>').join("")}</div>`;
+                }
+
+                const mediaWidthStyle = section.imageWidth ? `max-width:${section.imageWidth}px;width:100%;justify-self:center;` : "";
+                const radiusStyle = section.imageRounded ? `border-radius:${section.imageRounded}px;overflow:hidden;` : "";
+                const mediaStyleAttr = (mediaWidthStyle || radiusStyle) ? ` style="${mediaWidthStyle}${radiusStyle}"` : "";
+                let mediaHtml;
+                if (section.carousel) {
+                    mediaHtml = `<div class="domino-media-frame scroll-fade"${mediaStyleAttr}>${this.carousel(section.carousel, usePlaceholder)}</div>`;
+                } else if (section.image) {
+                    mediaHtml = `<div class="domino-media-frame scroll-fade"${mediaStyleAttr}>${this.media(section.image.src, section.image.alt, section.image.alt, usePlaceholder)}</div>`;
+                } else {
+                    mediaHtml = "";
+                }
+
+                let leftSlot, rightSlot;
+
+                if (hasQuotes) {
+                    const quotesHtml = `
+                        <div class="domino-quote-grid">
+                            ${section.quotes.map((q) => `
+                                <div class="domino-quote-shell scroll-fade">
+                                    <div class="domino-quote-card">
+                                        <p class="domino-quote-mark">\u201C</p>
+                                        <p class="domino-quote-copy">${escapeHtml(q)}</p>
+                                    </div>
+                                </div>
+                            `).join("")}
+                        </div>`;
+                    leftSlot = quotesHtml;
+                    rightSlot = `
+                        <div class="domino-copy scroll-fade">
+                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                            ${bodyHtml}
+                        </div>`;
+                } else if (isReverse) {
+                    leftSlot = `
+                        <div class="domino-copy scroll-fade">
+                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                            ${bodyHtml}${inlineImgHtml}
+                        </div>`;
+                    rightSlot = mediaHtml;
+                } else {
+                    leftSlot = mediaHtml;
+                    rightSlot = `
+                        <div class="domino-copy scroll-fade">
+                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                            ${bodyHtml}${inlineImgHtml}
+                        </div>`;
+                }
+
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "default"}">
+                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="domino-two-col${isReverse ? " reverse" : ""}">
+                        ${leftSlot}
+                        ${rightSlot}
+                    </div>
+                </section>`;
+            },
+
+            systemGrid(section, usePlaceholder) {
+                const rows = (section.rows || []).map((row) => {
+                    const isReverse = row.reverse === true;
+                    const mediaEl = `<div class="domino-system-media domino-media-frame scroll-fade">${this.media(row.image.src, row.image.alt, row.image.alt, usePlaceholder)}</div>`;
+                    const copyEl = `
+                        <div class="domino-system-copy scroll-fade">
+                            <h4 class="domino-system-item">${escapeHtml(row.title)}</h4>
+                            <p class="domino-system-text">${escapeHtml(row.text)}</p>
+                        </div>`;
+                    return `
+                        <div class="domino-system-row${isReverse ? " reverse" : ""}">
+                            ${isReverse ? copyEl + mediaEl : mediaEl + copyEl}
+                        </div>`;
+                }).join("");
+
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "solution"}">
+                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
+                    <div class="domino-soln-intro scroll-fade">
+                        <h3 class="domino-subtitle" style="margin-bottom: 56px;">${escapeHtml(section.subtitle || "")}</h3>
+                        <p class="domino-body">${escapeHtml(section.intro || "")}</p>
+                    </div>
+                    <div class="domino-system-wrap">
+                        <div class="domino-system-grid">${rows}</div>
+                    </div>
+                </section>`;
+            },
+
+            textBlock(section) {
+                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "default"}">
+                    <div class="domino-text-block scroll-fade">
+                        <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                        ${bodyHtml}
+                    </div>
+                </section>`;
+            },
+
+            centeredBlock(section, usePlaceholder) {
+                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+                const images = section.images || [];
+                const imagesHtml = images.length > 0
+                    ? `<div class="domino-centered-images scroll-fade">
+                        ${images.map((img) => `
+                            <div class="domino-centered-image-wrap">
+                                ${this.media(img.src, img.alt, img.alt, usePlaceholder)}
+                            </div>
+                        `).join("")}
+                    </div>`
+                    : "";
+
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "default"}">
+                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="domino-soln-intro scroll-fade">
+                        <h3 class="domino-subtitle" style="margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
+                        ${bodyHtml}
+                    </div>
+                    ${imagesHtml}
+                </section>`;
+            },
+
+            outcomes(section, project) {
+                return `
+                <section class="section">
+                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(project.outcomes.title || "Outcomes")}</h2>
+                    <div class="domino-outcomes">
+                        ${(section.items || []).map((item) => `
+                            <article class="scroll-fade">
+                                <span class="domino-outcome-value">${escapeHtml(item.value)}</span>
+                                <p class="domino-outcome-label">${escapeHtml(item.label)}</p>
+                            </article>
+                        `).join("")}
+                    </div>
+                </section>`;
+            }
+        };
+
+        function renderDominoV2(project, usePlaceholderImages) {
+            const sections = project.sections || [];
+            return sections.map((section) => {
+                switch (section.type) {
+                    case "hero": return lockups.hero(project, usePlaceholderImages);
+                    case "divider": return lockups.divider(section);
+                    case "challenge": return lockups.challenge(project);
+                    case "principlesGrid": return lockups.principlesGrid(section);
+                    case "textBlock": return lockups.textBlock(section);
+                    case "centeredBlock": return lockups.centeredBlock(section, usePlaceholderImages);
+                    case "twoCol": return lockups.twoCol(section, usePlaceholderImages);
+                    case "systemGrid": return lockups.systemGrid(section, usePlaceholderImages);
+                    case "outcomes": return lockups.outcomes(section, project);
+                    default: return "";
+                }
+            }).join("");
+        }
+
+        async function loadCaseStudy() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get("slug");
+            const root = document.getElementById("caseStudyPage");
+
+            if (!slug) {
+                root.innerHTML = "<div class='error-state'>Missing project slug.</div>";
+                return;
+            }
+
+            try {
+                const response = await fetch("data/case-studies.json");
+                if (!response.ok) {
+                    throw new Error("Unable to load case study data.");
+                }
+                const data = await response.json();
+                const project = (data.projects || []).find((item) => item.slug === slug);
+
+                if (!project) {
+                    root.innerHTML = "<div class='error-state'>Case study not found.</div>";
+                    return;
+                }
+
+                document.title = `${project.title} | Natasha Mistry`;
+                const isDominoLayout = project.layoutVersion === "domino-v2";
+                const usePlaceholderImages = project.usePlaceholderImages === true;
+                root.classList.toggle("domino-v2", isDominoLayout);
+                if (project.slug) root.classList.add(`project-${project.slug}`);
+
+                if (isDominoLayout) {
+                    root.innerHTML = renderDominoV2(project, usePlaceholderImages);
+                } else {
+                    const heroVisualMarkup = usePlaceholderImages || !String(project.intro.image || "").trim()
+                        ? renderPlaceholder(project.intro.placeholderLabel || "Hero visual placeholder")
+                        : `<img class="hero-image" src="${escapeHtml(project.intro.image || "")}" alt="${escapeHtml(project.intro.imageAlt || project.title)}">`;
+
+                    root.innerHTML = `
+                        <section class="section intro-grid">
+                            <div class="intro-copy scroll-fade">
+                                <p class="eyebrow">${escapeHtml(project.intro.eyebrow || "")}</p>
+                                <h1 class="intro-title">${escapeHtml(project.intro.heading || "")}</h1>
+                                <p class="lead">${escapeHtml(project.intro.body || "")}</p>
+                            </div>
+                            <div class="hero-stack scroll-fade">
+                                <div class="hero-image-wrap">
+                                    ${heroVisualMarkup}
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <div class="section-head">
+                                <h2 class="section-title scroll-fade">${escapeHtml(project.challenge.title || "Challenge")}</h2>
+                                <p class="section-copy scroll-fade">${escapeHtml(project.challenge.body || "")}</p>
+                            </div>
+                            <ul class="goals-list">
+                                ${(project.challenge.goals || []).map((goal) => `<li class="scroll-fade">${escapeHtml(goal)}</li>`).join("")}
+                            </ul>
+                        </section>
+
+                        <section class="section">
+                            <div class="section-head">
+                                <h2 class="section-title scroll-fade">${escapeHtml(project.processTitle || "Process")}</h2>
+                            </div>
+                            <div class="story-blocks">
+                                ${renderStoryBlocks(project.process, project.processTitle || "Process", { usePlaceholderImages })}
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <div class="section-head">
+                                <h2 class="section-title scroll-fade">${escapeHtml(project.solutionTitle || "Solution")}</h2>
+                            </div>
+                            <div class="story-blocks">
+                                ${renderStoryBlocks(project.solution, project.solutionTitle || "Solution", { usePlaceholderImages })}
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <div class="section-head">
+                                <h2 class="section-title scroll-fade">${escapeHtml(project.outcomes.title || "Outcomes")}</h2>
+                                <p class="section-copy scroll-fade">${escapeHtml(project.outcomes.summary || "")}</p>
+                            </div>
+                            <ul class="outcomes-grid">
+                                ${renderOutcomes(project.outcomes.items)}
+                            </ul>
+                        </section>
+                    `;
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -40px 0px"
+                });
+
+                // Stagger reveal timing per section for a calmer, editorial feel.
+                document.querySelectorAll(".section, .intro-grid").forEach((section) => {
+                    const fades = [...section.querySelectorAll(".scroll-fade")];
+                    fades.forEach((el, idx) => {
+                        el.style.setProperty("--reveal-delay", `${Math.min(idx * 70, 420)}ms`);
+                    });
+                });
+
+                document.querySelectorAll(".scroll-fade").forEach((el) => observer.observe(el));
+                initStoryCarousels();
+            } catch (error) {
+                root.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
+            }
+        }
+
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const header = document.querySelector(".header");
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", () => {
+                menuToggle.classList.toggle("active");
+                mobileMenu.classList.toggle("open");
+                document.body.classList.toggle("menu-open");
+            });
+        }
+
+        document.querySelectorAll(".mobile-menu a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (mobileMenu && menuToggle) {
+                    mobileMenu.classList.remove("open");
+                    menuToggle.classList.remove("active");
+                    document.body.classList.remove("menu-open");
+                }
+            });
+        });
+
+        function handleHeaderScrollState() {
+            if (header) {
+                header.classList.toggle("scrolled", window.scrollY > 8);
+            }
+        }
+
+        handleHeaderScrollState();
+        window.addEventListener("scroll", handleHeaderScrollState, { passive: true });
+
+        if (sessionStorage.getItem(storageKey) === correctPassword) {
+            unlockCaseStudy();
+        } else {
+            const passwordForm = document.getElementById("passwordForm");
+            const passwordSubmit = document.getElementById("passwordSubmit");
+            const passwordInput = document.getElementById("passwordInput");
+            const passwordError = document.getElementById("passwordError");
+
+            if (passwordForm && passwordInput && passwordError) {
+                passwordForm.addEventListener("submit", function () {
+                    if (passwordInput.value === correctPassword) {
+                        sessionStorage.setItem(storageKey, correctPassword);
+                        passwordError.classList.remove("show");
+                        unlockCaseStudy();
+                    } else {
+                        passwordError.classList.add("show");
+                        passwordInput.value = "";
+                        passwordInput.focus();
+                    }
+                });
+            }
+
+            if (passwordSubmit && passwordForm) {
+                passwordSubmit.addEventListener("click", function () {
+                    passwordForm.dispatchEvent(new Event("submit"));
+                });
+            }
+        }
+    </script>
+</body>
+</html>
