@@ -21,6 +21,8 @@
             --brown-2: #4b353c;
             --red: #E04C2D;
             --red-hover: #b8391f;
+            --fs-h4: 24px;
+            --radius-pill: 999px;
             --space-1: 8px;
             --space-2: 16px;
             --space-3: 24px;
@@ -1771,6 +1773,30 @@
                 grid-template-columns: 1fr;
             }
 
+            .case-study-page.domino-v2 .intro-grid {
+                justify-items: stretch;
+                align-items: start;
+            }
+
+            .case-study-page.domino-v2 .hero-stack {
+                margin: 0;
+                justify-self: center;
+            }
+
+            .case-study-page.domino-v2 .intro-copy {
+                width: 100%;
+                max-width: 100%;
+                justify-self: stretch;
+            }
+
+            .case-study-page.domino-v2 .eyebrow,
+            .case-study-page.domino-v2 .intro-title,
+            .case-study-page.domino-v2 .lead {
+                max-width: 100%;
+                margin-left: 0;
+                text-align: left;
+            }
+
             .domino-challenge-grid {
                 grid-template-columns: 1fr;
                 gap: 22px;
@@ -1794,10 +1820,73 @@
                 grid-template-columns: 1fr;
             }
 
-            .domino-system-row.reverse .domino-system-copy,
-            .domino-two-col.reverse .domino-copy,
-            .domino-two-col.reverse .domino-media-frame {
+            /* Ensure project-specific desktop lockups collapse correctly on mobile. */
+            .project-cash-deposits .domino-two-col,
+            .project-cash-deposits .domino-two-col.reverse,
+            .project-cash-flow-visualization .domino-two-col,
+            .project-cash-flow-visualization .domino-two-col.reverse,
+            .project-instant-transfers .domino-two-col,
+            .project-instant-transfers .domino-two-col.reverse {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .project-cash-flow-visualization .domino-copy,
+            .project-instant-transfers .domino-copy,
+            .project-instant-transfers .domino-media-frame {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            /* Keep phone screenshots readable on mobile: cap media width. */
+            .domino-two-col .domino-media-frame,
+            .domino-system-media,
+            .domino-centered-image-wrap {
+                max-width: 260px !important;
+                width: 100%;
+                justify-self: center;
+                margin: 0 auto;
+            }
+
+            .case-study-page.domino-v2 .domino-hero-visual {
+                max-width: 260px !important;
+                margin: 0 auto;
+            }
+
+            .case-study-page.domino-v2 .domino-hero-visual .domino-media-image,
+            .domino-two-col .domino-media-image {
+                max-height: none;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .case-study-page.domino-v2.project-cash-flow-visualization .intro-grid,
+            .case-study-page.domino-v2.project-check-deposit .intro-grid,
+            .case-study-page.domino-v2.project-instant-transfers .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                justify-content: stretch;
+            }
+
+            .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual,
+            .case-study-page.domino-v2.project-check-deposit .domino-hero-visual,
+            .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual {
+                max-width: 260px !important;
+            }
+
+            .domino-system-row.reverse .domino-system-copy {
                 order: initial;
+                text-align: left;
+            }
+
+            /* On mobile, always show two-col media first, then copy. */
+            .domino-two-col .domino-media-frame {
+                order: 1 !important;
+            }
+
+            .domino-two-col .domino-copy {
+                order: 2 !important;
                 text-align: left;
             }
 
