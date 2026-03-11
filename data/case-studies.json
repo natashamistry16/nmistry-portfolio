@@ -56,7 +56,7 @@
             "We kept the core action fast, then designed clear status states and follow-up messaging for cases where bank checks completed later in the flow. We focused on actionable recovery paths for name mismatch and account ineligibility so sellers could quickly understand the issue and move forward."
           ],
           "image": {
-            "src": "assets/case-studies/japan-instant-transfers/process-error-handling-flow.png.png",
+            "src": "assets/case-studies/japan-instant-transfers/process-error-handling-flow.png",
             "alt": "Eligibility and error handling flow"
           },
           "spacing": "process-main",
@@ -115,7 +115,7 @@
             "When a bank account is blocked, sellers are guided to relink directly from the error context. This creates a clear self-serve recovery path and reduces repeated failed transfer attempts."
           ],
           "image": {
-            "src": "assets/case-studies/japan-instant-transfers/solution-bank-relinking.png",
+            "src": "assets/case-studies/japan-instant-transfers/solution-bank-linking.png",
             "alt": "Bank relinking entry point from transfer errors"
           },
           "spacing": "solution-secondary"
