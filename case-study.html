@@ -262,6 +262,69 @@
         }
 
 
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            cursor: zoom-out;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-overlay img,
+        .lightbox-overlay video {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+            transform: scale(0.92);
+            transition: transform 0.25s ease;
+        }
+
+        .lightbox-overlay.active img,
+        .lightbox-overlay.active video {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .domino-media-frame,
+        .domino-centered-image-wrap,
+        .domino-hero-visual {
+            cursor: zoom-in;
+        }
+
         .password-gate {
             max-width: 1200px;
             margin: 0 auto;
@@ -386,8 +449,8 @@
         }
 
         .case-study-page.domino-v2 {
-            max-width: 1248px;
-            padding: 28px 0 120px;
+            max-width: 1200px;
+            padding: 28px var(--space-6) 120px;
         }
 
         .case-study-page.domino-v2 .section {
@@ -460,8 +523,8 @@
 
         .domino-challenge-grid {
             display: grid;
-            grid-template-columns: 530px 528px;
-            gap: 190px;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
             align-items: center;
             justify-content: center;
         }
@@ -489,6 +552,61 @@
 
         .domino-challenge-copy .domino-body {
             max-width: 530px;
+        }
+
+        .domino-question-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .domino-question-copy .domino-subtitle {
+            margin-bottom: 12px;
+        }
+
+        .domino-question-copy .domino-body {
+            max-width: 530px;
+        }
+
+        .domino-question-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            counter-reset: question-counter;
+            display: grid;
+            gap: 8px;
+            align-self: center;
+        }
+
+        .domino-question-list li {
+            counter-increment: question-counter;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 2;
+            color: var(--brown);
+        }
+
+        .domino-question-list li::before {
+            content: counter(question-counter) ".";
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 2;
+            color: var(--red-hover);
+            flex-shrink: 0;
+        }
+
+        .domino-question-list li span {
+            font-family: "swear-display", serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 2;
         }
 
         .domino-goals {
@@ -1061,6 +1179,7 @@
             border: 0;
             border-radius: 0;
             padding: 0;
+            overflow: hidden;
             background: transparent;
         }
 
@@ -1068,6 +1187,15 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        video.domino-media-image {
+            object-fit: cover;
+            background: transparent;
+            transform: scale(1.02);
+            transform-origin: center center;
+            border: none;
+            outline: none;
         }
 
         .domino-carousel {
@@ -1212,14 +1340,17 @@
 
         .domino-two-col {
             display: grid;
-            grid-template-columns: 624px 560px;
+            grid-template-columns: 1fr 1fr;
             gap: 64px;
             align-items: center;
             justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .domino-two-col.reverse {
-            grid-template-columns: 560px 624px;
+            grid-template-columns: 1fr 1fr;
         }
 
         .project-cash-deposits .domino-two-col {
@@ -1275,19 +1406,19 @@
         }
 
         .project-cash-flow-visualization .domino-two-col {
-            grid-template-columns: 560px 560px;
+            grid-template-columns: 1fr 1fr;
             justify-content: center;
             justify-items: center;
             gap: 64px;
         }
 
         .project-cash-flow-visualization .domino-two-col.reverse {
-            grid-template-columns: 560px 560px;
+            grid-template-columns: 1fr 1fr;
         }
 
         .project-cash-flow-visualization .domino-copy {
             width: 100%;
-            max-width: 560px;
+            max-width: 568px;
         }
 
         .project-cash-flow-visualization .domino-media-frame {
@@ -1300,12 +1431,12 @@
         }
 
         .case-study-page.domino-v2.project-cash-flow-visualization .intro-grid {
-            grid-template-columns: 437px 528px;
+            grid-template-columns: 530px 528px;
             justify-content: center;
         }
 
         .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual {
-            max-width: 437px;
+            max-width: 530px;
             margin: 0 auto;
         }
 
@@ -1774,6 +1905,8 @@
             }
 
             .case-study-page.domino-v2 .intro-grid {
+                grid-template-columns: 1fr !important;
+                gap: 28px;
                 justify-items: stretch;
                 align-items: start;
             }
@@ -1810,6 +1943,7 @@
                 padding-top: 0;
             }
 
+            .domino-question-grid,
             .domino-heuristics-grid,
             .domino-outcomes,
             .domino-two-col,
@@ -1817,17 +1951,7 @@
             .domino-system-row,
             .domino-system-row.reverse,
             .domino-quote-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Ensure project-specific desktop lockups collapse correctly on mobile. */
-            .project-cash-deposits .domino-two-col,
-            .project-cash-deposits .domino-two-col.reverse,
-            .project-cash-flow-visualization .domino-two-col,
-            .project-cash-flow-visualization .domino-two-col.reverse,
-            .project-instant-transfers .domino-two-col,
-            .project-instant-transfers .domino-two-col.reverse {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 gap: 28px;
             }
 
@@ -1836,6 +1960,14 @@
             .project-instant-transfers .domino-media-frame {
                 max-width: 100%;
                 width: 100%;
+            }
+
+            .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual {
+                max-width: 90% !important;
+            }
+
+            .project-cash-flow-visualization .domino-two-col .domino-media-frame:not([style*="max-width"]) {
+                max-width: 90% !important;
             }
 
             /* Keep phone screenshots readable on mobile: cap media width. */
@@ -1849,7 +1981,7 @@
             }
 
             .case-study-page.domino-v2 .domino-hero-visual {
-                max-width: 260px !important;
+                max-width: 90% !important;
                 margin: 0 auto;
             }
 
@@ -1861,17 +1993,9 @@
                 margin: 0 auto;
             }
 
-            .case-study-page.domino-v2.project-cash-flow-visualization .intro-grid,
-            .case-study-page.domino-v2.project-check-deposit .intro-grid,
-            .case-study-page.domino-v2.project-instant-transfers .intro-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-                justify-content: stretch;
-            }
-
-            .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual,
             .case-study-page.domino-v2.project-check-deposit .domino-hero-visual,
-            .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual {
+            .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual,
+            .case-study-page.domino-v2.project-cash-deposits .domino-hero-visual {
                 max-width: 260px !important;
             }
 
@@ -1897,6 +2021,16 @@
             .domino-system-row.reverse .domino-system-text {
                 margin-left: 0;
                 margin-right: 0;
+            }
+
+            .domino-outcome-value {
+                font-size: 32px;
+                margin-bottom: 4px;
+            }
+
+            .domino-outcome-label {
+                font-size: 16px;
+                line-height: 1.3;
             }
 
             .domino-goals li,
@@ -2266,6 +2400,10 @@
 
             media(src, alt, placeholderLabel, usePlaceholder) {
                 if (usePlaceholder || !src) return renderPlaceholder(placeholderLabel || alt || "Image placeholder");
+                const ext = src.split(".").pop().toLowerCase();
+                if (["mp4", "mov", "webm"].includes(ext)) {
+                    return `<video class="domino-media-image" src="${escapeHtml(src)}${this._cacheBust}" autoplay loop muted playsinline></video>`;
+                }
                 return `<img class="domino-media-image" src="${escapeHtml(src)}${this._cacheBust}" alt="${escapeHtml(alt || "")}">`;
             },
 
@@ -2372,6 +2510,26 @@
                                 </div>
                             </article>
                         `).join("")}
+                    </div>
+                </section>`;
+            },
+
+            questionGrid(section) {
+                const questionsHtml = (section.questions || []).map((q) =>
+                    `<li class="scroll-fade"><span>${escapeHtml(q)}</span></li>`
+                ).join("");
+
+                return `
+                <section class="section domino-block domino-block--${section.spacing || "process"}">
+                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="domino-question-grid">
+                        <div class="domino-question-copy scroll-fade">
+                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                            <p class="domino-body">${escapeHtml(section.body || "")}</p>
+                        </div>
+                        <ol class="domino-question-list">
+                            ${questionsHtml}
+                        </ol>
                     </div>
                 </section>`;
             },
@@ -2538,6 +2696,7 @@
                     case "centeredBlock": return lockups.centeredBlock(section, usePlaceholderImages);
                     case "twoCol": return lockups.twoCol(section, usePlaceholderImages);
                     case "systemGrid": return lockups.systemGrid(section, usePlaceholderImages);
+                    case "questionGrid": return lockups.questionGrid(section);
                     case "outcomes": return lockups.outcomes(section, project);
                     default: return "";
                 }
@@ -2719,6 +2878,61 @@
                 });
             }
         }
+    </script>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <script>
+    (function () {
+        const overlay = document.getElementById("lightboxOverlay");
+        const content = document.getElementById("lightboxContent");
+        const closeBtn = overlay.querySelector(".lightbox-close");
+
+        function openLightbox(el) {
+            content.innerHTML = "";
+            if (el.tagName === "VIDEO") {
+                const video = document.createElement("video");
+                video.src = el.src;
+                video.autoplay = true;
+                video.loop = true;
+                video.muted = true;
+                video.playsInline = true;
+                content.appendChild(video);
+            } else {
+                const img = document.createElement("img");
+                img.src = el.src;
+                img.alt = el.alt || "";
+                content.appendChild(img);
+            }
+            overlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+            setTimeout(() => { content.innerHTML = ""; }, 250);
+        }
+
+        closeBtn.addEventListener("click", closeLightbox);
+        overlay.addEventListener("click", function (e) {
+            if (e.target === overlay) closeLightbox();
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeLightbox();
+        });
+
+        document.addEventListener("click", function (e) {
+            const mediaEl = e.target.closest(".domino-media-image, .domino-hero-visual .domino-media-image, .story-image");
+            if (mediaEl && (mediaEl.tagName === "IMG" || mediaEl.tagName === "VIDEO")) {
+                e.preventDefault();
+                openLightbox(mediaEl);
+            }
+        });
+    })();
     </script>
 </body>
 </html>

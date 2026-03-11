@@ -202,9 +202,20 @@
           "spacing": "after-challenge"
         },
         {
-          "type": "twoCol",
+          "type": "questionGrid",
           "sectionTitle": "Process",
-          "reverse": true,
+          "subtitle": "Research objectives",
+          "body": "Discovery focused on four key questions that shaped the direction of our research and design decisions.",
+          "questions": [
+            "What financial data is essential for daily operations?",
+            "How do visuals and insights affect decision-making?",
+            "Do sellers prefer visual or text-based information?",
+            "Which visual formats best support taking action?"
+          ],
+          "spacing": "process-main"
+        },
+        {
+          "type": "twoCol",
           "subtitle": "Methodology",
           "body": [
             "We ran 90-minute semi-structured interviews with 10 sellers, balancing participants who used multiple finance tools and those fully in Square's ecosystem. Sessions included moderated co-creation in FigJam and qualitative feedback collection over remote interviews."
@@ -217,26 +228,14 @@
         },
         {
           "type": "twoCol",
+          "reverse": true,
           "subtitle": "Interview flow and co-creation",
           "body": [
             "Interviews covered goal tracking, external tools, guided co-creation, and design feedback. This helped reveal which dashboard patterns, visual treatments, and automation opportunities were most meaningful to sellers."
           ],
           "image": {
-            "src": "assets/case-studies/cash-flow-visualization/custom-dashboards.png",
+            "src": "assets/case-studies/cash-flow-visualization/custom-dashboards.mov",
             "alt": "Custom dashboards co-creation output"
-          },
-          "spacing": "process-main"
-        },
-        {
-          "type": "twoCol",
-          "reverse": true,
-          "subtitle": "Research objectives",
-          "body": [
-            "Discovery focused on four questions: what data is essential for daily operations, how visuals and insights affect decision-making, whether sellers prefer visuals or text, and which visual formats best support action."
-          ],
-          "image": {
-            "src": "assets/case-studies/cash-flow-visualization/methodology.png",
-            "alt": "Research objectives and synthesis"
           },
           "spacing": "process-secondary"
         },
@@ -269,7 +268,7 @@
             "src": "assets/case-studies/cash-flow-visualization/sales-reporting-insights.png",
             "alt": "Sales reporting view with insights"
           },
-          "imageWidth": 420,
+          "imageWidth": 320,
           "spacing": "solution-main"
         },
         {
