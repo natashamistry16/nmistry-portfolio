@@ -3,7 +3,7 @@
     {
       "slug": "instant-transfers",
       "title": "Instant Transfers",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -164,7 +164,7 @@
     {
       "slug": "cash-flow-visualization",
       "title": "Cash Flow Visualization",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -346,7 +346,7 @@
     {
       "slug": "cash-deposits",
       "title": "Cash Deposits",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -447,7 +447,7 @@
     {
       "slug": "point-of-sale",
       "title": "Point of Sale",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -557,7 +557,7 @@
           "inlineImage": {
             "src": "assets/case-studies/dominos/competitive-landscape-icons.png",
             "alt": "Competitive landscape logos",
-            "className": "domino-landscape-logos"
+            "className": "cs-landscape-logos"
           },
           "carousel": [
             {
@@ -720,7 +720,7 @@
     {
       "slug": "expense-reporting",
       "title": "Expense Management",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -913,7 +913,7 @@
     {
       "slug": "online-banking",
       "title": "Online Banking",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -1071,7 +1071,7 @@
     {
       "slug": "flexible-transfers",
       "title": "Flexible Transfers",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",
@@ -1173,7 +1173,7 @@
     {
       "slug": "check-deposit",
       "title": "Mobile Check Deposit",
-      "layoutVersion": "domino-v2",
+      "layoutVersion": "cs-v2",
       "usePlaceholderImages": false,
       "processTitle": "Process",
       "solutionTitle": "Solution",

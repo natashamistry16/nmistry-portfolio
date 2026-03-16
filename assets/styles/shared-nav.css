@@ -260,4 +260,17 @@ body.menu-open .menu-toggle {
     body.menu-open .menu-toggle {
         background-color: #161314;
     }
+
+    .mobile-menu a {
+        color: #f2efea;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
+        color: var(--red);
+    }
+
+    body.menu-open .menu-toggle {
+        background-color: #f2efea;
+    }
 }

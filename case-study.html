@@ -319,9 +319,9 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        .domino-media-frame,
-        .domino-centered-image-wrap,
-        .domino-hero-visual {
+        .cs-media-frame,
+        .cs-centered-image-wrap,
+        .cs-hero-visual {
             cursor: zoom-in;
         }
 
@@ -448,27 +448,27 @@
             position: relative;
         }
 
-        .case-study-page.domino-v2 {
+        .case-study-page.cs-v2 {
             max-width: 1200px;
             padding: 28px var(--space-6) 120px;
         }
 
-        .case-study-page.domino-v2 .section {
+        .case-study-page.cs-v2 .section {
             margin-top: 104px;
         }
 
-        .case-study-page.domino-v2 .intro-grid {
+        .case-study-page.cs-v2 .intro-grid {
             grid-template-columns: 624px 1fr;
             gap: 48px;
             align-items: center;
         }
 
-        .case-study-page.domino-v2 .hero-stack {
+        .case-study-page.cs-v2 .hero-stack {
             padding: 0;
             margin: -24px -20px;
         }
 
-        .case-study-page.domino-v2 .hero-image-wrap {
+        .case-study-page.cs-v2 .hero-image-wrap {
             border-radius: 0;
             background: none;
             border: 0;
@@ -476,14 +476,14 @@
             overflow: visible;
         }
 
-        .case-study-page.domino-v2 .hero-image {
+        .case-study-page.cs-v2 .hero-image {
             width: 100%;
             height: auto;
             max-height: none;
             object-fit: contain;
         }
 
-        .case-study-page.domino-v2 .intro-title {
+        .case-study-page.cs-v2 .intro-title {
             font-family: "swear-display", serif;
             font-weight: 500;
             font-size: 48px;
@@ -493,7 +493,7 @@
             max-width: 528px;
         }
 
-        .case-study-page.domino-v2 .lead {
+        .case-study-page.cs-v2 .lead {
             font-family: "swear-text", serif;
             font-weight: 400;
             font-style: italic;
@@ -504,7 +504,7 @@
             color: var(--brown);
         }
 
-        .case-study-page.domino-v2 .eyebrow {
+        .case-study-page.cs-v2 .eyebrow {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 24px;
@@ -514,14 +514,14 @@
             margin-bottom: 16px;
         }
 
-        .domino-hero-visual {
+        .cs-hero-visual {
             padding: 0;
             border-radius: 0;
             border: 0;
             background: transparent;
         }
 
-        .domino-challenge-grid {
+        .cs-challenge-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 96px;
@@ -529,32 +529,32 @@
             justify-content: center;
         }
 
-        .domino-challenge-grid--with-icons {
+        .cs-challenge-grid--with-icons {
             align-items: start;
         }
 
-        .domino-challenge-frame {
+        .cs-challenge-frame {
             position: relative;
             padding: 0;
         }
 
-        .domino-challenge-copy {
+        .cs-challenge-copy {
             padding-top: 0;
         }
 
-        .domino-challenge-grid--with-icons .domino-challenge-copy {
+        .cs-challenge-grid--with-icons .cs-challenge-copy {
             padding-top: 157px;
         }
 
-        .domino-challenge-copy .domino-section-title {
+        .cs-challenge-copy .cs-section-title {
             margin-bottom: 16px;
         }
 
-        .domino-challenge-copy .domino-body {
+        .cs-challenge-copy .cs-body {
             max-width: 530px;
         }
 
-        .domino-question-grid {
+        .cs-question-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 96px;
@@ -562,15 +562,15 @@
             justify-content: center;
         }
 
-        .domino-question-copy .domino-subtitle {
+        .cs-question-copy .cs-subtitle {
             margin-bottom: 12px;
         }
 
-        .domino-question-copy .domino-body {
+        .cs-question-copy .cs-body {
             max-width: 530px;
         }
 
-        .domino-question-list {
+        .cs-question-list {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -580,7 +580,7 @@
             align-self: center;
         }
 
-        .domino-question-list li {
+        .cs-question-list li {
             counter-increment: question-counter;
             display: flex;
             align-items: baseline;
@@ -592,7 +592,7 @@
             color: var(--brown);
         }
 
-        .domino-question-list li::before {
+        .cs-question-list li::before {
             content: counter(question-counter) ".";
             font-family: "swear-display", serif;
             font-weight: 700;
@@ -602,14 +602,14 @@
             flex-shrink: 0;
         }
 
-        .domino-question-list li span {
+        .cs-question-list li span {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 24px;
             line-height: 2;
         }
 
-        .domino-goals {
+        .cs-goals {
             list-style: none;
             display: grid;
             gap: 48px;
@@ -617,34 +617,34 @@
             padding: 0;
         }
 
-        .domino-goals li {
+        .cs-goals li {
             display: grid;
             grid-template-columns: 144px minmax(0, 336px);
             align-items: center;
             gap: 48px;
         }
 
-        .domino-goals li.goal-reverse {
+        .cs-goals li.goal-reverse {
             grid-template-columns: minmax(0, 337px) 144px;
         }
 
-        .domino-goals li.goal-reverse .domino-goal-icon {
+        .cs-goals li.goal-reverse .cs-goal-icon {
             order: 2;
         }
 
-        .domino-goals li.goal-reverse .domino-goal-copy {
+        .cs-goals li.goal-reverse .cs-goal-copy {
             order: 1;
             text-align: right;
         }
 
-        .domino-goal-icon {
+        .cs-goal-icon {
             width: 144px;
             height: 144px;
             display: block;
             object-fit: contain;
         }
 
-        .domino-goal-copy {
+        .cs-goal-copy {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 32px;
@@ -654,7 +654,7 @@
             text-align: left;
         }
 
-        .domino-goals-numbered {
+        .cs-goals-numbered {
             list-style: none;
             counter-reset: goal-counter;
             display: grid;
@@ -664,7 +664,7 @@
             align-self: center;
         }
 
-        .domino-goals-numbered li {
+        .cs-goals-numbered li {
             counter-increment: goal-counter;
             display: flex;
             align-items: baseline;
@@ -676,7 +676,7 @@
             color: var(--brown);
         }
 
-        .domino-goals-numbered li::before {
+        .cs-goals-numbered li::before {
             content: counter(goal-counter) ".";
             font-family: "swear-display", serif;
             font-weight: 700;
@@ -686,29 +686,29 @@
             flex-shrink: 0;
         }
 
-        .domino-centered-images {
+        .cs-centered-images {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 48px;
             margin-top: 48px;
         }
 
-        .domino-centered-image-wrap {
+        .cs-centered-image-wrap {
             border-radius: 16px;
             overflow: hidden;
         }
 
-        .domino-centered-image-wrap .domino-media-image {
+        .cs-centered-image-wrap .cs-media-image {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .case-study-page.domino-v2 .story-blocks {
+        .case-study-page.cs-v2 .story-blocks {
             gap: 44px;
         }
 
-        .case-study-page.domino-v2 .story-block {
+        .case-study-page.cs-v2 .story-block {
             border-top-color: rgba(46, 25, 31, 0.2);
             border-bottom-color: rgba(46, 25, 31, 0.13);
             padding: 26px 0;
@@ -1160,7 +1160,7 @@
             margin: 92px 0 96px;
         }
 
-        .domino-section-title {
+        .cs-section-title {
             font-family: "swear-display", serif;
             font-weight: 500;
             font-size: 48px;
@@ -1169,13 +1169,13 @@
             color: var(--red);
         }
 
-        .domino-section-title--center {
+        .cs-section-title--center {
             text-align: center;
             margin: 0 auto 64px;
         }
 
-        .domino-hero-frame,
-        .domino-media-frame {
+        .cs-hero-frame,
+        .cs-media-frame {
             border: 0;
             border-radius: 0;
             padding: 0;
@@ -1183,13 +1183,13 @@
             background: transparent;
         }
 
-        .domino-media-image {
+        .cs-media-image {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        video.domino-media-image {
+        video.cs-media-image {
             object-fit: cover;
             background: transparent;
             transform: scale(1.02);
@@ -1198,33 +1198,33 @@
             outline: none;
         }
 
-        .domino-carousel {
+        .cs-carousel {
             position: relative;
             padding: 0 44px 40px;
         }
 
-        .domino-carousel-viewport {
+        .cs-carousel-viewport {
             border-radius: 16px;
             overflow: hidden;
         }
 
-        .domino-carousel .story-carousel-track {
+        .cs-carousel .story-carousel-track {
             display: flex;
             width: 100%;
             transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
         }
 
-        .domino-carousel .story-carousel-slide {
+        .cs-carousel .story-carousel-slide {
             flex: 0 0 100%;
             min-width: 100%;
         }
 
-        .domino-carousel .domino-media-image {
+        .cs-carousel .cs-media-image {
             border-radius: 0;
         }
 
-        .domino-carousel .story-carousel-btn {
+        .cs-carousel .story-carousel-btn {
             top: calc(50% - 20px);
             width: 32px;
             height: 32px;
@@ -1235,7 +1235,7 @@
             line-height: 0;
         }
 
-        .domino-carousel .story-carousel-btn svg {
+        .cs-carousel .story-carousel-btn svg {
             width: 14px;
             height: 14px;
             stroke: var(--brown);
@@ -1245,19 +1245,19 @@
             stroke-linejoin: round;
         }
 
-        .domino-carousel .story-carousel-btn:hover {
+        .cs-carousel .story-carousel-btn:hover {
             background: #fff;
         }
 
-        .domino-carousel .story-carousel-btn--prev {
+        .cs-carousel .story-carousel-btn--prev {
             left: 0;
         }
 
-        .domino-carousel .story-carousel-btn--next {
+        .cs-carousel .story-carousel-btn--next {
             right: 0;
         }
 
-        .domino-carousel .story-carousel-dots {
+        .cs-carousel .story-carousel-dots {
             position: absolute;
             left: 50%;
             bottom: 0;
@@ -1267,19 +1267,19 @@
             gap: 8px;
         }
 
-        .domino-carousel .story-carousel-dot {
+        .cs-carousel .story-carousel-dot {
             width: 8px;
             height: 8px;
             background: rgba(46, 25, 31, 0.2);
             border-radius: 999px;
         }
 
-        .domino-carousel .story-carousel-dot.is-active {
+        .cs-carousel .story-carousel-dot.is-active {
             background: var(--red);
             transform: scale(1);
         }
 
-        .domino-heuristics-intro {
+        .cs-heuristics-intro {
             text-align: center;
             max-width: 576px;
             margin: 0 auto 48px;
@@ -1289,20 +1289,20 @@
             color: var(--brown);
         }
 
-        .domino-heuristics-grid {
+        .cs-heuristics-grid {
             display: grid;
             grid-template-columns: repeat(4, 288px);
             gap: 31px;
             justify-content: center;
         }
 
-        .domino-principle-shell {
+        .cs-principle-shell {
             border: 1px solid var(--red);
             border-radius: 40px;
             padding: 16px;
         }
 
-        .domino-principle-card {
+        .cs-principle-card {
             border: 1px solid #db6046;
             border-radius: 24px;
             background: rgba(255, 255, 255, 0.5);
@@ -1310,7 +1310,7 @@
             min-height: 262px;
         }
 
-        .domino-principle-num {
+        .cs-principle-num {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 24px;
@@ -1319,7 +1319,7 @@
             margin-bottom: 8px;
         }
 
-        .domino-principle-title {
+        .cs-principle-title {
             font-family: "swear-display", serif;
             font-weight: 500;
             font-size: 24px;
@@ -1328,7 +1328,7 @@
             margin-bottom: 10px;
         }
 
-        .domino-principle-list {
+        .cs-principle-list {
             margin: 0;
             padding-left: 18px;
             list-style: disc;
@@ -1338,7 +1338,7 @@
             color: var(--brown);
         }
 
-        .domino-two-col {
+        .cs-two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 64px;
@@ -1349,121 +1349,121 @@
             margin-right: auto;
         }
 
-        .domino-two-col.reverse {
+        .cs-two-col.reverse {
             grid-template-columns: 1fr 1fr;
         }
 
-        .project-cash-deposits .domino-two-col {
+        .project-cash-deposits .cs-two-col {
             grid-template-columns: 320px 560px;
         }
 
-        .project-cash-deposits .domino-two-col.reverse {
+        .project-cash-deposits .cs-two-col.reverse {
             grid-template-columns: 560px 320px;
         }
 
-        .project-cash-flow-visualization .domino-outcomes {
+        .project-cash-flow-visualization .cs-outcomes {
             grid-template-columns: repeat(3, minmax(0, 1fr));
             max-width: 1024px;
             margin: 0 auto;
         }
 
-        .project-instant-transfers .domino-outcomes {
+        .project-instant-transfers .cs-outcomes {
             grid-template-columns: repeat(3, minmax(0, 1fr));
             max-width: 1024px;
             margin: 0 auto;
         }
 
-        .case-study-page.domino-v2.project-instant-transfers .intro-grid {
+        .case-study-page.cs-v2.project-instant-transfers .intro-grid {
             grid-template-columns: 503px 528px;
             justify-content: center;
         }
 
-        .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual {
+        .case-study-page.cs-v2.project-instant-transfers .cs-hero-visual {
             max-width: 503px;
             margin: 0 auto;
         }
 
-        .project-instant-transfers .domino-two-col {
+        .project-instant-transfers .cs-two-col {
             grid-template-columns: 560px 560px;
             justify-content: center;
             justify-items: center;
             gap: 64px;
         }
 
-        .project-instant-transfers .domino-two-col.reverse {
+        .project-instant-transfers .cs-two-col.reverse {
             grid-template-columns: 560px 560px;
         }
 
-        .project-instant-transfers .domino-copy {
+        .project-instant-transfers .cs-copy {
             width: 100%;
             max-width: 560px;
         }
 
-        .project-instant-transfers .domino-media-frame {
+        .project-instant-transfers .cs-media-frame {
             max-width: 560px;
             width: 100%;
             justify-self: center;
         }
 
-        .project-cash-flow-visualization .domino-two-col {
+        .project-cash-flow-visualization .cs-two-col {
             grid-template-columns: 1fr 1fr;
             justify-content: center;
             justify-items: center;
             gap: 64px;
         }
 
-        .project-cash-flow-visualization .domino-two-col.reverse {
+        .project-cash-flow-visualization .cs-two-col.reverse {
             grid-template-columns: 1fr 1fr;
         }
 
-        .project-cash-flow-visualization .domino-copy {
+        .project-cash-flow-visualization .cs-copy {
             width: 100%;
             max-width: 568px;
         }
 
-        .project-cash-flow-visualization .domino-media-frame {
+        .project-cash-flow-visualization .cs-media-frame {
             justify-self: center;
         }
 
-        .project-cash-flow-visualization .domino-carousel .story-carousel-btn {
+        .project-cash-flow-visualization .cs-carousel .story-carousel-btn {
             top: 50%;
             transform: translateY(calc(-50% - 20px));
         }
 
-        .case-study-page.domino-v2.project-cash-flow-visualization .intro-grid {
+        .case-study-page.cs-v2.project-cash-flow-visualization .intro-grid {
             grid-template-columns: 530px 528px;
             justify-content: center;
         }
 
-        .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual {
+        .case-study-page.cs-v2.project-cash-flow-visualization .cs-hero-visual {
             max-width: 530px;
             margin: 0 auto;
         }
 
-        .case-study-page.domino-v2.project-check-deposit .intro-grid {
+        .case-study-page.cs-v2.project-check-deposit .intro-grid {
             grid-template-columns: 320px 528px;
             gap: 96px;
             justify-content: center;
         }
 
-        .case-study-page.domino-v2.project-check-deposit .domino-hero-visual {
+        .case-study-page.cs-v2.project-check-deposit .cs-hero-visual {
             max-width: 320px;
             margin: 0 auto;
         }
 
-        .case-study-page.domino-v2.project-check-deposit .hero-stack {
+        .case-study-page.cs-v2.project-check-deposit .hero-stack {
             margin: 0;
         }
 
-        .domino-two-col.reverse .domino-copy {
+        .cs-two-col.reverse .cs-copy {
             order: 1;
         }
 
-        .domino-two-col.reverse .domino-media-frame {
+        .cs-two-col.reverse .cs-media-frame {
             order: 2;
         }
 
-        .domino-subtitle {
+        .cs-subtitle {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 32px;
@@ -1472,7 +1472,7 @@
             margin-bottom: 20px;
         }
 
-        .domino-body {
+        .cs-body {
             font-family: "swear-text", serif;
             font-weight: 400;
             font-size: 16px;
@@ -1480,19 +1480,19 @@
             color: var(--brown);
         }
 
-        .domino-soln-intro {
+        .cs-soln-intro {
             text-align: center;
             max-width: 576px;
             margin: 0 auto 64px;
         }
 
-        .domino-system-grid {
+        .cs-system-grid {
             display: grid;
             gap: 96px;
             position: relative;
         }
 
-        .domino-system-grid::before {
+        .cs-system-grid::before {
             content: "";
             position: absolute;
             left: 50%;
@@ -1508,11 +1508,11 @@
                 linear-gradient(var(--red), var(--red)) center 5px / 2px calc(100% - 10px) no-repeat;
         }
 
-        .domino-system-wrap {
+        .cs-system-wrap {
             position: relative;
         }
 
-        .domino-system-row {
+        .cs-system-row {
             display: grid;
             grid-template-columns: 337px 337px;
             justify-content: center;
@@ -1521,7 +1521,7 @@
             position: relative;
         }
 
-        .domino-system-row::before {
+        .cs-system-row::before {
             content: "";
             position: absolute;
             top: 50%;
@@ -1533,7 +1533,7 @@
             pointer-events: none;
         }
 
-        .domino-system-row::after {
+        .cs-system-row::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -1545,42 +1545,42 @@
             pointer-events: none;
         }
 
-        .domino-system-row:not(.reverse)::before {
+        .cs-system-row:not(.reverse)::before {
             left: 50%;
         }
 
-        .domino-system-row:not(.reverse)::after {
+        .cs-system-row:not(.reverse)::after {
             left: calc(50% + 83px);
         }
 
-        .domino-system-row.reverse::before {
+        .cs-system-row.reverse::before {
             right: 50%;
         }
 
-        .domino-system-row.reverse::after {
+        .cs-system-row.reverse::after {
             right: calc(50% + 83px);
         }
 
-        .domino-system-row.reverse {
+        .cs-system-row.reverse {
             grid-template-columns: 337px 337px;
         }
 
-        .domino-system-row.reverse .domino-system-copy {
+        .cs-system-row.reverse .cs-system-copy {
             order: 1;
             text-align: right;
         }
 
-        .domino-system-row.reverse .domino-system-media {
+        .cs-system-row.reverse .cs-system-media {
             order: 2;
         }
 
-        .domino-system-media,
-        .domino-system-copy {
+        .cs-system-media,
+        .cs-system-copy {
             position: relative;
             z-index: 1;
         }
 
-        .domino-system-item {
+        .cs-system-item {
             font-family: "swear-display", serif;
             font-weight: 500;
             font-size: 24px;
@@ -1589,27 +1589,27 @@
             margin-bottom: 10px;
         }
 
-        .domino-system-text {
+        .cs-system-text {
             font-family: "swear-text", serif;
             font-size: 12px;
-            line-height: 30px;
+            line-height: 18px;
             color: var(--brown);
             max-width: 288px;
             margin-left: 49px;
         }
 
-        .domino-system-row.reverse .domino-system-text {
+        .cs-system-row.reverse .cs-system-text {
             margin-left: auto;
             margin-right: 49px;
         }
 
-        .domino-chip-row {
+        .cs-chip-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .domino-chip {
+        .cs-chip {
             width: 40px;
             height: 40px;
             border-radius: 12px;
@@ -1617,27 +1617,27 @@
             background: rgba(255, 255, 255, 0.65);
         }
 
-        .domino-landscape-logos {
+        .cs-landscape-logos {
             width: 100%;
             max-width: 464px;
             margin-top: 20px;
             display: block;
         }
 
-        .domino-quote-grid {
+        .cs-quote-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 288px));
             gap: 48px;
             justify-content: start;
         }
 
-        .domino-quote-shell {
+        .cs-quote-shell {
             border: 1px solid var(--red);
             border-radius: 40px;
             padding: 8px;
         }
 
-        .domino-quote-card {
+        .cs-quote-card {
             border: 1px solid #db6046;
             border-radius: 24px;
             background: rgba(255, 255, 255, 0.5);
@@ -1645,7 +1645,7 @@
             min-height: 265px;
         }
 
-        .domino-quote-mark {
+        .cs-quote-mark {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 32px;
@@ -1653,7 +1653,7 @@
             color: #db6046;
         }
 
-        .domino-quote-copy {
+        .cs-quote-copy {
             font-family: "swear-text", serif;
             font-weight: 500;
             font-size: 18px;
@@ -1661,14 +1661,14 @@
             color: var(--brown);
         }
 
-        .domino-outcomes {
+        .cs-outcomes {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 28px;
             text-align: center;
         }
 
-        .domino-outcome-value {
+        .cs-outcome-value {
             font-family: "swear-display", serif;
             font-weight: 700;
             font-size: 48px;
@@ -1677,7 +1677,7 @@
             margin-bottom: 8px;
         }
 
-        .domino-outcome-label {
+        .cs-outcome-label {
             font-family: "swear-display", serif;
             font-weight: 400;
             font-size: 24px;
@@ -1687,59 +1687,59 @@
             margin: 0 auto;
         }
 
-        .case-study-page.domino-v2 .section {
+        .case-study-page.cs-v2 .section {
             margin-top: 0;
         }
 
-        .domino-divider {
+        .cs-divider {
             margin: 0;
         }
 
-        .domino-divider--after-hero {
+        .cs-divider--after-hero {
             margin-top: 88px;
             margin-bottom: 92px;
         }
 
-        .domino-divider--after-challenge {
+        .cs-divider--after-challenge {
             margin-top: 86px;
             margin-bottom: 96px;
         }
 
-        .domino-divider--after-process {
+        .cs-divider--after-process {
             margin-top: 94px;
             margin-bottom: 88px;
         }
 
-        .domino-divider--before-outcomes {
+        .cs-divider--before-outcomes {
             margin-top: 96px;
             margin-bottom: 88px;
         }
 
-        .domino-block--process {
+        .cs-block--process {
             margin-bottom: 96px;
         }
 
-        .domino-block--process-main {
+        .cs-block--process-main {
             margin-bottom: 84px;
         }
 
-        .domino-block--process-secondary {
+        .cs-block--process-secondary {
             margin-bottom: 72px;
         }
 
-        .domino-block--solution {
+        .cs-block--solution {
             margin-bottom: 96px;
         }
 
-        .domino-block--solution-main {
+        .cs-block--solution-main {
             margin-bottom: 90px;
         }
 
-        .domino-block--solution-secondary {
+        .cs-block--solution-secondary {
             margin-bottom: 76px;
         }
 
-        .domino-text-block {
+        .cs-text-block {
             max-width: 526px;
             padding-left: 22px;
         }
@@ -1757,10 +1757,7 @@
         }
 
         .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: var(--space-6);
-            margin-bottom: var(--space-6);
+            display: none;
         }
 
         .footer-col-label {
@@ -1786,7 +1783,7 @@
         }
 
         .footer-divider {
-            margin: 0 0 var(--space-3) 0;
+            display: none;
         }
 
         .footer-divider hr {
@@ -1825,14 +1822,14 @@
             filter: blur(0);
         }
 
-        .domino-media-frame,
-        .domino-centered-image-wrap {
+        .cs-media-frame,
+        .cs-centered-image-wrap {
             transition: transform 0.35s ease, filter 0.35s ease;
             transform-origin: center center;
         }
 
-        .domino-media-frame:hover,
-        .domino-centered-image-wrap:hover {
+        .cs-media-frame:hover,
+        .cs-centered-image-wrap:hover {
             transform: translateY(-4px);
             filter: saturate(1.02) contrast(1.01);
         }
@@ -1842,7 +1839,7 @@
             50% { transform: translateY(-4px); }
         }
 
-        .case-study-page.domino-v2 .domino-hero-visual .domino-media-image {
+        .case-study-page.cs-v2 .cs-hero-visual .cs-media-image {
             animation: hero-float 8s ease-in-out infinite;
         }
 
@@ -1894,8 +1891,8 @@
                 padding: 24px 24px 80px;
             }
 
-            .case-study-page.domino-v2 {
-                padding: 24px 24px 80px;
+            .case-study-page.cs-v2 {
+                padding: 40px 32px 40px;
             }
 
             .intro-grid,
@@ -1904,155 +1901,422 @@
                 grid-template-columns: 1fr;
             }
 
-            .case-study-page.domino-v2 .intro-grid {
+            .case-study-page.cs-v2 .intro-grid {
                 grid-template-columns: 1fr !important;
-                gap: 28px;
+                gap: 40px;
                 justify-items: stretch;
                 align-items: start;
             }
 
-            .case-study-page.domino-v2 .hero-stack {
+            .case-study-page.cs-v2 .hero-stack {
                 margin: 0;
-                justify-self: center;
+                justify-self: stretch;
             }
 
-            .case-study-page.domino-v2 .intro-copy {
+            .case-study-page.cs-v2 .hero-image-wrap {
+                border-radius: 0;
+                box-shadow: none;
+                background: none;
+                border: 0;
+            }
+
+            .case-study-page.cs-v2 .hero-image-wrap .cs-media-image {
+                max-height: 323px;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .case-study-page.cs-v2 .intro-copy {
                 width: 100%;
                 max-width: 100%;
                 justify-self: stretch;
             }
 
-            .case-study-page.domino-v2 .eyebrow,
-            .case-study-page.domino-v2 .intro-title,
-            .case-study-page.domino-v2 .lead {
+            .case-study-page.cs-v2 .eyebrow,
+            .case-study-page.cs-v2 .intro-title,
+            .case-study-page.cs-v2 .lead {
                 max-width: 100%;
                 margin-left: 0;
                 text-align: left;
             }
 
-            .domino-challenge-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
+            /* Section spacing: uniform 56px via dividers/margins */
+            .cs-divider--after-hero,
+            .cs-divider--after-challenge,
+            .cs-divider--after-process,
+            .cs-divider--before-outcomes {
+                margin: 56px 0;
             }
 
-            .domino-challenge-frame {
+            /* Challenge grid: single column for title+body, goals below */
+            .cs-challenge-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cs-challenge-frame {
                 padding: 0;
             }
 
-            .domino-challenge-copy {
+            .cs-challenge-copy,
+            .cs-challenge-grid--with-icons .cs-challenge-copy {
                 padding-top: 0;
             }
 
-            .domino-question-grid,
-            .domino-heuristics-grid,
-            .domino-outcomes,
-            .domino-two-col,
-            .domino-two-col.reverse,
-            .domino-system-row,
-            .domino-system-row.reverse,
-            .domino-quote-grid {
-                grid-template-columns: 1fr !important;
-                gap: 28px;
+            /* Challenge goals: 3 across with compact icons */
+            .cs-goals {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px;
             }
 
-            .project-cash-flow-visualization .domino-copy,
-            .project-instant-transfers .domino-copy,
-            .project-instant-transfers .domino-media-frame {
+            .cs-goals li,
+            .cs-goals li.goal-reverse {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                justify-items: center;
+                text-align: center;
+            }
+
+            .cs-goals li .cs-goal-copy,
+            .cs-goals li.goal-reverse .cs-goal-copy {
+                justify-self: start;
+                text-align: left;
+            }
+
+            .cs-goals li.goal-reverse .cs-goal-icon,
+            .cs-goals li.goal-reverse .cs-goal-copy {
+                order: initial;
+            }
+
+            .cs-goal-icon {
+                width: 72px;
+                height: 72px;
+            }
+
+            .cs-goal-copy {
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: left;
+                max-width: 100%;
+            }
+
+            /* Grids that collapse to single column on mobile */
+            .cs-question-grid,
+            .cs-two-col,
+            .cs-two-col.reverse,
+            .cs-system-row,
+            .cs-system-row.reverse {
+                grid-template-columns: 1fr !important;
+                gap: 16px;
+            }
+
+            /* Heuristic principles: horizontal scroll */
+            .cs-heuristics-grid {
+                display: flex !important;
+                justify-content: flex-start !important;
+                overflow-x: auto;
+                overflow-y: clip;
+                gap: 16px !important;
+                padding-bottom: 8px;
+            }
+
+            .cs-principle-shell {
+                flex-shrink: 0;
+                width: 240px;
+                border-radius: 30px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cs-principle-card {
+                padding: 12px;
+                min-height: 244px;
+                flex: 1;
+            }
+
+            /* Process block spacing */
+            .cs-block--process {
+                margin-bottom: 40px;
+            }
+
+            .cs-block--process-main {
+                margin-bottom: 16px;
+            }
+
+            .cs-block--process-secondary {
+                margin-bottom: 16px;
+            }
+
+            /* Solution section: left-align text and 40px sub-section spacing */
+            .cs-section-title--center {
+                text-align: left;
+                margin: 0 0 40px;
+            }
+
+            .cs-soln-intro {
+                text-align: left;
+                max-width: 100%;
+            }
+
+            .cs-soln-intro .cs-subtitle {
+                text-align: left !important;
+                margin-bottom: 16px !important;
+            }
+
+            .cs-heuristics-intro {
+                text-align: left;
+                margin: 0 0 24px;
+            }
+
+            /* Override inline text-align:center on principlesGrid subtitle */
+            .cs-block--process .cs-subtitle {
+                text-align: left !important;
+            }
+
+            .cs-block--solution {
+                margin-bottom: 40px;
+            }
+
+            .cs-block--solution-main {
+                margin-bottom: 40px;
+            }
+
+            .cs-block--solution-secondary {
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+
+            /* Two-col media sizing: full width on POS, capped for other projects */
+            .project-point-of-sale .cs-two-col .cs-media-frame,
+            .project-point-of-sale .cs-system-media {
+                max-width: 100% !important;
+                width: 100%;
+                justify-self: stretch;
+                margin: 0;
+            }
+
+            .project-cash-flow-visualization .cs-copy,
+            .project-instant-transfers .cs-copy,
+            .project-instant-transfers .cs-media-frame {
                 max-width: 100%;
                 width: 100%;
             }
 
-            .case-study-page.domino-v2.project-cash-flow-visualization .domino-hero-visual {
+            .case-study-page.cs-v2.project-cash-flow-visualization .cs-hero-visual {
                 max-width: 90% !important;
             }
 
-            .project-cash-flow-visualization .domino-two-col .domino-media-frame:not([style*="max-width"]) {
+            .project-cash-flow-visualization .cs-two-col .cs-media-frame:not([style*="max-width"]) {
                 max-width: 90% !important;
             }
 
-            /* Keep phone screenshots readable on mobile: cap media width. */
-            .domino-two-col .domino-media-frame,
-            .domino-system-media,
-            .domino-centered-image-wrap {
+            /* Keep phone screenshots readable on mobile: cap media width (non-POS projects). */
+            .project-cash-deposits .cs-two-col .cs-media-frame,
+            .project-check-deposit .cs-two-col .cs-media-frame,
+            .project-cash-flow-visualization .cs-centered-image-wrap {
                 max-width: 260px !important;
                 width: 100%;
                 justify-self: center;
                 margin: 0 auto;
             }
 
-            .case-study-page.domino-v2 .domino-hero-visual {
-                max-width: 90% !important;
+            .cs-centered-image-wrap {
+                max-width: 260px !important;
+                width: 100%;
+                justify-self: center;
                 margin: 0 auto;
             }
 
-            .case-study-page.domino-v2 .domino-hero-visual .domino-media-image,
-            .domino-two-col .domino-media-image {
+            .case-study-page.cs-v2 .cs-hero-visual {
+                max-width: 100% !important;
+                margin: 0;
+            }
+
+            .case-study-page.cs-v2 .cs-hero-visual .cs-media-image,
+            .project-point-of-sale .cs-two-col .cs-media-image {
                 max-height: none;
                 width: 100%;
                 max-width: 100%;
+                margin: 0;
+            }
+
+            .case-study-page.cs-v2.project-check-deposit .cs-hero-visual,
+            .case-study-page.cs-v2.project-cash-deposits .cs-hero-visual {
+                max-width: 260px !important;
                 margin: 0 auto;
             }
 
-            .case-study-page.domino-v2.project-check-deposit .domino-hero-visual,
-            .case-study-page.domino-v2.project-instant-transfers .domino-hero-visual,
-            .case-study-page.domino-v2.project-cash-deposits .domino-hero-visual {
-                max-width: 260px !important;
+            .case-study-page.cs-v2.project-instant-transfers .cs-hero-visual {
+                max-width: 100% !important;
+                margin: 0;
             }
 
-            .domino-system-row.reverse .domino-system-copy {
+            /* Process blocks: copy first, media second */
+            .cs-block--process-main .cs-two-col .cs-copy,
+            .cs-block--process-secondary .cs-two-col .cs-copy {
+                order: 1 !important;
+                text-align: left;
+            }
+
+            .cs-block--process-main .cs-two-col .cs-media-frame,
+            .cs-block--process-secondary .cs-two-col .cs-media-frame {
+                order: 2 !important;
+            }
+
+            /* Solution blocks: media first, copy second */
+            .cs-block--solution-main .cs-two-col .cs-media-frame {
+                order: -1 !important;
+            }
+
+            .cs-block--solution-main .cs-two-col .cs-copy {
+                text-align: left;
+            }
+
+            .cs-block--solution-secondary .cs-two-col .cs-copy {
+                text-align: left;
+            }
+
+            /* System grid: left-side timeline on mobile */
+            .cs-system-grid {
+                gap: 40px;
+                padding-left: 56px;
+            }
+
+            .cs-system-grid::before {
+                display: block !important;
+                left: 0 !important;
+                transform: none !important;
+            }
+
+            /* Branch line: horizontal connector from vertical line to row */
+            .cs-system-row::before,
+            .cs-system-row:not(.reverse)::before,
+            .cs-system-row.reverse::before {
+                content: "" !important;
+                display: block !important;
+                position: absolute;
+                left: -52px !important;
+                right: auto !important;
+                top: 50%;
+                width: 44px;
+                height: 2px;
+                background: var(--red);
+                z-index: 2;
+                transform: translateY(-50%);
+            }
+
+            /* Diamond endpoint on branch */
+            .cs-system-row::after,
+            .cs-system-row:not(.reverse)::after,
+            .cs-system-row.reverse::after {
+                content: "" !important;
+                display: block !important;
+                position: absolute;
+                left: -12px !important;
+                right: auto !important;
+                top: 50%;
+                width: 8px;
+                height: 8px;
+                background: var(--red);
+                transform: translateY(-50%) rotate(45deg);
+                z-index: 2;
+            }
+
+            /* Remove copy-level pseudo-elements */
+            .cs-system-copy::before,
+            .cs-system-copy::after {
+                display: none !important;
+            }
+
+            /* Images always above text in timeline rows */
+            .cs-system-row .cs-system-media {
+                order: -1;
+                max-width: 100% !important;
+                width: 100%;
+                justify-self: stretch;
+                margin: 0;
+            }
+
+            .cs-system-row.reverse .cs-system-copy {
                 order: initial;
                 text-align: left;
             }
 
-            /* On mobile, always show two-col media first, then copy. */
-            .domino-two-col .domino-media-frame {
-                order: 1 !important;
+            .cs-system-row.reverse .cs-system-media {
+                order: -1;
             }
 
-            .domino-two-col .domino-copy {
-                order: 2 !important;
-                text-align: left;
-            }
-
-            .domino-system-text {
+            .cs-system-text {
                 margin-left: 0;
+                max-width: 100%;
             }
 
-            .domino-system-row.reverse .domino-system-text {
+            .cs-system-row.reverse .cs-system-text {
                 margin-left: 0;
                 margin-right: 0;
             }
 
-            .domino-outcome-value {
-                font-size: 32px;
-                margin-bottom: 4px;
+            /* Quotes: blockquote style instead of cards */
+            .cs-quote-grid {
+                display: flex !important;
+                flex-direction: column;
+                gap: 16px !important;
             }
 
-            .domino-outcome-label {
+            .cs-quote-shell {
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+                border-left: 2px solid var(--red);
+                padding-left: 8px;
+            }
+
+            .cs-quote-card {
+                border-radius: 0;
+                border: 0;
+                border-left: 1px solid #db6046;
+                background: transparent;
+                padding: 0 0 0 12px;
+                min-height: auto;
+            }
+
+            .cs-quote-mark {
                 font-size: 16px;
-                line-height: 1.3;
+                line-height: 1;
+                margin-bottom: 0;
             }
 
-            .domino-goals li,
-            .domino-goals li.goal-reverse {
+            .cs-quote-copy {
+                font-family: "swear-text", serif;
+                font-style: italic;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            /* Outcomes: tighter title-to-grid spacing */
+            .cs-section-title--center + .cs-outcomes {
+                margin-top: -24px;
+            }
+
+            /* Outcomes: 2×2 grid */
+            .cs-outcomes {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+            }
+
+            .cs-outcome-value {
+                font-size: 32px;
+                margin-bottom: 3px;
+            }
+
+            .cs-outcome-label {
+                font-size: 16px;
+                line-height: 1.25;
+            }
+
+            .cs-centered-images {
                 grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .domino-goals li.goal-reverse .domino-goal-icon,
-            .domino-goals li.goal-reverse .domino-goal-copy {
-                order: initial;
-                text-align: left;
-            }
-
-            .domino-centered-images {
-                grid-template-columns: 1fr;
-            }
-
-            .domino-system-grid::before,
-            .domino-system-row::before,
-            .domino-system-row::after {
-                display: none;
             }
 
             .story-block--image-focus,
@@ -2076,6 +2340,81 @@
 
             .outcomes-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* ── Instant Transfers: mobile overrides ── */
+
+            /* Keep two-col side-by-side (phone mockups are narrow enough) */
+            .project-instant-transfers .cs-two-col,
+            .project-instant-transfers .cs-two-col.reverse {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 16px;
+                align-items: center;
+            }
+
+            /* Bank relinking: stack copy above full-width image */
+            .project-instant-transfers .cs-block--solution-secondary .cs-two-col,
+            .project-instant-transfers .cs-block--solution-secondary .cs-two-col.reverse {
+                grid-template-columns: 1fr !important;
+            }
+
+            .project-instant-transfers .cs-block--solution-secondary .cs-two-col .cs-copy {
+                order: 1 !important;
+            }
+
+            .project-instant-transfers .cs-block--solution-secondary .cs-two-col .cs-media-frame {
+                order: 2 !important;
+                max-width: 100% !important;
+            }
+
+            /* Solution section: 48px gap between sub-sections */
+            .project-instant-transfers .cs-block--solution-main {
+                margin-bottom: 48px;
+            }
+
+            /* Subtitle-to-body gap: 8px */
+            .project-instant-transfers .cs-soln-intro,
+            .project-instant-transfers .cs-copy {
+                gap: 8px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Outcomes: 3-column single row */
+            .project-instant-transfers .cs-outcomes {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px 16px !important;
+            }
+
+            /* Outcome values: 24px */
+            .project-instant-transfers .cs-outcome-value {
+                font-size: 24px;
+            }
+
+            /* Remove media width cap — keep side-by-side sizing natural */
+            .project-instant-transfers .cs-two-col .cs-media-frame {
+                max-width: none !important;
+                justify-self: stretch;
+                margin: 0;
+            }
+
+            /* Disable process/solution reordering for instant-transfers (keep natural order) */
+            .project-instant-transfers .cs-block--process-main .cs-two-col .cs-copy,
+            .project-instant-transfers .cs-block--process-secondary .cs-two-col .cs-copy,
+            .project-instant-transfers .cs-block--solution-main .cs-two-col .cs-copy {
+                order: initial !important;
+            }
+
+            .project-instant-transfers .cs-block--process-main .cs-two-col .cs-media-frame,
+            .project-instant-transfers .cs-block--process-secondary .cs-two-col .cs-media-frame,
+            .project-instant-transfers .cs-block--solution-main .cs-two-col .cs-media-frame {
+                order: initial !important;
+            }
+
+            /* Footer: compact padding, row layout */
+            .project-instant-transfers .footer {
+                padding: 32px;
+                margin-top: 0;
             }
         }
 
@@ -2145,12 +2484,12 @@
                 background: rgba(255, 255, 255, 0.04);
             }
 
-            .domino-principle-card,
-            .domino-quote-card {
+            .cs-principle-card,
+            .cs-quote-card {
                 background: rgba(255, 255, 255, 0.04);
             }
 
-            .domino-carousel .story-carousel-dot {
+            .cs-carousel .story-carousel-dot {
                 background: rgba(250, 248, 234, 0.32);
             }
 
@@ -2169,8 +2508,8 @@
                 transition-delay: 0ms;
             }
 
-            .domino-media-frame,
-            .domino-centered-image-wrap,
+            .cs-media-frame,
+            .cs-centered-image-wrap,
             .story-image-wrap,
             .cs-card-mockup img {
                 transition: none !important;
@@ -2181,6 +2520,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/styles/shared-nav.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
 <body>
     <header class="header">
@@ -2402,23 +2742,23 @@
                 if (usePlaceholder || !src) return renderPlaceholder(placeholderLabel || alt || "Image placeholder");
                 const ext = src.split(".").pop().toLowerCase();
                 if (["mp4", "mov", "webm"].includes(ext)) {
-                    return `<video class="domino-media-image" src="${escapeHtml(src)}${this._cacheBust}" autoplay loop muted playsinline></video>`;
+                    return `<video class="cs-media-image" src="${escapeHtml(src)}${this._cacheBust}" autoplay loop muted playsinline></video>`;
                 }
-                return `<img class="domino-media-image" src="${escapeHtml(src)}${this._cacheBust}" alt="${escapeHtml(alt || "")}">`;
+                return `<img class="cs-media-image" src="${escapeHtml(src)}${this._cacheBust}" alt="${escapeHtml(alt || "")}">`;
             },
 
             carousel(images, usePlaceholder) {
                 if (!images || images.length === 0) return renderPlaceholder("Carousel placeholder");
                 if (images.length === 1) return this.media(images[0].src, images[0].alt, images[0].alt, usePlaceholder);
                 return `
-                    <div class="domino-carousel" data-carousel>
-                        <div class="domino-carousel-viewport">
+                    <div class="cs-carousel" data-carousel>
+                        <div class="cs-carousel-viewport">
                             <div class="story-carousel-track">
                                 ${images.map((img) => `
                                     <div class="story-carousel-slide">
                                         ${usePlaceholder || !img.src
                                             ? renderPlaceholder(img.alt || "Image")
-                                            : `<img class="domino-media-image" src="${escapeHtml(img.src)}${this._cacheBust}" alt="${escapeHtml(img.alt || "")}">`}
+                                            : `<img class="cs-media-image" src="${escapeHtml(img.src)}${this._cacheBust}" alt="${escapeHtml(img.alt || "")}">`}
                                     </div>
                                 `).join("")}
                             </div>
@@ -2437,11 +2777,11 @@
                 const heroSrc = String(project.intro.image || "").trim();
                 const heroImg = usePlaceholder || !heroSrc
                     ? renderPlaceholder(project.intro.placeholderLabel || "Hero mockup placeholder")
-                    : `<img class="domino-media-image" src="${escapeHtml(heroSrc)}${this._cacheBust}" alt="${escapeHtml(project.intro.imageAlt || project.title)}">`;
+                    : `<img class="cs-media-image" src="${escapeHtml(heroSrc)}${this._cacheBust}" alt="${escapeHtml(project.intro.imageAlt || project.title)}">`;
 
                 return `
                 <section class="section intro-grid">
-                    <div class="hero-stack domino-hero-visual scroll-fade">
+                    <div class="hero-stack cs-hero-visual scroll-fade">
                         <div class="hero-image-wrap">${heroImg}</div>
                     </div>
                     <div class="intro-copy scroll-fade">
@@ -2453,8 +2793,8 @@
             },
 
             divider(section) {
-                const spacingClass = section.spacing ? ` domino-divider--${section.spacing}` : "";
-                return `<div class="section-divider-pill domino-divider${spacingClass} scroll-fade"></div>`;
+                const spacingClass = section.spacing ? ` cs-divider--${section.spacing}` : "";
+                return `<div class="section-divider-pill cs-divider${spacingClass} scroll-fade"></div>`;
             },
 
             challenge(project) {
@@ -2462,29 +2802,29 @@
                 const isNumbered = project.challenge.numberedGoals === true;
 
                 const goalsHtml = isNumbered
-                    ? `<ol class="domino-goals-numbered scroll-fade">
+                    ? `<ol class="cs-goals-numbered scroll-fade">
                         ${(project.challenge.goals || []).map((goal) =>
-                            `<li><span class="domino-goal-num-text">${escapeHtml(goal)}</span></li>`
+                            `<li><span class="cs-goal-num-text">${escapeHtml(goal)}</span></li>`
                         ).join("")}
                     </ol>`
-                    : `<ul class="domino-goals">
+                    : `<ul class="cs-goals">
                         ${(project.challenge.goals || []).map((goal, idx) => {
                             const isReverse = idx % 2 === 1;
                             const iconSrc = icons[idx] || icons[icons.length - 1] || "";
                             return `<li class="scroll-fade${isReverse ? " goal-reverse" : ""}">
-                                ${iconSrc ? `<img class="domino-goal-icon" src="${escapeHtml(iconSrc)}" alt="">` : ""}
-                                <span class="domino-goal-copy">${escapeHtml(goal)}</span>
+                                ${iconSrc ? `<img class="cs-goal-icon" src="${escapeHtml(iconSrc)}" alt="">` : ""}
+                                <span class="cs-goal-copy">${escapeHtml(goal)}</span>
                             </li>`;
                         }).join("")}
                     </ul>`;
 
                 return `
-                <section class="section domino-block domino-block--challenge">
-                    <div class="domino-challenge-frame">
-                    <div class="domino-challenge-grid${icons.length > 0 ? ' domino-challenge-grid--with-icons' : ''}">
-                        <div class="section-head domino-challenge-copy">
-                            <h2 class="domino-section-title scroll-fade">${escapeHtml(project.challenge.title || "Challenge")}</h2>
-                            <p class="domino-body scroll-fade">${escapeHtml(project.challenge.body || "")}</p>
+                <section class="section cs-block cs-block--challenge">
+                    <div class="cs-challenge-frame">
+                    <div class="cs-challenge-grid${icons.length > 0 ? ' cs-challenge-grid--with-icons' : ''}">
+                        <div class="section-head cs-challenge-copy">
+                            <h2 class="cs-section-title scroll-fade">${escapeHtml(project.challenge.title || "Challenge")}</h2>
+                            <p class="cs-body scroll-fade">${escapeHtml(project.challenge.body || "")}</p>
                         </div>
                         ${goalsHtml}
                     </div>
@@ -2494,17 +2834,17 @@
 
             principlesGrid(section) {
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "process"}">
-                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
-                    <h3 class="domino-subtitle scroll-fade" style="text-align:center; margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
-                    <p class="domino-heuristics-intro scroll-fade">${escapeHtml(section.intro || "")}</p>
-                    <div class="domino-heuristics-grid">
+                <section class="section cs-block cs-block--${section.spacing || "process"}">
+                    <h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
+                    <h3 class="cs-subtitle scroll-fade" style="text-align:center; margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
+                    <p class="cs-heuristics-intro scroll-fade">${escapeHtml(section.intro || "")}</p>
+                    <div class="cs-heuristics-grid">
                         ${(section.cards || []).map((card) => `
-                            <article class="domino-principle-shell scroll-fade">
-                                <div class="domino-principle-card">
-                                    <p class="domino-principle-num">${escapeHtml(card.number)}</p>
-                                    <h4 class="domino-principle-title">${escapeHtml(card.title)}</h4>
-                                    <ul class="domino-principle-list">
+                            <article class="cs-principle-shell scroll-fade">
+                                <div class="cs-principle-card">
+                                    <p class="cs-principle-num">${escapeHtml(card.number)}</p>
+                                    <h4 class="cs-principle-title">${escapeHtml(card.title)}</h4>
+                                    <ul class="cs-principle-list">
                                         ${(card.bullets || []).map((b) => `<li>${escapeHtml(b)}</li>`).join("")}
                                     </ul>
                                 </div>
@@ -2520,14 +2860,14 @@
                 ).join("");
 
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "process"}">
-                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
-                    <div class="domino-question-grid">
-                        <div class="domino-question-copy scroll-fade">
-                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
-                            <p class="domino-body">${escapeHtml(section.body || "")}</p>
+                <section class="section cs-block cs-block--${section.spacing || "process"}">
+                    ${section.sectionTitle ? `<h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="cs-question-grid">
+                        <div class="cs-question-copy scroll-fade">
+                            <h3 class="cs-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                            <p class="cs-body">${escapeHtml(section.body || "")}</p>
                         </div>
-                        <ol class="domino-question-list">
+                        <ol class="cs-question-list">
                             ${questionsHtml}
                         </ol>
                     </div>
@@ -2537,14 +2877,14 @@
             twoCol(section, usePlaceholder) {
                 const isReverse = section.reverse === true;
                 const hasQuotes = Array.isArray(section.quotes) && section.quotes.length > 0;
-                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+                const bodyHtml = (section.body || []).map((p) => `<p class="cs-body">${escapeHtml(p)}</p>`).join("");
 
                 let inlineImgHtml = "";
                 if (section.inlineImage && !usePlaceholder) {
                     const cls = section.inlineImage.className ? ` class="${escapeHtml(section.inlineImage.className)}"` : "";
                     inlineImgHtml = `<img${cls} src="${escapeHtml(section.inlineImage.src)}" alt="${escapeHtml(section.inlineImage.alt || "")}">`;
                 } else if (section.inlineImage && usePlaceholder) {
-                    inlineImgHtml = `<div class="domino-chip-row" style="margin-top:18px;">${Array.from({ length: 7 }).map(() => '<span class="domino-chip" aria-hidden="true"></span>').join("")}</div>`;
+                    inlineImgHtml = `<div class="cs-chip-row" style="margin-top:18px;">${Array.from({ length: 7 }).map(() => '<span class="cs-chip" aria-hidden="true"></span>').join("")}</div>`;
                 }
 
                 const mediaWidthStyle = section.imageWidth ? `max-width:${section.imageWidth}px;width:100%;justify-self:center;` : "";
@@ -2552,9 +2892,9 @@
                 const mediaStyleAttr = (mediaWidthStyle || radiusStyle) ? ` style="${mediaWidthStyle}${radiusStyle}"` : "";
                 let mediaHtml;
                 if (section.carousel) {
-                    mediaHtml = `<div class="domino-media-frame scroll-fade"${mediaStyleAttr}>${this.carousel(section.carousel, usePlaceholder)}</div>`;
+                    mediaHtml = `<div class="cs-media-frame scroll-fade"${mediaStyleAttr}>${this.carousel(section.carousel, usePlaceholder)}</div>`;
                 } else if (section.image) {
-                    mediaHtml = `<div class="domino-media-frame scroll-fade"${mediaStyleAttr}>${this.media(section.image.src, section.image.alt, section.image.alt, usePlaceholder)}</div>`;
+                    mediaHtml = `<div class="cs-media-frame scroll-fade"${mediaStyleAttr}>${this.media(section.image.src, section.image.alt, section.image.alt, usePlaceholder)}</div>`;
                 } else {
                     mediaHtml = "";
                 }
@@ -2563,42 +2903,42 @@
 
                 if (hasQuotes) {
                     const quotesHtml = `
-                        <div class="domino-quote-grid">
+                        <div class="cs-quote-grid">
                             ${section.quotes.map((q) => `
-                                <div class="domino-quote-shell scroll-fade">
-                                    <div class="domino-quote-card">
-                                        <p class="domino-quote-mark">\u201C</p>
-                                        <p class="domino-quote-copy">${escapeHtml(q)}</p>
+                                <div class="cs-quote-shell scroll-fade">
+                                    <div class="cs-quote-card">
+                                        <p class="cs-quote-mark">\u201C</p>
+                                        <p class="cs-quote-copy">${escapeHtml(q)}</p>
                                     </div>
                                 </div>
                             `).join("")}
                         </div>`;
                     leftSlot = quotesHtml;
                     rightSlot = `
-                        <div class="domino-copy scroll-fade">
-                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                        <div class="cs-copy scroll-fade">
+                            <h3 class="cs-subtitle">${escapeHtml(section.subtitle || "")}</h3>
                             ${bodyHtml}
                         </div>`;
                 } else if (isReverse) {
                     leftSlot = `
-                        <div class="domino-copy scroll-fade">
-                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                        <div class="cs-copy scroll-fade">
+                            <h3 class="cs-subtitle">${escapeHtml(section.subtitle || "")}</h3>
                             ${bodyHtml}${inlineImgHtml}
                         </div>`;
                     rightSlot = mediaHtml;
                 } else {
                     leftSlot = mediaHtml;
                     rightSlot = `
-                        <div class="domino-copy scroll-fade">
-                            <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                        <div class="cs-copy scroll-fade">
+                            <h3 class="cs-subtitle">${escapeHtml(section.subtitle || "")}</h3>
                             ${bodyHtml}${inlineImgHtml}
                         </div>`;
                 }
 
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "default"}">
-                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
-                    <div class="domino-two-col${isReverse ? " reverse" : ""}">
+                <section class="section cs-block cs-block--${section.spacing || "default"}">
+                    ${section.sectionTitle ? `<h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="cs-two-col${isReverse ? " reverse" : ""}">
                         ${leftSlot}
                         ${rightSlot}
                     </div>
@@ -2608,49 +2948,49 @@
             systemGrid(section, usePlaceholder) {
                 const rows = (section.rows || []).map((row) => {
                     const isReverse = row.reverse === true;
-                    const mediaEl = `<div class="domino-system-media domino-media-frame scroll-fade">${this.media(row.image.src, row.image.alt, row.image.alt, usePlaceholder)}</div>`;
+                    const mediaEl = `<div class="cs-system-media cs-media-frame scroll-fade">${this.media(row.image.src, row.image.alt, row.image.alt, usePlaceholder)}</div>`;
                     const copyEl = `
-                        <div class="domino-system-copy scroll-fade">
-                            <h4 class="domino-system-item">${escapeHtml(row.title)}</h4>
-                            <p class="domino-system-text">${escapeHtml(row.text)}</p>
+                        <div class="cs-system-copy scroll-fade">
+                            <h4 class="cs-system-item">${escapeHtml(row.title)}</h4>
+                            <p class="cs-system-text">${escapeHtml(row.text)}</p>
                         </div>`;
                     return `
-                        <div class="domino-system-row${isReverse ? " reverse" : ""}">
+                        <div class="cs-system-row${isReverse ? " reverse" : ""}">
                             ${isReverse ? copyEl + mediaEl : mediaEl + copyEl}
                         </div>`;
                 }).join("");
 
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "solution"}">
-                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
-                    <div class="domino-soln-intro scroll-fade">
-                        <h3 class="domino-subtitle" style="margin-bottom: 56px;">${escapeHtml(section.subtitle || "")}</h3>
-                        <p class="domino-body">${escapeHtml(section.intro || "")}</p>
+                <section class="section cs-block cs-block--${section.spacing || "solution"}">
+                    <h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(section.sectionTitle || "")}</h2>
+                    <div class="cs-soln-intro scroll-fade">
+                        <h3 class="cs-subtitle" style="margin-bottom: 56px;">${escapeHtml(section.subtitle || "")}</h3>
+                        <p class="cs-body">${escapeHtml(section.intro || "")}</p>
                     </div>
-                    <div class="domino-system-wrap">
-                        <div class="domino-system-grid">${rows}</div>
+                    <div class="cs-system-wrap">
+                        <div class="cs-system-grid">${rows}</div>
                     </div>
                 </section>`;
             },
 
             textBlock(section) {
-                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+                const bodyHtml = (section.body || []).map((p) => `<p class="cs-body">${escapeHtml(p)}</p>`).join("");
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "default"}">
-                    <div class="domino-text-block scroll-fade">
-                        <h3 class="domino-subtitle">${escapeHtml(section.subtitle || "")}</h3>
+                <section class="section cs-block cs-block--${section.spacing || "default"}">
+                    <div class="cs-text-block scroll-fade">
+                        <h3 class="cs-subtitle">${escapeHtml(section.subtitle || "")}</h3>
                         ${bodyHtml}
                     </div>
                 </section>`;
             },
 
             centeredBlock(section, usePlaceholder) {
-                const bodyHtml = (section.body || []).map((p) => `<p class="domino-body">${escapeHtml(p)}</p>`).join("");
+                const bodyHtml = (section.body || []).map((p) => `<p class="cs-body">${escapeHtml(p)}</p>`).join("");
                 const images = section.images || [];
                 const imagesHtml = images.length > 0
-                    ? `<div class="domino-centered-images scroll-fade">
+                    ? `<div class="cs-centered-images scroll-fade">
                         ${images.map((img) => `
-                            <div class="domino-centered-image-wrap">
+                            <div class="cs-centered-image-wrap">
                                 ${this.media(img.src, img.alt, img.alt, usePlaceholder)}
                             </div>
                         `).join("")}
@@ -2658,10 +2998,10 @@
                     : "";
 
                 return `
-                <section class="section domino-block domino-block--${section.spacing || "default"}">
-                    ${section.sectionTitle ? `<h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
-                    <div class="domino-soln-intro scroll-fade">
-                        <h3 class="domino-subtitle" style="margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
+                <section class="section cs-block cs-block--${section.spacing || "default"}">
+                    ${section.sectionTitle ? `<h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(section.sectionTitle)}</h2>` : ""}
+                    <div class="cs-soln-intro scroll-fade">
+                        <h3 class="cs-subtitle" style="margin-bottom: 42px;">${escapeHtml(section.subtitle || "")}</h3>
                         ${bodyHtml}
                     </div>
                     ${imagesHtml}
@@ -2671,12 +3011,12 @@
             outcomes(section, project) {
                 return `
                 <section class="section">
-                    <h2 class="domino-section-title domino-section-title--center scroll-fade">${escapeHtml(project.outcomes.title || "Outcomes")}</h2>
-                    <div class="domino-outcomes">
+                    <h2 class="cs-section-title cs-section-title--center scroll-fade">${escapeHtml(project.outcomes.title || "Outcomes")}</h2>
+                    <div class="cs-outcomes">
                         ${(section.items || []).map((item) => `
                             <article class="scroll-fade">
-                                <span class="domino-outcome-value">${escapeHtml(item.value)}</span>
-                                <p class="domino-outcome-label">${escapeHtml(item.label)}</p>
+                                <span class="cs-outcome-value">${escapeHtml(item.value)}</span>
+                                <p class="cs-outcome-label">${escapeHtml(item.label)}</p>
                             </article>
                         `).join("")}
                     </div>
@@ -2727,9 +3067,9 @@
                 }
 
                 document.title = `${project.title} | Natasha Mistry`;
-                const isDominoLayout = project.layoutVersion === "domino-v2";
+                const isDominoLayout = project.layoutVersion === "cs-v2";
                 const usePlaceholderImages = project.usePlaceholderImages === true;
-                root.classList.toggle("domino-v2", isDominoLayout);
+                root.classList.toggle("cs-v2", isDominoLayout);
                 if (project.slug) root.classList.add(`project-${project.slug}`);
 
                 if (isDominoLayout) {
@@ -2926,7 +3266,7 @@
         });
 
         document.addEventListener("click", function (e) {
-            const mediaEl = e.target.closest(".domino-media-image, .domino-hero-visual .domino-media-image, .story-image");
+            const mediaEl = e.target.closest(".cs-media-image, .cs-hero-visual .cs-media-image, .story-image");
             if (mediaEl && (mediaEl.tagName === "IMG" || mediaEl.tagName === "VIDEO")) {
                 e.preventDefault();
                 openLightbox(mediaEl);
